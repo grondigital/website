@@ -335,3 +335,19 @@ a {
 	color: #ffffff;
 	font-weight: bold;
 }
+
+
+#crypto-icons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+#crypto-icons img {
+	width: 35px;
+}
+#crypto-icons img.icon-ltc {
+	width: 30px;
+}
+#crypto-icons img.icon-dash {
+	width: 47px;
+}
