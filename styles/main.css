@@ -618,3 +618,18 @@ a {
 .rodmap-description {
 	text-align: center;
 }
+
+#partners {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#partners img {
+	max-width: 170px;
+	height: 65px;
+	opacity: 0.25;
+	transition: opacity 0.35s;
+}
+#partners img:hover {
+	opacity: 0.9;
+}
