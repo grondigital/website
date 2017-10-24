@@ -65,7 +65,9 @@ a {
 }
 
 
-
+.home-section {
+	background: center center / cover;
+}
 .blue {
 	background-color: #415275;
 }
@@ -442,6 +444,7 @@ a {
 
 
 #top-section {
+	background-image: url("../images/bg/top.png");
 	color: #e8eaee;
 	font-size: 18px;
 	line-height: 1.25;
@@ -487,6 +490,9 @@ a {
 }
 
 
+#video-section {
+	background-image: url("../images/bg/video.png");
+}
 #video-section .container {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -544,6 +550,7 @@ a {
 }
 
 #ico-counter-section {
+	background-image: url("../images/bg/ico-counter.png");
 	text-align: center;
 }
 #ico-counter-container {
@@ -648,10 +655,14 @@ a {
 }
 
 
-.rodmap-description {
+.roadmap-description {
 	text-align: center;
 }
 
+
+#partners-section {
+	background-image: url("../images/bg/partners.png");
+}
 #partners {
 	display: flex;
 	flex-wrap: wrap;
@@ -702,6 +713,9 @@ a {
 }
 
 
+#main-footer {
+	background-image: url("../images/bg/footer.png");
+}
 #footer-widgets {
 	display: flex;
 	justify-content: space-around;
