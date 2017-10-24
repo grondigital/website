@@ -702,3 +702,13 @@ a {
 #footer-widgets .social a {
 	margin-right: 0.5em;
 }
+
+#copyright-section {
+	background-color: #2c3955;
+	color: #415275;
+}
+#copyright-section .container {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
