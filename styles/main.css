@@ -633,3 +633,37 @@ a {
 #partners img:hover {
 	opacity: 0.9;
 }
+
+
+#team {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#team .item {
+	max-width: 360px;
+	margin: 0 10px 20px 10px;
+}
+#team .person-header {
+	margin-bottom: 30px;
+}
+#team .avatar {
+	vertical-align: middle;
+	margin-right: 1em;
+}
+#team .person {
+	display: inline-block;
+	vertical-align: middle;
+}
+#team .person h4,
+#team .person p {
+	margin-bottom: 0;
+}
+#team .person .position {
+	font-size: 18px;
+	font-weight: bold;
+	color: #f18036;
+}
+#team .description p:last-child {
+	margin-bottom: 0;
+}
