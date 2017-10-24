@@ -69,7 +69,7 @@ a {
 .blue {
 	background-color: #415275;
 }
-.blue, .blue h1, .blue h2 {
+.blue, .blue h1, .blue h2, .blue h4, .blue a {
 	color: #ffffff;
 }
 .gray {
@@ -120,6 +120,10 @@ a {
 	background: #ffffff;
 	color: #415275;
 	font: 44px/70px Helvetica, Arial, Lucida, sans-serif;
+}
+
+.social a {
+	text-decoration: none;
 }
 
 
@@ -666,4 +670,35 @@ a {
 }
 #team .description p:last-child {
 	margin-bottom: 0;
+}
+
+
+#footer-widgets {
+	display: flex;
+	justify-content: space-around;
+}
+#footer-widgets .item {
+	width: 195px;
+}
+#footer-widgets h4 {
+	margin-bottom: 20px;
+	text-align: left;
+}
+#footer-widgets h4::after {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 3px;
+	background: #f18036;
+}
+#footer-widgets .item p:last-child {
+	margin-bottom: 0;
+}
+
+#footer-widgets .social {
+	font-size: 20px;
+	line-height: 2;
+}
+#footer-widgets .social a {
+	margin-right: 0.5em;
 }
