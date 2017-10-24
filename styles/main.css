@@ -487,6 +487,35 @@ a {
 }
 
 
+#video-section .container {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+/* responsive video container https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+#video {
+	position: relative;
+	max-width: 960px;
+	margin: 0 auto;
+	padding-bottom: 56.25%; /* 16:9 */
+}
+#play-video {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin-top: -90px;
+	margin-left: -90px;
+}
+#video iframe {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
 #products-section {
 	text-align: center;
 }
