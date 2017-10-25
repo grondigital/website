@@ -8,9 +8,6 @@ html {
 	color: #6b7a8f;
 	font: normal 14px/1.5 "Open Sans", Arial, sans-serif;
 }
-body {
-	padding-top: 80px;
-}
 
 h1, h2, h3, h4, h5, h6 {
 	color: #415275;
@@ -402,6 +399,11 @@ a {
 	background: rgba(255, 255, 255, 0.88);
 	box-shadow: 0 3px 3px 0 rgba(34, 50, 85, 0.1);
 	line-height: 80px;
+	transition: height 0.4s, line-height 0.4s;
+}
+#main-header.fixed-header {
+	height: 50px;
+	line-height: 50px;
 }
 #main-header .container {
 	height: 100%;
@@ -444,6 +446,7 @@ a {
 
 
 #top-section {
+	padding-top: 80px;
 	background-image: url("../images/bg/top.png");
 	color: #e8eaee;
 	font-size: 18px;

@@ -23,7 +23,7 @@ function onYouTubeIframeAPIReady() {
 /**
  * ICO counter
  */
-(function() {
+$(function() {
 	// Set the date we're counting down to
 	var countDownDate = new Date("Nov 1, 2017 00:00:00").getTime();
 	var $timer = $('#timer');
@@ -57,4 +57,18 @@ function onYouTubeIframeAPIReady() {
 	function n(n){
 		return n > 9 ? "" + n: "0" + n;
 	}
-})();
+});
+
+$(function() {
+	var $header = $('#main-header');
+	$header.waypoint(function(dir) {
+		console.log(dir);
+		if (dir === 'down') {
+			$header.addClass('fixed-header');
+		} else {
+			$header.removeClass('fixed-header');
+		}
+	}, {
+		offset: -50
+	});
+});
