@@ -83,19 +83,20 @@ a {
 
 .flex-container {
 	display: flex;
-	justify-content: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .flex-cols-2 .flex-item {
-	width: 50%;
+	flex-basis: 48%;
 }
 
 .grid-container {
 	display: grid;
 }
 .grid-cols-2 {
-	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-	grid-column-gap: 160px;
-	grid-row-gap: 50px;
+	grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+	grid-column-gap: 30px;
+	grid-row-gap: 30px;
 	justify-content: space-between;
 }
 
@@ -108,9 +109,6 @@ a {
 .timer {
 	display: flex;
 	justify-content: center;
-}
-.timer > div {
-	
 }
 .timer-cell {
 	width: 70px;
@@ -452,21 +450,61 @@ a {
 	line-height: 1.25;
 }
 
+#top-image-container {
+	padding: 40px 0;
+}
 #top-image {
 	position: relative;
-	height: 515px;
+	width: 100%;
+	max-width: 494px;
 }
-
 #top-image img {
+	display: block;
+	max-width: 100%;
+	transition: opacity 0.4s;
+}
+#top-image-colour {
 	position: absolute;
-	top: 50%;
+	top: 0;
 	left: 0;
-	margin-top: -214px;
+	width: 100%;
+}
+#top-image-colour {
+	opacity: 0;
+}
+#top-image:hover #top-image-colour {
+	opacity: 1;
+}
+#top-image:hover #top-image-bw {
+	opacity: 0;
 }
 
 #top-text .btn {
 	width: 195px;
 	margin-right: 20px;
+	margin-bottom: 20px;
+}
+#top-text p:last-child {
+	margin-bottom: 0;
+}
+#top-text .btn:last-child {
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+/* styles for top section in one-column layout */
+@media (max-width: 639px) {
+	#top-image-container {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	#top-image {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#top-text {
+		text-align: center;
+	}
 }
 
 
@@ -475,6 +513,10 @@ a {
 }
 
 
+#blurbs-section .grid-container {
+	grid-column-gap: 160px;
+	grid-row-gap: 50px;
+}
 .blurb img {
 	float: left;
 	width: 80px;
