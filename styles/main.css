@@ -441,7 +441,6 @@ a {
 #top-menu a:hover:not(.btn) {
 	border-bottom: 3px solid #f18036;
 	color: #415275;
-	font-weight: 600;
 }
 
 
