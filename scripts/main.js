@@ -27,7 +27,7 @@ function onYouTubeIframeAPIReady() {
 	// Set the date we're counting down to
 	var countDownDate = new Date("Nov 1, 2017 00:00:00").getTime();
 	var $timer = $('#timer');
-	console.log($timer);
+	
 	// Update the count down every 1 second
 	setInterval(function() {
 		// Get today's date and time
