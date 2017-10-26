@@ -64,16 +64,17 @@ a {
 	color: #ffff;
 }
 .btn.animated::after {
-	content: '\e802';
+	content: '\f105';
 	display: inline-block;
 	width: 1em;
 	margin-left: -1em;
 	opacity: 0;
 	font-family: 'fontello';
+	font-size: 120%;
 	transition: margin 0.2s, opacity 0.2s;
 }
 .btn.animated:hover::after {
-	margin-left: 0.5em;
+	margin-left: 0.2em;
 	opacity: 1;
 }
 
@@ -228,7 +229,7 @@ a {
 	background: white;
 	color: #f18036;
 	text-align: center;
-	font-size: 25px;
+	font-size: 16px;
 	line-height: 40px;
 }
 .cd-timeline-img .icon-back-in-time {
