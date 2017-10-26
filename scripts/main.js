@@ -73,3 +73,7 @@ $(function() {
 		offset: -50
 	});
 });
+
+$(function() {
+	AOS.init();
+});
