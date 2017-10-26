@@ -123,6 +123,7 @@ a {
 .timer {
 	display: flex;
 	justify-content: center;
+	font-size: 14px;
 }
 .timer-cell {
 	width: 70px;
@@ -131,6 +132,17 @@ a {
 	background: #ffffff;
 	color: #415275;
 	font: bold 44px/70px Helvetica, Arial, Lucida, sans-serif;
+}
+@media (max-width: 359px) {
+	.timer {
+		font-size: 12px;
+	}
+	.timer-cell {
+		width: 50px;
+		height: 50px;
+		font-size: 35px;
+		line-height: 50px;
+	}
 }
 
 .social a {
@@ -444,6 +456,11 @@ a {
 	#top-text {
 		text-align: center;
 	}
+	#top-text .btn,
+	#top-text .btn:last-child {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }
 
 
@@ -534,24 +551,21 @@ a {
 #ico-counter-section {
 	background-image: url("../images/bg/ico-counter.png");
 	text-align: center;
-}
-#ico-counter-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	margin-bottom: 30px;
-}
-#ico-counter-container .col1,
-#ico-counter-container .col3 {
-	width: 25%;
 	font-size: 18px;
 }
-#ico-counter-container .col2 {
-	width: 50%;
+#ico-counter-container {
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 30px;
+	grid-row-gap: 30px;
+	margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+	#ico-counter-container {
+		grid-template-columns: 1fr;
+	}
 }
 #ico-counter-section .btn {
 	width: 14em;
-	font-size: 18px;
 }
 
 
@@ -697,12 +711,17 @@ a {
 #main-footer {
 	background-image: url("../images/bg/footer.png");
 }
+#main-footer .container {
+	padding-bottom: 20px;
+}
 #footer-widgets {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 #footer-widgets .item {
 	width: 195px;
+	margin-bottom: 20px;
 }
 #footer-widgets h4 {
 	margin-bottom: 20px;
