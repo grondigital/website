@@ -80,3 +80,48 @@ $(function() {
 		once: true
 	});
 });
+
+//https://css-tricks.com/snippets/jquery/smooth-scrolling/#article-header-id-1
+//https://css-tricks.com/smooth-scrolling-accessibility/#article-header-id-3
+$(function() {
+	// URL updates and the element focus is maintained
+	// originally found via in Update 3 on http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links
+	
+	// filter handling for a /dir/ OR /indexordefault.page
+	function filterPath(string) {
+		return string
+			.replace(/^\//, '')
+			.replace(/(index)\.html?$/, '')
+			.replace(/\/$/, '');
+	}
+	
+	var locationPath = filterPath(location.pathname);
+	$('a[href*="#"]')
+		// Remove links that don't actually link to anything
+		.not('[href="#"]')
+		.not('[href="#0"]')
+		.each(function() {
+			var thisPath = filterPath(this.pathname) || locationPath;
+			var hash = this.hash.replace(/#/, '');
+			if (hash !== '' &&
+				locationPath === thisPath &&
+				(location.hostname === this.hostname || !this.hostname)) {
+				var $target = $(this.hash);
+				if ($target.length) {
+					$(this).click(function(event) {
+						event.preventDefault();
+						$('html, body').animate({scrollTop: $target.offset().top}, 1000, function () {
+							location.hash = hash;
+							$target.focus();
+							if ($target.is(":focus")){ //checking if the target was focused
+								return false;
+							}else{
+								$target.attr('tabindex', '-1'); //Adding tabindex for elements not focusable
+								$target.focus(); //Setting focus
+							}
+						});
+					});
+				}
+			}
+	});
+});
