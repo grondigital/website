@@ -61,8 +61,9 @@ $(function() {
 
 $(function() {
 	var $header = $('#main-header');
-	$header.waypoint(function(dir) {
-		console.log(dir);
+	
+	$('#top-section').waypoint(function(dir) {
+		
 		if (dir === 'down') {
 			$header.addClass('fixed-header');
 		} else {
