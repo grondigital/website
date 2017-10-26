@@ -328,7 +328,11 @@ a {
 }
 
 #top-menu {
+	position: relative;
 	text-align: right;
+}
+#top-menu ul {
+	margin: 0;
 }
 #top-menu li {
 	display: inline;
@@ -340,6 +344,40 @@ a {
 #top-menu a:hover:not(.btn) {
 	border-bottom: 3px solid #f18036;
 	color: #415275;
+}
+
+#top-menu .menu-button {
+	display: none;
+}
+#top-menu .menu-button::before {
+	font-size: 140%;
+}
+#top-menu a.menu-button:hover {
+	border-bottom: none;
+}
+
+@media (max-width: 1023px) {
+	#top-menu .menu-button {
+		display: inline;
+	}
+	#top-menu ul {
+		position: absolute;
+		display: none;
+		right: -15px;
+		top: 100%;
+		min-width: 10em;
+		padding: 0 15px;
+		background: rgba(255, 255, 255, 0.88);
+		text-align: left;
+	}
+	#top-menu.open ul {
+		display: block;
+	}
+	#top-menu li {
+		display: block;
+		margin: 0 0 10px 0;
+		line-height: 1.5;
+	}
 }
 
 

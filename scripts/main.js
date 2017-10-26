@@ -60,7 +60,8 @@ $(function() {
 });
 
 $(function() {
-	var $header = $('#main-header');
+	var $header = $('#main-header'),
+	    $menu = $('#top-menu');
 	
 	$('#top-section').waypoint(function(dir) {
 		
@@ -71,6 +72,14 @@ $(function() {
 		}
 	}, {
 		offset: -50
+	});
+	
+	$menu.find('.menu-button').click(function() {
+		$menu.toggleClass('open');
+		return false;
+	});
+	$menu.find('ul a').click(function() {
+		$menu.removeClass('open');
 	});
 });
 
