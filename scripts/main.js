@@ -75,5 +75,8 @@ $(function() {
 });
 
 $(function() {
-	AOS.init();
+	AOS.init({
+		easing: 'ease-out-back',
+		once: true
+	});
 });
