@@ -1,3 +1,6 @@
+/**
+ * YouTube API load callback
+ */
 function onYouTubeIframeAPIReady() {
 	//play YouTube video on button click
 	$('#play-video').click(function() {
@@ -59,12 +62,15 @@ $(function() {
 	}
 });
 
+/**
+ * Common manipulations
+ */
 $(function() {
 	var $header = $('#main-header'),
 	    $menu = $('#top-menu');
 	
+	//change header style on scroll
 	$('#top-section').waypoint(function(dir) {
-		
 		if (dir === 'down') {
 			$header.addClass('fixed-header');
 		} else {
@@ -74,6 +80,7 @@ $(function() {
 		offset: -50
 	});
 	
+	//top menu open/close events
 	$menu.find('.menu-button').click(function() {
 		$menu.toggleClass('open');
 		return false;
@@ -83,6 +90,9 @@ $(function() {
 	});
 });
 
+/**
+ * Animate On Scroll initialization
+ */
 $(function() {
 	AOS.init({
 		easing: 'ease-out-back',
@@ -90,12 +100,15 @@ $(function() {
 	});
 });
 
-//https://css-tricks.com/snippets/jquery/smooth-scrolling/#article-header-id-1
-//https://css-tricks.com/smooth-scrolling-accessibility/#article-header-id-3
+/**
+ * Smooth page scrolling
+ * 
+ * See:
+ * - https://css-tricks.com/snippets/jquery/smooth-scrolling/#article-header-id-1
+ * - https://css-tricks.com/smooth-scrolling-accessibility/#article-header-id-3
+ * - http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links
+ */
 $(function() {
-	// URL updates and the element focus is maintained
-	// originally found via in Update 3 on http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links
-	
 	// filter handling for a /dir/ OR /indexordefault.page
 	function filterPath(string) {
 		return string
