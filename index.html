@@ -120,8 +120,7 @@
 	<section id="video-section" class="blue home-section">
 		<div class="container">
 			<div id="video">
-				<a id="play-video" href="#"><img src="images/play.png" /></a>
-				<div id="player"></div>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/ruTB5jBGXsE" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 	</section>
@@ -547,11 +546,5 @@
 	<script src="scripts/lib/jquery.waypoints.min.js"></script>
 	<script src="scripts/lib/aos.js"></script>
 	<script src="scripts/main.js"></script>
-	<script>
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-	</script>
 </body>
 </html>

@@ -529,14 +529,6 @@ a {
 	margin: 0 auto;
 	padding-bottom: 56.25%; /* 16:9 */
 }
-#play-video {
-	position: absolute;
-	display: block;
-	top: 50%;
-	left: 50%;
-	margin-top: -90px;
-	margin-left: -90px;
-}
 #video iframe {
 	position: absolute;
 	display: block;
