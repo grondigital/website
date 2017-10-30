@@ -181,7 +181,12 @@ a {
 }
 
 .social a {
+	opacity: 0.4;
 	text-decoration: none;
+	transition: opacity 0.35s;
+}
+.social a:hover {
+	opacity: 0.9;
 }
 
 
