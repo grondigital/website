@@ -79,46 +79,81 @@ $(function() {
  * Smooth page scrolling
  * 
  * See:
- * - https://css-tricks.com/snippets/jquery/smooth-scrolling/#article-header-id-1
- * - https://css-tricks.com/smooth-scrolling-accessibility/#article-header-id-3
- * - http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links
+ * - https://stackoverflow.com/a/13067009
+ * - http://jsfiddle.net/ianclark001/rkocah23/
  */
-$(function() {
-	// filter handling for a /dir/ OR /indexordefault.page
-	function filterPath(string) {
-		return string
-			.replace(/^\//, '')
-			.replace(/(index)\.html?$/, '')
-			.replace(/\/$/, '');
-	}
+(function(document, history, location) {
+	var HISTORY_SUPPORT = !!(history && history.pushState);
 	
-	var locationPath = filterPath(location.pathname);
-	$('a[href*="#"]')
-		// Remove links that don't actually link to anything
-		.not('[href="#"]')
-		.not('[href="#0"]')
-		.each(function() {
-			var thisPath = filterPath(this.pathname) || locationPath;
-			var hash = this.hash.replace(/#/, '');
-			if (hash !== '' &&
-				locationPath === thisPath &&
-				(location.hostname === this.hostname || !this.hostname)) {
-				var $target = $(this.hash);
-				if ($target.length) {
-					$(this).click(function(event) {
-						event.preventDefault();
-						$('html, body').animate({scrollTop: $target.offset().top}, 1000, function () {
-							location.hash = hash;
-							$target.focus();
-							if ($target.is(":focus")){ //checking if the target was focused
-								return false;
-							}else{
-								$target.attr('tabindex', '-1'); //Adding tabindex for elements not focusable
-								$target.focus(); //Setting focus
-							}
-						});
-					});
+	var anchorScrolls = {
+		ANCHOR_REGEX: /^#[^ ]+$/,
+		OFFSET_HEIGHT_PX: 50,
+		
+		/**
+		 * Establish events, and fix initial scroll position if a hash is provided.
+		 */
+		init: function() {
+			this.scrollToCurrent();
+			$(window).on('hashchange', $.proxy(this, 'scrollToCurrent'));
+			$('body').on('click', 'a', $.proxy(this, 'delegateAnchors'));
+		},
+		
+		/**
+		 * Return the offset amount to deduct from the normal scroll position.
+		 * Modify as appropriate to allow for dynamic calculations
+		 */
+		getFixedOffset: function() {
+			return this.OFFSET_HEIGHT_PX;
+		},
+		
+		/**
+		 * If the provided href is an anchor which resolves to an element on the
+		 * page, scroll to it.
+		 * @param  {String} href
+		 * @return {Boolean} - Was the href an anchor.
+		 */
+		scrollIfAnchor: function(href, pushToHistory) {
+			var match, anchorOffset;
+			
+			if (!this.ANCHOR_REGEX.test(href)) {
+				return false;
+			}
+			
+			match = document.getElementById(href.slice(1));
+			
+			if (match) {
+				anchorOffset = $(match).offset().top - this.getFixedOffset();
+				$('html, body').animate({scrollTop: anchorOffset}, 1000);
+				
+				// Add the state to history as-per normal anchor links
+				if (HISTORY_SUPPORT && pushToHistory) {
+					history.pushState({}, document.title, location.pathname + href);
 				}
 			}
-	});
-});
+			
+			return !!match;
+		},
+		
+		/**
+		 * Attempt to scroll to the current location's hash.
+		 */
+		scrollToCurrent: function(e) {
+			if (this.scrollIfAnchor(window.location.hash) && e) {
+				e.preventDefault();
+			}
+		},
+		
+		/**
+		 * If the click event's target was an anchor, fix the scroll position.
+		 */
+		delegateAnchors: function(e) {
+			var elem = e.target;
+			
+			if (this.scrollIfAnchor(elem.getAttribute('href'), true)) {
+				e.preventDefault();
+			}
+		}
+	};
+	
+	$(document).ready($.proxy(anchorScrolls, 'init'));
+})(window.document, window.history, window.location);
