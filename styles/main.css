@@ -740,7 +740,9 @@ a {
 }
 #team .avatar {
 	vertical-align: middle;
-	margin-right: 1em;
+	width: 100px;
+	margin-right: 10px;
+	border-radius: 50%;
 }
 #team .person {
 	display: inline-block;
