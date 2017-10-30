@@ -582,6 +582,7 @@ a {
 }
 #products-section img {
 	max-width: 100%;
+	width: 549.5px; /* all images in this section are 1099px wide */
 	margin: 0 auto 70px auto;
 }
 #products-section .product {
