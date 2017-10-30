@@ -718,17 +718,15 @@ a {
 	background-image: url("../images/bg/partners.png");
 }
 #partners {
-	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-around;
 }
 #partners img {
 	max-width: 170px;
 	height: 65px;
-	opacity: 0.25;
+	opacity: 0.4;
 	transition: opacity 0.35s;
 }
-#partners img:hover {
+#partners a:hover img {
 	opacity: 0.9;
 }
 
