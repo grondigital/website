@@ -15,12 +15,13 @@ h1 {
 	margin: 0 0 30px 0;
 	font-size: 44px;
 	font-weight: 600;
-	text-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
 }
 h2 {
 	margin: 0 0 30px 0;
 	font-size: 30px;
 	font-weight: 600;
+}
+.section-header {
 	text-align: center;
 }
 .section-header::after {
@@ -32,7 +33,6 @@ h2 {
 }
 h4 {
 	margin: 0 0 30px 0;
-	text-align: center;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -79,6 +79,9 @@ a {
 	opacity: 1;
 }
 
+body > section:first-of-type {
+	padding-top: 80px;
+}
 .home-section {
 	background: center center / cover;
 }
@@ -190,6 +193,9 @@ a {
 	opacity: 0.9;
 }
 
+.centered {
+	text-align: center;
+}
 
 /**
  * Timeline
@@ -305,9 +311,6 @@ a {
 	border: 13px solid transparent;
 	border-right: 13px solid #f3f4f6;
 }
-.cd-timeline-content h4 {
-	text-align: left;
-}
 .cd-timeline-content h4, .cd-timeline-content p, .cd-timeline-content ol, .cd-timeline-content ul {
 	margin-bottom: 5px;
 	padding: 0;
@@ -343,6 +346,81 @@ a {
 		border-color: transparent;
 		border-right-color: #f3f4f6;
 	}
+}
+
+
+/**
+ * Main content
+ */
+.title-section {
+	text-align: center;
+}
+.title-section h1 {
+	font-size: 30px;
+}
+.content-section {
+	text-align: justify;
+}
+.content-section h2 {
+	margin-top: 50px;
+	margin-bottom: 15px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.content-section h3 {
+	margin: 20px 0;
+	padding: 10px;
+	background: #f3f4f6;
+	font-size: 14px;
+	font-weight: bold;
+}
+.content-section p + h3, .content-section ul + h3, .content-section ol + h3 {
+	margin-top: -10px;
+}
+.content-section h4 {
+	margin-bottom: 0;
+	font-size: 14px;
+	color: #6b7a8f;
+}
+
+.content-section ul {
+	padding: 0;
+	list-style: none;
+}
+.content-section p + ul {
+	margin-top: -30px;
+}
+.content-section ul > li {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.content-section ul > li::before {
+	content: "•";
+	margin-right: 0.61em;
+	color: #f18036;
+}
+
+.content-section h2:first-child {
+	margin-top: 0;
+}
+.title-section p:last-child, .title-section ul:last-child, .title-section ol:last-child,
+.content-section p:last-child, .content-section ul:last-child, .content-section ol:last-child {
+	margin-bottom: 0;
+}
+
+.title-number {
+	color: #f18036;
+}
+
+.download-link {
+	font-weight: bold;
+	text-decoration: none;
+}
+.download-link img {
+	position: relative;
+	top: -6px;
+	margin-left: 0.5px;
+	vertical-align: middle;
 }
 
 
@@ -450,7 +528,6 @@ a {
  * Top section
  */
 #top-section {
-	padding-top: 80px;
 	background-image: url("../images/bg/top.png");
 	color: #e8eaee;
 	font-size: 18px;
@@ -486,6 +563,9 @@ a {
 	opacity: 0;
 }
 
+#top-text h1 {
+	text-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
+}
 #top-text .btn {
 	width: 195px;
 	margin-right: 20px;
@@ -543,7 +623,6 @@ a {
 }
 .blurb h4 {
 	margin-bottom: 5px;
-	text-align: left;
 }
 .blurb-content :last-child {
 	margin-bottom: 0;
@@ -782,7 +861,6 @@ a {
 }
 #footer-widgets h4 {
 	margin-bottom: 20px;
-	text-align: left;
 	font-weight: 600;
 }
 #footer-widgets h4::after {
