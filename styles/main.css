@@ -643,13 +643,15 @@ body > section:first-of-type {
 	padding-bottom: 0;
 }
 /* responsive video container https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
-#video {
-	position: relative;
+.video-wrapper {
 	max-width: 960px;
 	margin: 0 auto;
+}
+.video-container {
+	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 }
-#video iframe {
+.video-container iframe {
 	position: absolute;
 	display: block;
 	top: 0;
