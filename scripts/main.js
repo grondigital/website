@@ -219,11 +219,22 @@ $(function() {
 		drawChart('Funds Allocation', data, colors, document.getElementById('funds-chart'));
 	}
 	
+	var $tokens = $('#tokens-chart'), tokensWidth = $tokens.width(),
+		$funds = $('#funds-chart'), fundsWidth = $funds.width();
+	
 	google.charts.load('current', {packages: ['corechart']});
 	google.charts.setOnLoadCallback(drawTokensChart);
 	google.charts.setOnLoadCallback(drawFundsChart);
 	$(window).resize(function() {
-		drawTokensChart();
-		drawFundsChart();
+		var newTokensWidth = $tokens.width(),
+			newFundsWidth = $funds.width();
+		if (newTokensWidth !== tokensWidth) {
+			drawTokensChart();
+			tokensWidth = newTokensWidth;
+		}
+		if (newFundsWidth !== fundsWidth) {
+			drawFundsChart();
+			fundsWidth = newFundsWidth;
+		}
 	})
 })();
