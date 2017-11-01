@@ -793,6 +793,32 @@ body > section:first-of-type {
 
 
 /**
+ * Token charts section
+ */
+#tokens-section {
+	text-align: center;
+}
+#tokens-section .flex-container > div {
+	margin-bottom: 20px;
+}
+.chart-wrapper {
+	max-width: 555px; /* chart width limit */
+	margin: 0 auto;
+}
+.chart-container {
+	position: relative;
+	padding-bottom: 54%; /* padding to maintain chart aspect ratio */
+}
+.chart {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/**
  * Roadmap section
  */
 .roadmap-description {

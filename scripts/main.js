@@ -157,3 +157,73 @@ $(function() {
 	
 	$(document).ready($.proxy(anchorScrolls, 'init'));
 })(window.document, window.history, window.location);
+
+(function() {
+	function drawChart(title, data, colors, el) {
+		var chart = new google.visualization.PieChart(el);
+		chart.draw(data, {
+			title: title,
+			titleTextStyle: {
+				color: '#415275',
+				fontSize: 16
+			},
+			backgroundColor: '#f3f4f6',
+			colors: colors,
+			chartArea: {
+				left: '5%',
+				top: 10,
+				width: '90%',
+				height: '90%'
+			},
+			pieSliceText: 'value',
+			tooltip: {
+				trigger: 'none'
+			},
+			legend: {
+				position: 'labeled'
+			}
+		});
+		
+		return chart;
+	}
+	
+	function drawTokensChart() {
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Distribution');
+		data.addColumn('number', '%');
+		data.addRows([
+			['Public Token Sale', 60],
+			['Initial Bank Roll', 16],
+			['Team incentives and bonuses', 12],
+			['Founders', 12]
+		]);
+		var colors = ['#415275', '#76819b', '#a4acbd', '#dbdee5'];
+		
+		drawChart('Token Distribution', data, colors, document.getElementById('tokens-chart'));
+	}
+	
+	function drawFundsChart() {
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Distribution');
+		data.addColumn('number', '%');
+		data.addRows([
+			['Software Development', 50],
+			['Operations', 15],
+			['Advisors', 15],
+			['Marketing', 12],
+			['Legal Framework and Finance', 5],
+			['Contingencies', 5]
+		]);
+		var colors = ['#60626f', '#727480', '#898b94', '#a5a6ae', '#b9babf', '#cfd0d4'];
+		
+		drawChart('Funds Allocation', data, colors, document.getElementById('funds-chart'));
+	}
+	
+	google.charts.load('current', {packages: ['corechart']});
+	google.charts.setOnLoadCallback(drawTokensChart);
+	google.charts.setOnLoadCallback(drawFundsChart);
+	$(window).resize(function() {
+		drawTokensChart();
+		drawFundsChart();
+	})
+})();
