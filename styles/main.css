@@ -773,6 +773,9 @@ body > section:first-of-type {
 /**
  * Crypto section
  */
+#crypto-section {
+	text-align: center;
+}
 #crypto-icons {
 	display: flex;
 	flex-wrap: wrap;
