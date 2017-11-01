@@ -225,16 +225,23 @@ $(function() {
 	google.charts.load('current', {packages: ['corechart']});
 	google.charts.setOnLoadCallback(drawTokensChart);
 	google.charts.setOnLoadCallback(drawFundsChart);
-	$(window).resize(function() {
-		var newTokensWidth = $tokens.width(),
-			newFundsWidth = $funds.width();
-		if (newTokensWidth !== tokensWidth) {
-			drawTokensChart();
-			tokensWidth = newTokensWidth;
-		}
-		if (newFundsWidth !== fundsWidth) {
-			drawFundsChart();
-			fundsWidth = newFundsWidth;
-		}
-	})
+	
+	//resize debouncing https://css-tricks.com/snippets/jquery/done-resizing-event/
+	var resizeTimer;
+	$(window).on('resize', function(e) {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function() {
+			//resizing has "stopped"
+			var newTokensWidth = $tokens.width(),
+				newFundsWidth = $funds.width();
+			if (newTokensWidth !== tokensWidth) {
+				drawTokensChart();
+				tokensWidth = newTokensWidth;
+			}
+			if (newFundsWidth !== fundsWidth) {
+				drawFundsChart();
+				fundsWidth = newFundsWidth;
+			}
+		}, 250);
+	});
 })();
