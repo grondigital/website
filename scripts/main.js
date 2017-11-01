@@ -3,7 +3,7 @@
  */
 $(function() {
 	// Set the date we're counting down to
-	var countDownDate = new Date("Nov 1, 2017 00:00:00").getTime();
+	var countDownDate = new Date("Dec 1, 2017 00:00:00").getTime();
 	var $timer = $('#timer');
 	
 	// Update the count down every 1 second
@@ -24,12 +24,6 @@ $(function() {
 		$timer.find('.timer-hour').html(n(hours));
 		$timer.find('.timer-min').html(n(minutes));
 		$timer.find('.timer-sec').html(n(seconds));
-		
-		// If the count down is over, write some text
-		if (distance < 0) {
-			clearInterval(x);
-			document.getElementById("demo").innerHTML = "EXPIRED";
-		}
 	}, 1000);
 	
 	function n(n){
