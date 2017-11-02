@@ -598,6 +598,9 @@ body > section:first-of-type {
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
+#top-text p {
+	margin-bottom: 40px;
+}
 #top-text p:last-child {
 	margin-bottom: 0;
 }
