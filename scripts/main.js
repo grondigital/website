@@ -35,8 +35,7 @@ $(function() {
  * Common manipulations
  */
 $(function() {
-	var $header = $('#main-header'),
-	    $menu = $('#top-menu');
+	var $header = $('#main-header');
 	
 	//change header style on scroll
 	$('#top-section').waypoint(function(dir) {
@@ -50,12 +49,31 @@ $(function() {
 	});
 	
 	//top menu open/close events
-	$menu.find('.menu-button').click(function() {
-		$menu.toggleClass('open');
+	var $menu = $('#top-menu'),
+		$menuButton = $menu.find('.menu-button'),
+		$shim = $('#shim');
+	function showMenu() {
+		$menu.addClass('open');
+		$menuButton.removeClass('icon-menu').addClass('icon-cancel');
+		$shim.show().on('click.menu', function() {
+			hideMenu();
+		});
+	}
+	function hideMenu() {
+		$menu.removeClass('open');
+		$menuButton.removeClass('icon-cancel').addClass('icon-menu');
+		$shim.hide().off('click.menu');
+	}
+	$menuButton.click(function() {
+		if (!$menu.hasClass('open')) {
+			showMenu();
+		} else {
+			hideMenu();
+		}
 		return false;
 	});
 	$menu.find('ul a').click(function() {
-		$menu.removeClass('open');
+		hideMenu();
 	});
 });
 
