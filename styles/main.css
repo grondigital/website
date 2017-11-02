@@ -97,11 +97,11 @@ a {
 	opacity: 1;
 }
 
+/**
+ * Home sections
+ */
 body > section:first-of-type {
 	padding-top: 80px;
-}
-.home-section {
-	background: center center / cover;
 }
 .blue {
 	background-color: #415275;
@@ -111,6 +111,27 @@ body > section:first-of-type {
 }
 .gray {
 	background-color: #f3f4f6;
+}
+#video-section, #ico-counter-section, #partners-section, #main-footer {
+	background-image: url("../images/bg/bg.png");
+	background-size: cover;
+	background-position-x: center;
+}
+#video-section {
+	background-position-y: top;
+}
+#ico-counter-section {
+	background-position-y: 80%;
+}
+#partners-section {
+	background-position-y: 20%;
+	transform: scaleX(-1); /* flip background */
+}
+#partners-section > * {
+	transform: scaleX(-1); /* flip content back */
+}
+#main-footer {
+	background-position-y: bottom;
 }
 
 .container {
@@ -558,7 +579,7 @@ body > section:first-of-type {
  * Top section
  */
 #top-section {
-	background-image: url("../images/bg/top.png");
+	background: url("../images/bg/top.png") center center / cover;
 	color: #e8eaee;
 	font-size: 18px;
 	line-height: 1.25;
@@ -668,9 +689,6 @@ body > section:first-of-type {
 /**
  * Video section
  */
-#video-section {
-	background-image: url("../images/bg/video.png");
-}
 #video-section .container {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -730,7 +748,6 @@ body > section:first-of-type {
  * ICO counter section
  */
 #ico-counter-section {
-	background-image: url("../images/bg/ico-counter.png");
 	text-align: center;
 	font-size: 18px;
 }
@@ -861,9 +878,6 @@ body > section:first-of-type {
 /**
  * Partners section
  */
-#partners-section {
-	background-image: url("../images/bg/partners.png");
-}
 #partners {
 	justify-content: space-around;
 }
@@ -911,9 +925,6 @@ body > section:first-of-type {
 /**
  * Footer
  */
-#main-footer {
-	background-image: url("../images/bg/footer.png");
-}
 #main-footer .container {
 	padding-bottom: 20px;
 }
