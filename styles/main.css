@@ -40,6 +40,9 @@ h4 {
 p, ul, ol {
 	margin: 0 0 30px 0;
 }
+ul, ol {
+	padding-left: 1em;
+}
 
 a {
 	color: #6b7a8f;
@@ -928,8 +931,12 @@ body > section:first-of-type {
 	height: 3px;
 	background: #f18036;
 }
-#footer-widgets p:last-child {
+#footer-widgets p:last-child,
+#footer-widgets ul:last-child {
 	margin-bottom: 0;
+}
+#footer-widgets a {
+	text-decoration-style: dotted;
 }
 
 #footer-widgets .social {
