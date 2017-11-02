@@ -222,7 +222,7 @@ $(function() {
 			['Software Development', 50],
 			['Operations', 15],
 			['Advisors', 15],
-			['Marketing', 12],
+			['Marketing', 10],
 			['Legal Framework and Finance', 5],
 			['Contingencies', 5]
 		]);
