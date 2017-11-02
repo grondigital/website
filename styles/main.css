@@ -64,6 +64,12 @@ a {
 	border-color: #ffffff;
 	color: #ffff;
 }
+.btn.highlighted {
+	border-color: #f18036;
+}
+.btn.animated.highlighted::after {
+	color: #f18036;
+}
 .btn.animated::after {
 	content: '\f105';
 	display: inline-block;
