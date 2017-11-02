@@ -54,7 +54,7 @@ a {
 	position: relative;
 	display: inline-block;
 	box-sizing: border-box;
-	padding: 0.75em 0.75em;
+	padding: 0.75em 1.5em;
 	border: 1px solid #f18036;
 	text-align: center;
 	line-height: 1.25;
@@ -70,15 +70,24 @@ a {
 .btn.animated.highlighted::after {
 	color: #f18036;
 }
+.btn.animated {
+	transition: padding 0.2s;
+}
 .btn.animated::after {
 	content: '\f105';
 	display: inline-block;
+	position: absolute;
 	width: 1em;
 	margin-left: -1em;
 	opacity: 0;
 	font-family: 'fontello';
 	font-size: 120%;
+	line-height: 1;
 	transition: margin 0.2s, opacity 0.2s;
+}
+.btn.animated:hover {
+	padding-left: 1em;
+	padding-right: 2em;
 }
 .btn.animated:hover::after {
 	margin-left: 0.2em;
@@ -477,8 +486,7 @@ body > section:first-of-type {
 
 #main-header .btn {
 	display: inline;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	padding: 0.5em 0.75em;
 	color: #f18036;
 }
 
@@ -719,9 +727,6 @@ body > section:first-of-type {
 	background-image: url("../images/bg/ico-counter.png");
 	text-align: center;
 	font-size: 18px;
-}
-#ico-counter-section .btn {
-	width: 14em;
 }
 
 
