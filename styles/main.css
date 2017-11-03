@@ -410,26 +410,41 @@ body > section:first-of-type {
 .content-section {
 	text-align: justify;
 }
+.content-subsection {
+	margin-left: 35px;
+}
 .content-section h2 {
-	margin-top: 50px;
-	margin-bottom: 15px;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 10px 15px;
+	background: #f3f4f6;
 	font-size: 18px;
 	font-weight: bold;
 }
+.content-section h2::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 40px;
+	height: 3px;
+	background: #f18036;
+}
+.content-section p + h2, .content-section ul + h2, .content-section ol + h2 {
+	margin-top: -15px;
+}
 .content-section h3 {
-	margin: 20px 0;
-	padding: 10px;
-	background: #f3f4f6;
-	font-size: 14px;
+	margin: 0;
+	font-size: 16px;
 	font-weight: bold;
 }
-.content-section p + h3, .content-section ul + h3, .content-section ol + h3 {
-	margin-top: -10px;
-}
 .content-section h4 {
-	margin-bottom: 0;
-	font-size: 14px;
+	margin: 0;
 	color: #6b7a8f;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .content-section ul {
@@ -449,26 +464,26 @@ body > section:first-of-type {
 	color: #f18036;
 }
 
-.content-section h2:first-child {
-	margin-top: 0;
-}
-.title-section p:last-child, .title-section ul:last-child, .title-section ol:last-child,
-.content-section p:last-child, .content-section ul:last-child, .content-section ol:last-child {
-	margin-bottom: 0;
-}
-
-.title-number {
+.content-section a {
 	color: #f18036;
 }
 
-.download-link {
+.content-section h2:first-child {
+	margin-top: 0;
+}
+.title-section .container > :last-child,
+.content-section .container > *:last-child {
+	margin-bottom: 0;
+}
+
+.content-section .download-link {
+	color: #425376;
 	font-weight: bold;
 	text-decoration: none;
 }
-.download-link img {
+.content-section .download-link img {
 	position: relative;
 	top: -6px;
-	margin-left: 0.5px;
 	vertical-align: middle;
 }
 
