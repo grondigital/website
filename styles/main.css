@@ -448,20 +448,11 @@ body > section:first-of-type {
 }
 
 .content-section ul {
-	padding: 0;
-	list-style: none;
+	padding: 0 0 0 1em;
+	list-style: disc outside;
 }
 .content-section p + ul {
 	margin-top: -30px;
-}
-.content-section ul > li {
-	padding-left: 1em;
-	text-indent: -1em;
-}
-.content-section ul > li::before {
-	content: "•";
-	margin-right: 0.61em;
-	color: #f18036;
 }
 
 .content-section a {
