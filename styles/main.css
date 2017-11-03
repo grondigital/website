@@ -49,6 +49,17 @@ a {
 	text-decoration: underline;
 }
 
+input[type="text"] {
+	padding: 0.75em;
+	border: 1px solid #7e8fb4;
+	outline: none;
+	background: #ffffff;
+	color: #6b7a8f;
+}
+input[type="text"]::placeholder {
+	color: #7e8fb4;
+}
+
 
 /**
  * Common classes
@@ -59,13 +70,15 @@ a {
 	box-sizing: border-box;
 	padding: 0.75em 1.5em;
 	border: 1px solid #f18036;
+	background: transparent;
 	text-align: center;
 	line-height: 1.25;
 	text-decoration: none;
+	cursor: pointer;
 }
 .blue .btn {
 	border-color: #ffffff;
-	color: #ffff;
+	color: #ffffff;
 }
 .btn.highlighted {
 	border-color: #f18036;
@@ -425,10 +438,33 @@ body > section:first-of-type {
 	margin: 0 auto;
 }
 #subscribe-header {
+	padding: 30px;
 	background: #ffffff;
 }
+#share-img {
+	margin-right: 40px;
+	vertical-align: middle;
+}
+#subscribe-header-text {
+	display: inline-block;
+	vertical-align: middle;
+}
+#subscribe-header h4,
+#subscribe-header p {
+	margin: 0;
+}
 #subscribe-body {
-	background: #415275;
+	padding: 30px;
+}
+#subscribe-email {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 358px;
+	margin-right: 30px;
+}
+#subscribe-submit {
+	box-sizing: border-box;
+	width: 163px;
 }
 
 /**

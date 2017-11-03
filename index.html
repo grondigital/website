@@ -552,16 +552,18 @@
 	<div id="subscribe-shim" class="shim"><div id="subscribe-form">
 		<a href="#" class="close-popup icon-cancel"></a>
 		<div id="subscribe-header">
-			<img src="images/share.svg" />
-			<h4>Let me know when the Pre-Sale begins</h4>
-			<p>Join our mailing list to receive the latest news.</p>
+			<img src="images/share.svg" id="share-img" />
+			<div id="subscribe-header-text">
+				<h4>Let me know when the Pre-Sale begins</h4>
+				<p>Join our mailing list to receive the latest news.</p>
+			</div>
 		</div>
-		<div id="subscribe-body">
+		<div id="subscribe-body" class="blue">
 			<form method="post" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
 				<input type="hidden" name="listname" value="awlist4809394" />
 				<input type="hidden" name="redirect" value="https://www.aweber.com/thankyou-coi.htm?m=text" />
-				<input type="text" name="email" title="EMail" required />
-				<input name="submit" type="submit" value="Submit" class="btn" />
+				<input type="text" name="email" id="subscribe-email" title="EMail" placeholder="Type your email..." required />
+				<input name="submit" type="submit" value="Submit" id="subscribe-submit" class="btn highlighted" />
 			</form>
 		</div>
 	</div></div>
