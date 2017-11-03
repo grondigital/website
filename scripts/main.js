@@ -37,9 +37,26 @@ $(function() {
  * Common manipulations
  */
 $(function() {
-	var $header = $('#main-header');
+	//functions to lock scrolling
+	var $html = $('html'),
+		$body = $('body');
+	function lockBody() {
+		var oWidth = $body.outerWidth(true);
+		$body.css({overflow: 'hidden'});
+		var sbWidth = $body.outerWidth(true) - oWidth;
+		
+		if (sbWidth!==0) {
+			$html.css({marginRight: sbWidth});
+		}
+	}
+	function unlockBody() {
+		$body.css({overflow: 'visible'});
+		$html.css({marginRight: 0});
+	}
+	
 	
 	//change header style on scroll
+	var $header = $('#main-header');
 	$('body > section:first-of-type').waypoint(function(dir) {
 		if (dir === 'down') {
 			$header.addClass('fixed-header');
@@ -50,11 +67,13 @@ $(function() {
 		offset: -50
 	});
 	
+	
 	//top menu open/close events
 	var $menu = $('#top-menu'),
 		$menuButton = $menu.find('.menu-button'),
 		$shim = $('#shim');
 	function showMenu() {
+		lockBody();
 		$menu.addClass('open');
 		$menuButton.removeClass('icon-menu').addClass('icon-cancel');
 		$shim.show().on('click.menu', function() {
@@ -62,6 +81,7 @@ $(function() {
 		});
 	}
 	function hideMenu() {
+		unlockBody();
 		$menu.removeClass('open');
 		$menuButton.removeClass('icon-cancel').addClass('icon-menu');
 		$shim.hide().off('click.menu');
@@ -76,6 +96,36 @@ $(function() {
 	});
 	$menu.find('ul a').click(function() {
 		hideMenu();
+	});
+	
+	
+	//subscribe form
+	var $subFormShim = $('#subscribe-shim'), 
+		$subForm = $('#subscribe-form');
+	function showSubForm() {
+		lockBody();
+		$subFormShim.show();
+	}
+	function hideSubForm() {
+		unlockBody();
+		$subFormShim.hide();
+	}
+	$subForm.find('.close-popup').click(function() {
+		hideSubForm();
+		return false;
+	});
+	//hide on click on shim...
+	$subFormShim.on('click.subForm', function() {
+		hideSubForm();
+	});
+	//... but do not close if clicked on form
+	$subForm.on('click', function(e) {
+		e.stopPropagation();
+	});
+	
+	$('#subscribe-btn').click(function() {
+		showSubForm();
+		return false;
 	});
 });
 

@@ -387,7 +387,7 @@ body > section:first-of-type {
 	}
 }
 
-#shim {
+.shim {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -397,6 +397,23 @@ body > section:first-of-type {
 	background: rgba(22, 37, 65, 0.86);
 }
 
+#subscribe-shim {
+	z-index: 150;
+}
+#subscribe-form {
+	position: absolute;
+	top: 20%;
+	left: 0;
+	right: 0;
+	max-width: 615px;
+	margin: 0 auto;
+}
+#subscribe-header {
+	background: #ffffff;
+}
+#subscribe-body {
+	background: #415275;
+}
 
 /**
  * Main content
