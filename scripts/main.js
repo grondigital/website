@@ -105,6 +105,7 @@ $(function() {
 	function showSubForm() {
 		lockBody();
 		$subFormShim.show();
+		$('#subscribe-email').focus();
 	}
 	function hideSubForm() {
 		unlockBody();
