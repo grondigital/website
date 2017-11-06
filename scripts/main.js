@@ -128,6 +128,11 @@ $(function() {
 		showSubForm();
 		return false;
 	});
+	if ($subForm.length) {
+		$('#timeline-section').waypoint(function() {
+			showSubForm();
+		});
+	}
 });
 
 /**
