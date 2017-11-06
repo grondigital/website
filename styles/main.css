@@ -466,6 +466,26 @@ body > section:first-of-type {
 	box-sizing: border-box;
 	width: 163px;
 }
+@media (max-width: 767px) {
+	#subscribe-form {
+		top: 0;
+		max-width: none;
+		text-align: center;
+	}
+	#share-img {
+		display: block;
+		margin: 0 auto;
+	}
+	#subscribe-email {
+		max-width: none;
+		margin: 0 0 30px 0;
+	}
+	.close-popup {
+		top: 10px;
+		right: 10px;
+	}
+}
+
 
 /**
  * Main content
