@@ -171,6 +171,33 @@ $(function() {
 });
 
 /**
+ * Particle background
+ */
+$(function() {
+	if (window.Particles) {
+		Particles.init({
+			selector: '#particles',
+			color: '#6b7a8f',
+			maxParticles: 200,
+			connectParticles: true,
+			responsive: [
+				{
+					breakpoint: 1200,
+					options: {
+						maxParticles: 100
+					}
+				}, {
+					breakpoint: 375,
+					options: {
+						maxParticles: 50
+					}
+				}
+			]
+		});
+	}
+});
+
+/**
  * Smooth page scrolling
  * 
  * See:

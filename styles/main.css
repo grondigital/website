@@ -674,10 +674,23 @@ body > section:first-of-type {
  * Top section
  */
 #top-section {
-	background: url("../images/bg/top.png") center center / cover;
+	position: relative;
 	color: #e8eaee;
 	font-size: 18px;
 	line-height: 1.25;
+}
+
+#top-section .container {
+	position: relative;
+	z-index: 50;
+}
+#particles {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
 }
 
 #top-image-container {
