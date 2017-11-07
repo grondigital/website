@@ -165,12 +165,14 @@ $(function() {
 		$contactForm = $('#contact-form'),
 		$contactFormLoader = $contactFormContainer.find('.loader');
 	$contactForm.submit(function() {
+		var formData = $contactForm.serialize();
+		
 		$contactForm.find('.error').remove();
 		$contactFormContainer.addClass('loading');
 		$contactForm.find(':input').prop('disabled', true);
 		$contactFormLoader.show();
 		
-		$.post($contactForm.attr("action"), $contactForm.serialize()).done(function() {
+		$.post($contactForm.attr("action"), formData).done(function() {
 			$contactForm.replaceWith('<div class="thank-you">Thank you!</div>');
 		}).fail(function() {
 			$contactForm.prepend('<div class="error">Something went wrong! Please, try again later.</div>')
