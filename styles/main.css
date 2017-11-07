@@ -957,7 +957,9 @@ body > section:first-of-type {
 	line-height: 50px;
 	font-weight: bold;
 }
-.timeline-action button {
+.timeline-action button,
+.timeline-action a {
+	display: block;
 	width: 100%;
 	border: none;
 	outline: none;
@@ -965,6 +967,7 @@ body > section:first-of-type {
 	background: #f18036;
 	color: #ffffff;
 	font-weight: bold;
+	text-decoration: none;
 }
 
 
