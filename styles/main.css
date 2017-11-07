@@ -1093,26 +1093,12 @@ body > section:first-of-type {
 #contact-form input[type="text"],
 #contact-form input[type="email"],
 #contact-form textarea {
-	margin-bottom: 30px;
-}
-#contact-form .flex-container {
-	flex-wrap: nowrap;
-	justify-content: space-between;
-}
-#contact-form .flex-container > * {
-	flex-basis: 50%;
-}
-@media (max-width: 767px) {
-	#contact-form .flex-container {
-		flex-wrap: wrap;
-	}
-	#contact-form .flex-container > * {
-		flex-basis: 100%;
-	}
-}
-#contact-form textarea {
 	display: block;
 	width: 100%;
+	max-width: 500px;
+	margin: 0 auto 30px auto;
+}
+#contact-form textarea {
 	height: 5em;
 }
 
