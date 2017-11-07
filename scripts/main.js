@@ -158,6 +158,30 @@ $(function() {
 				showSubForm();
 		});
 	}
+	
+	
+	//Contact us form
+	var $contactFormContainer = $('#contact-form-container'),
+		$contactForm = $('#contact-form'),
+		$contactFormLoader = $contactFormContainer.find('.loader');
+	$contactForm.submit(function() {
+		$contactForm.find('.error').remove();
+		$contactFormContainer.addClass('loading');
+		$contactForm.find(':input').prop('disabled', true);
+		$contactFormLoader.show();
+		
+		$.post($contactForm.attr("action"), $contactForm.serialize()).done(function() {
+			$contactForm.replaceWith('<div class="thank-you">Thank you!</div>');
+		}).fail(function() {
+			$contactForm.prepend('<div class="error">Something went wrong! Please, try again later.</div>')
+		}).always(function() {
+			$contactFormContainer.removeClass('loading');
+			$contactForm.find(':input').prop('disabled', false);
+			$contactFormLoader.hide();
+		});
+		
+		return false;
+	});
 });
 
 /**

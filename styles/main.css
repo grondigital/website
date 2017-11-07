@@ -50,14 +50,26 @@ a {
 	text-decoration: underline;
 }
 
-input[type="text"] {
+input, button, textarea {
+	box-sizing: border-box;
+}
+input[type="text"],
+input[type="email"],
+textarea {
 	padding: 0.75em;
-	border: 1px solid #7e8fb4;
+	border: 1px solid #dfdfdf;
 	outline: none;
 	background: #ffffff;
 	color: #6b7a8f;
 }
-input[type="text"]::placeholder {
+.blue input[type="text"],
+.blue input[type="email"],
+.blue textarea {
+	border-color: #7e8fb4;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
 	color: #7e8fb4;
 }
 
@@ -72,10 +84,14 @@ input[type="text"]::placeholder {
 	padding: 0.75em 1.5em;
 	border: 1px solid #f18036;
 	background: transparent;
+	color: #3e5075;
 	text-align: center;
 	line-height: 1.25;
 	text-decoration: none;
 	cursor: pointer;
+}
+.btn:disabled {
+	cursor: auto;
 }
 .blue .btn {
 	border-color: #ffffff;
@@ -109,6 +125,32 @@ input[type="text"]::placeholder {
 .btn.animated:hover::after {
 	margin-left: 0.2em;
 	opacity: 1;
+}
+
+/* https://www.w3schools.com/howto/howto_css_loader.asp */
+.loader {
+	display: none;
+	border: 8px solid #dfdfdf;
+	border-top: 8px solid #7e8fb4;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	animation: spin 2s linear infinite;
+}
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.thank-you {
+	padding: 15px;
+	text-align: center;
+	font-size: 200%;
+}
+.error {
+	padding: 15px;
+	color: red;
+	text-align: center;
 }
 
 /**
@@ -458,13 +500,11 @@ body > section:first-of-type {
 	padding: 30px;
 }
 #subscribe-email {
-	box-sizing: border-box;
 	width: 100%;
 	max-width: 358px;
 	margin-right: 30px;
 }
 #subscribe-submit {
-	box-sizing: border-box;
 	width: 163px;
 }
 @media (max-width: 767px) {
@@ -1028,6 +1068,49 @@ body > section:first-of-type {
 }
 #team .description p:last-child {
 	margin-bottom: 0;
+}
+
+
+/**
+ * Contact Us
+ */
+#contact-form-container {
+	position: relative;
+}
+#contact-form-container .loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -25px;
+}
+#contact-form-container.loading #contact-form {
+	opacity: 0.5;
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+	margin-bottom: 30px;
+}
+#contact-form .flex-container {
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+#contact-form .flex-container > * {
+	flex-basis: 50%;
+}
+@media (max-width: 767px) {
+	#contact-form .flex-container {
+		flex-wrap: wrap;
+	}
+	#contact-form .flex-container > * {
+		flex-basis: 100%;
+	}
+}
+#contact-form textarea {
+	display: block;
+	width: 100%;
+	height: 5em;
 }
 
 
