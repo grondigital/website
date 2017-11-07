@@ -1100,6 +1100,7 @@ body > section:first-of-type {
 }
 #contact-form textarea {
 	height: 5em;
+	resize: vertical;
 }
 
 
