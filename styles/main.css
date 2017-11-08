@@ -1144,7 +1144,11 @@ ol + .sublist-item {
 	margin-bottom: 0;
 }
 #footer-widgets a {
+	text-decoration-line: none;
 	text-decoration-style: dotted;
+}
+#footer-widgets a:hover {
+	text-decoration-line: underline;
 }
 
 #footer-widgets .social {
