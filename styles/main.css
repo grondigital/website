@@ -1165,6 +1165,15 @@ ol + .sublist-item {
 #footer-widgets > * {
 	max-width: 195px;
 }
+@media (max-width: 450px) {
+	#footer-widgets > * {
+		max-width: 130px;
+	}
+	#widget-token-swap {
+		order: 5;
+		max-width: 290px;
+	}
+}
 #footer-widgets h4 {
 	margin-bottom: 20px;
 	font-weight: 600;
