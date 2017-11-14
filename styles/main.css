@@ -1210,6 +1210,9 @@ ol + .sublist-item {
 #footer-widgets .social a {
 	margin-right: 0.5em;
 }
+#footer-widgets .social a:hover {
+	text-decoration: none;
+}
 
 
 /**
