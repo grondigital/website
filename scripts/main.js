@@ -271,6 +271,7 @@ $(function() {
 			
 			if (match) {
 				anchorOffset = $(match).offset().top - this.getFixedOffset();
+				$('[data-aos]').removeAttr('data-aos');
 				$('html, body').animate({scrollTop: anchorOffset}, 1000);
 				
 				// Add the state to history as-per normal anchor links
