@@ -774,10 +774,10 @@ ol + .sublist-item {
 #top-image-colour {
 	opacity: 0;
 }
-#top-image:hover #top-image-colour {
+#top-image.hover #top-image-colour {
 	opacity: 1;
 }
-#top-image:hover #top-image-bw {
+#top-image.hover #top-image-bw {
 	opacity: 0;
 }
 

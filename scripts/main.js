@@ -121,6 +121,28 @@ $(function() {
 		hideMenu();
 	});
 	
+	//top image fade in/out
+	var $topImage = $('#top-image'),
+		topImgDrag = false;
+	//standard hover for desktop browsers
+	$topImage.hover(function() {
+		$topImage.addClass('hover');
+	}, function() {
+		$topImage.removeClass('hover');
+	});
+	//touch click (except draggling) for mobile browsers
+	$topImage.on('touchmove', function() {
+		topImgDrag = true;
+	});
+	$topImage.on('touchend', function() {
+		if (topImgDrag) {
+			topImgDrag = false;
+			return;
+		}
+		$topImage.toggleClass('hover');
+		return false; //discard other mouse events - hover, click
+	});
+	
 	
 	//subscribe form
 	var $subFormShim = $('#subscribe-shim'), 
