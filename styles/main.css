@@ -11,6 +11,10 @@ html {
 h1, h2, h3, h4, h5, h6 {
 	color: #415275;
 	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 h1 {
 	margin: 0 0 30px 0;
@@ -655,6 +659,11 @@ ol + .sublist-item {
 	display: block;
 	float: left;
 	height: 100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 #logo img {
 	height: 50%;

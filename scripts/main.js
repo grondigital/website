@@ -90,6 +90,7 @@ $(function() {
 		offset: -50
 	});
 	
+	$('#logo').on('contextmenu', false);
 	
 	//top menu open/close events
 	var $menu = $('#top-menu'),
