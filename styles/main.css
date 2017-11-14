@@ -903,10 +903,8 @@ ol + .sublist-item {
 #products-section {
 	text-align: center;
 }
-@media (max-width: 767px) {
-	#products-section {
-		text-align: justify;
-	}
+#products-section h4 {
+	text-align: center;
 }
 #products-section img {
 	max-width: 100%;
@@ -919,11 +917,11 @@ ol + .sublist-item {
 #products-section .product:last-child {
 	margin-bottom: 0;
 }
-#products-section .product::after {
+#products-section .product::before {
 	content: '';
 	display: block;
 	width: 70px;
-	margin: 27px auto 0 auto;
+	margin: 0 auto 27px auto;
 	border-bottom: 3px solid #f18036;
 }
 #products-section .product:last-child::after {
@@ -931,6 +929,15 @@ ol + .sublist-item {
 }
 #products-section .product p:last-child {
 	margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+	#products-section {
+		text-align: justify;
+	}
+	#products-section img {
+		margin-bottom: 30px;
+	}
 }
 
 
