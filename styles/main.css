@@ -835,11 +835,21 @@ ol + .sublist-item {
 #platform-description-section {
 	text-align: center;
 }
+@media (max-width: 767px) {
+	#platform-description-section {
+		text-align: justify;
+	}
+}
 
 
 /**
  * Blurbs section
  */
+@media (max-width: 767px) {
+	#blurbs-section {
+		text-align: justify;
+	}
+}
 #blurbs-section .container {
 	padding-bottom: 0;
 }
@@ -893,6 +903,11 @@ ol + .sublist-item {
  */
 #products-section {
 	text-align: center;
+}
+@media (max-width: 767px) {
+	#products-section {
+		text-align: justify;
+	}
 }
 #products-section img {
 	max-width: 100%;
@@ -1052,6 +1067,11 @@ ol + .sublist-item {
 .roadmap-description {
 	text-align: center;
 }
+@media (max-width: 767px) {
+	.roadmap-description {
+		text-align: justify;
+	}
+}
 
 
 /**
@@ -1095,6 +1115,11 @@ ol + .sublist-item {
 	font-size: 18px;
 	font-weight: bold;
 	color: #f18036;
+}
+@media (max-width: 767px) {
+	#team .description {
+		text-align: justify;
+	}
 }
 #team .description p:last-child {
 	margin-bottom: 0;
