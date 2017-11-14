@@ -876,7 +876,6 @@ ol + .sublist-item {
  * Video section
  */
 #video-section .container {
-	padding-top: 0;
 	padding-bottom: 0;
 }
 /* responsive video container https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
