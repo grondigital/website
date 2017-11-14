@@ -26,7 +26,7 @@ function getCookie(cname) {
  */
 $(function() {
 	// Set the date we're counting down to
-	var countDownDate = new Date("Dec 1, 2017 00:00:00").getTime();
+	var countDownDate = new Date("Dec 5, 2017 00:00:00").getTime();
 	var $timer = $('#timer');
 	
 	if ($timer.length) {
