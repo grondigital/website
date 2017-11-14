@@ -534,6 +534,9 @@ body > section:first-of-type {
 .title-section {
 	text-align: center;
 }
+.title-section:not(.gray) > .container {
+	padding-bottom: 0;
+}
 .title-section h1 {
 	font-size: 30px;
 }
