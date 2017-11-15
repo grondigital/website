@@ -566,11 +566,8 @@ body > section:first-of-type {
 	height: 3px;
 	background: #f18036;
 }
-.content-section p:not(.sublist-item) + h2, .content-section ul + h2, .content-section ol + h2 {
+.content-section p + h2, .content-section ul + h2, .content-section ol + h2 {
 	margin-top: -15px;
-}
-.sublist-item + h2 {
-	margin-top: 10px;
 }
 .content-section h3 {
 	margin: 0;
@@ -588,20 +585,10 @@ body > section:first-of-type {
 	padding: 0 0 0 1em;
 	list-style: disc outside;
 }
-.content-section p:not(.sublist-item) + ul {
+.content-section p + ul {
 	margin-top: -30px;
 }
-p:not(.sublist-item) + .sublist-item,
-ul + .sublist-item,
-ol + .sublist-item {
-	margin-top: -30px;
-}
-.sublist-item {
-	margin-bottom: 0;
-}
-.sublist-item + p:not(.sublist-item) {
-	margin-top: 30px;
-}
+
 
 .content-section a {
 	color: #f18036;
