@@ -845,11 +845,6 @@ ol + .sublist-item {
 /**
  * Blurbs section
  */
-@media (max-width: 767px) {
-	#blurbs-section {
-		text-align: justify;
-	}
-}
 #blurbs-section .container {
 	padding-bottom: 0;
 }
@@ -863,6 +858,9 @@ ol + .sublist-item {
 }
 .blurb h4 {
 	margin-bottom: 5px;
+}
+.blurb-content {
+	text-align: justify;
 }
 .blurb-content :last-child {
 	margin-bottom: 0;
@@ -1139,10 +1137,8 @@ ol + .sublist-item {
 	font-weight: bold;
 	color: #f18036;
 }
-@media (max-width: 767px) {
-	#team .description {
-		text-align: justify;
-	}
+#team .description {
+	text-align: justify;
 }
 #team .description p:last-child {
 	margin-bottom: 0;
