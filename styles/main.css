@@ -172,13 +172,10 @@ body > section:first-of-type {
 .gray {
 	background-color: #f3f4f6;
 }
-#video-section, #ico-counter-section, #partners-section, #main-footer {
+#ico-counter-section, #partners-section, #main-footer {
 	background-image: url("../images/bg/bg.png");
 	background-size: cover;
 	background-position-x: center;
-}
-#video-section {
-	background-position-y: top;
 }
 #ico-counter-section {
 	background-position-y: 80%;
@@ -873,12 +870,30 @@ ol + .sublist-item {
 /**
  * Video section
  */
+#video-section, #video-bg {
+	background: url(../images/bg/video.png) left top / auto 100% no-repeat;
+}
+@media (max-width: 1350px) {
+	#video-section, #video-bg {
+		background-image: none;
+	}
+}
+#video-section {
+	background-color: #415275;
+}
+#video-bg {
+	transform: scaleX(-1); /* flip background */
+}
+#video-bg > * {
+	transform: scaleX(-1); /* flip content back */
+}
 #video-section .container {
-	padding-bottom: 0;
+	padding-top: 35px;
+	padding-bottom: 35px;
 }
 /* responsive video container https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .video-wrapper {
-	max-width: 960px;
+	max-width: 840px;
 	margin: 0 auto;
 }
 .video-container {
