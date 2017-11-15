@@ -1116,8 +1116,13 @@ ol + .sublist-item {
 }
 #team .person {
 	display: inline-block;
-	max-width: 180px;
+	max-width: 235px;
 	vertical-align: middle;
+}
+@media (max-width: 374px) {
+	#team .person {
+		max-width: 180px;
+	}
 }
 #team .person h4,
 #team .person p {
