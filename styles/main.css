@@ -1105,6 +1105,12 @@ ol + .sublist-item {
 /**
  * Team section
  */
+#team-section > .container {
+	padding-bottom: 0;
+}
+#team > * {
+	margin-bottom: 50px;
+}
 #team .person-header {
 	margin-bottom: 30px;
 }
