@@ -247,6 +247,56 @@ $(function() {
 });
 
 /**
+ * Timeline slider
+ */
+$(function () {
+	var slider = document.getElementById('timeline-slider');
+	if (slider) {
+		//see "Single element - dot navigation" at http://meandmax.github.io/lory/
+		var dot_count         = slider.querySelectorAll('.js_slide').length;
+		var dot_container     = slider.querySelector('.js_dots');
+		var dot_list_item     = document.createElement('li');
+		
+		function handleDotEvent(e) {
+			if (e.type === 'before.lory.init') {
+				for (var i = 0, len = dot_count; i < len; i++) {
+					var clone = dot_list_item.cloneNode();
+					dot_container.appendChild(clone);
+				}
+				dot_container.childNodes[0].classList.add('active');
+			}
+			if (e.type === 'after.lory.init') {
+				for (var i = 0, len = dot_count; i < len; i++) {
+					dot_container.childNodes[i].addEventListener('click', function(e) {
+						timeline_slider.slideTo(Array.prototype.indexOf.call(dot_container.childNodes, e.target));
+					});
+				}
+			}
+			if (e.type === 'after.lory.slide') {
+				for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
+					dot_container.childNodes[i].classList.remove('active');
+				}
+				dot_container.childNodes[e.detail.currentSlide].classList.add('active');
+			}
+			if (e.type === 'on.lory.resize') {
+				for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
+					dot_container.childNodes[i].classList.remove('active');
+				}
+				dot_container.childNodes[0].classList.add('active');
+			}
+		}
+		slider.addEventListener('before.lory.init', handleDotEvent);
+		slider.addEventListener('after.lory.init', handleDotEvent);
+		slider.addEventListener('after.lory.slide', handleDotEvent);
+		slider.addEventListener('on.lory.resize', handleDotEvent);
+		
+		var timeline_slider= lory(slider, {
+			enableMouseEvents: true
+		});
+	}
+});
+
+/**
  * Smooth page scrolling
  * 
  * See:

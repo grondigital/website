@@ -202,72 +202,81 @@
 	
 	<section id="timeline-section" class="home-section">
 		<div class="container">
-			<div class="timeline flex-container">
-				<div class="timeline-card">
-					<div class="ico-round">
-						<h4>Pre-ICO</h4>
-						<p class="ico-round-date">Starts on<br/>5 December 2017</p>
-						<p class="ico-round-bonus">+40% Bonus</p>
+			<div id="timeline-wrapper">
+				<div id="timeline-slider" class="timeline slider js_slider">
+					<div class="frame js_frame">
+						<div class="slides js_slides">
+							<div class="timeline-card js_slide">
+								<div class="ico-round">
+									<h4>Pre-ICO</h4>
+									<p class="ico-round-date">Starts on<br/>5 December 2017</p>
+									<p class="ico-round-bonus">+40% Bonus</p>
+								</div>
+								<div class="timeline-price">
+									<p>Minimum Pledge 50ETH<br/>
+										1ETH will be swapped for 14,000 GRO</p>
+								</div>
+								<div class="timeline-action">
+									<a href="#contact-section">Enquire</a>
+								</div>
+							</div>
+							<div class="timeline-card js_slide">
+								<div class="ico-round">
+									<h4>Round 1</h4>
+									<p class="ico-round-date">Starts on<br/>20 December 2017</p>
+									<p class="ico-round-bonus">+30% Bonus</p>
+								</div>
+								<div class="timeline-price">
+									<p>1ETH will be swapped for 13,000 GRO</p>
+								</div>
+								<div class="timeline-action">
+									<span>soon</span>
+								</div>
+							</div>
+							<div class="timeline-card js_slide">
+								<div class="ico-round">
+									<h4>Round 2</h4>
+									<p class="ico-round-date">Starts on<br/>4 January 2018</p>
+									<p class="ico-round-bonus">+20% Bonus</p>
+								</div>
+								<div class="timeline-price">
+									<p>1ETH will be swapped for 12,000 GRO</p>
+								</div>
+								<div class="timeline-action">
+									<span>soon</span>
+								</div>
+							</div>
+							<div class="timeline-card js_slide">
+								<div class="ico-round">
+									<h4>Round 3</h4>
+									<p class="ico-round-date">Starts on<br/>19 January 2018</p>
+									<p class="ico-round-bonus">+10% Bonus</p>
+								</div>
+								<div class="timeline-price">
+									<p>1ETH will be swapped for 11,000 GRO</p>
+								</div>
+								<div class="timeline-action">
+									<span>soon</span>
+								</div>
+							</div>
+							<div class="timeline-card js_slide">
+								<div class="ico-round">
+									<h4>Round 4</h4>
+									<p class="ico-round-date">Starts on<br/>3 February 2018</p>
+									<p class="ico-round-bonus">No Bonus</p>
+								</div>
+								<div class="timeline-price">
+									<p>1ETH will be swapped for 10,000 GRO</p>
+								</div>
+								<div class="timeline-action">
+									<span>soon</span>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="timeline-price">
-						<p>Minimum Pledge 50ETH<br/>
-						1ETH will be swapped for 14,000 GRO</p>
-					</div>
-					<div class="timeline-action">
-						<a href="#contact-section">Enquire</a>
-					</div>
-				</div>
-				<div class="timeline-card">
-					<div class="ico-round">
-						<h4>Round 1</h4>
-						<p class="ico-round-date">Starts on<br/>20 December 2017</p>
-						<p class="ico-round-bonus">+30% Bonus</p>
-					</div>
-					<div class="timeline-price">
-						<p>1ETH will be swapped for 13,000 GRO</p>
-					</div>
-					<div class="timeline-action">
-						<span>soon</span>
-					</div>
-				</div>
-				<div class="timeline-card">
-					<div class="ico-round">
-						<h4>Round 2</h4>
-						<p class="ico-round-date">Starts on<br/>4 January 2018</p>
-						<p class="ico-round-bonus">+20% Bonus</p>
-					</div>
-					<div class="timeline-price">
-						<p>1ETH will be swapped for 12,000 GRO</p>
-					</div>
-					<div class="timeline-action">
-						<span>soon</span>
-					</div>
-				</div>
-				<div class="timeline-card">
-					<div class="ico-round">
-						<h4>Round 3</h4>
-						<p class="ico-round-date">Starts on<br/>19 January 2018</p>
-						<p class="ico-round-bonus">+10% Bonus</p>
-					</div>
-					<div class="timeline-price">
-						<p>1ETH will be swapped for 11,000 GRO</p>
-					</div>
-					<div class="timeline-action">
-						<span>soon</span>
-					</div>
-				</div>
-				<div class="timeline-card">
-					<div class="ico-round">
-						<h4>Round 4</h4>
-						<p class="ico-round-date">Starts on<br/>3 February 2018</p>
-						<p class="ico-round-bonus">No Bonus</p>
-					</div>
-					<div class="timeline-price">
-						<p>1ETH will be swapped for 10,000 GRO</p>
-					</div>
-					<div class="timeline-action">
-						<span>soon</span>
-					</div>
+					<span class="js_prev prev icon-angle-left"></span>
+					<span class="js_next next icon-angle-right"></span>
+					<ul class="js_dots dots"></ul>
 				</div>
 			</div>
 		</div>
@@ -530,6 +539,42 @@
 							and blockchain technologies and their application in the business
 							context.
 						</p>
+				</div>
+				</div>
+				<div>
+					<div class="person-header">
+						<img class="avatar" src="images/team/artur-BW.jpg"/><!--
+						-->
+						<div class="person">
+							<h4>Artur Timoshin</h4>
+							<p class="position">System Architect</p>
+						</div>
+					</div>
+					<div class="description">
+						<p>
+							Artur has over 8 years of ultimate experience in Gaming and Betting. Headed the team of developers.
+							Progressed from Senior Java developer to System Architect. Technology enthusiast with an innovative
+							approach and use of technology in gaming. A unique specialist with a mix of technical and deep product
+							understanding.
+						</p>
+					</div>
+				</div>
+				<div>
+					<div class="person-header">
+						<img class="avatar" src="images/team/dede-BW.jpg"/><!--
+						-->
+						<div class="person">
+							<h4>Alex Dede</h4>
+							<p class="position">Software Engineer</p>
+						</div>
+					</div>
+					<div class="description">
+						<p>
+							Alex began his career as a Java developer more than 5 years ago. He has been intensively involved in
+							developing mobile products for the online betting sector. Highly proficient in Lottery Products, developed
+							state-of-the-art mobile applications. Alex’s proven technical background is efficiently applied in
+							products development for both the online and landbased operations.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -622,6 +667,7 @@
 	<script src="scripts/lib/aos.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="scripts/lib/particles.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.3/lory.min.js"></script>
 	<script src="scripts/main.js"></script>
 </body>
 </html>
