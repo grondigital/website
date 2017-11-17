@@ -192,8 +192,9 @@ body > section:first-of-type {
 }
 
 .container {
-	max-width: 1140px;
-	min-width: 290px;
+	box-sizing: border-box;
+	max-width: 1170px;
+	min-width: 320px;
 	margin: 0 auto;
 	padding: 50px 15px 40px 15px;
 }
@@ -443,6 +444,42 @@ body > section:first-of-type {
 		border-right-color: #f3f4f6;
 	}
 }
+
+/**
+ * Lory slider styles
+ */
+/* http://meandmax.github.io/lory/ */
+.slider {
+	position: relative;
+}
+.frame {
+	position: relative;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.slides {
+	display: inline-block;
+}
+.slides > * {
+	position: relative;
+	display: inline-block;
+}
+.prev, .next {
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	display: block;
+	cursor: pointer;
+}
+.next {
+	right: 0;
+}
+.prev {
+	left: 0;
+}
+
 
 .shim {
 	display: none;
@@ -942,14 +979,71 @@ body > section:first-of-type {
 #timeline-section .container {
 	padding-bottom: 0;
 }
-.timeline {
-	justify-content: space-around;
-	padding-bottom: 20px;
+#timeline-wrapper {
+	padding-bottom: 40px;
 	border-bottom: 1px solid #f3f4f6;
 }
+#timeline-slider {
+	margin: 0 auto;
+}
+#timeline-slider .prev, #timeline-slider .next {
+	display: none;
+	color: #b8bcc4;
+	font-size: 35px;
+}
+#timeline-slider .prev::before, #timeline-slider .next::before {
+	width: 25px;
+	margin: 0;
+}
+#timeline-slider .prev.disabled, #timeline-slider .next.disabled {
+	display: none;
+}
+#timeline-slider .prev {
+	left: -25px;
+}
+#timeline-slider .next {
+	right: -25px;
+}
 .timeline-card {
-	width: 195px;
-	margin-bottom: 20px;
+	width: 212px;
+	margin: 0 10px;
+	font-size: 16px;
+	line-height: 1.5;
+	white-space: normal;
+}
+.timeline-card:first-child {
+	margin-left: 0;
+}
+.timeline-card:last-child {
+	margin-right: 0;
+}
+@media (max-width: 1169px) {
+	#timeline-wrapper {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	/* 3 slides */
+	#timeline-slider {
+		width: 850px;
+	}
+	#timeline-slider .prev, #timeline-slider .next {
+		display: block;
+	}
+	.timeline-card {
+		width: 270px;
+	}
+}
+/* 2 slides */
+@media (max-width: 899px) {
+	#timeline-slider {
+		width: 560px;
+	}
+}
+/* 1 slide */
+@media (max-width: 609px) {
+	#timeline-slider {
+		width: 270px;
+	}
 }
 .ico-round {
 	background: #415275;

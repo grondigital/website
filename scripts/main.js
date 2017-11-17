@@ -247,6 +247,18 @@ $(function() {
 });
 
 /**
+ * Timeline slider
+ */
+$(function () {
+	var slider = document.getElementById('timeline-slider');
+	if (slider) {
+		lory(slider, {
+			enableMouseEvents: true
+		});
+	}
+});
+
+/**
  * Smooth page scrolling
  * 
  * See:
