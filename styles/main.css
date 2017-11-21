@@ -1222,6 +1222,12 @@ body > section:first-of-type {
 	margin-bottom: 0;
 }
 
+#team [class|="icon"] {
+    text-decoration: none;
+}
+#team .icon-linkedin {
+    color: #0077B5;
+}
 
 /**
  * Contact Us
