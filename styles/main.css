@@ -446,46 +446,40 @@ body > section:first-of-type {
 }
 
 /**
- * Lory slider styles
+ * Swiper slider styles
  */
-/* http://meandmax.github.io/lory/ */
-.slider {
-	position: relative;
-}
-.frame {
-	position: relative;
-	font-size: 0;
-	line-height: 0;
-	overflow: hidden;
-	white-space: nowrap;
-}
-.slides {
-	display: inline-block;
-}
-.slides > * {
-	position: relative;
-	display: inline-block;
+.swiper-container {
+	margin-bottom: 20px;
 }
 .prev, .next {
+	display: block;
 	position: absolute;
 	top: 50%;
 	margin-top: -25px;
-	display: block;
+	color: #b8bcc4;
+	font-size: 35px;
 	cursor: pointer;
 }
 .next {
-	right: 0;
+	right: -25px;
 }
 .prev {
-	left: 0;
+	left: -25px;
+}
+.prev.disabled, .next.disabled {
+	display: none;
+}
+.prev::before, .next::before {
+	width: 25px;
+	margin: 0;
 }
 
-.dots {
+.pagination-bullets {
 	margin: 0 0 20px 0;
 	padding: 0;
 	text-align: center;
 }
-.dots li {
+.pagination-bullets .bullet {
 	display: inline-block;
 	width: 8px;
 	height: 8px;
@@ -494,7 +488,7 @@ body > section:first-of-type {
 	background: #d8dadf;
 	cursor: pointer;
 }
-.dots li.active {
+.pagination-bullets .bullet.active {
 	background: #415275;
 }
 
@@ -1002,35 +996,16 @@ body > section:first-of-type {
 	border-bottom: 1px solid #f3f4f6;
 }
 #timeline-slider {
+	position: relative;
 	margin: 0 auto;
 }
-#timeline-slider .frame {
-	margin-bottom: 20px;
-}
-#timeline-slider .dots {
+#timeline-slider .pagination-bullets {
 	display: none;
 }
-#timeline-slider .prev, #timeline-slider .next {
-	display: none;
-	color: #b8bcc4;
-	font-size: 35px;
-}
-#timeline-slider .prev::before, #timeline-slider .next::before {
-	width: 25px;
-	margin: 0;
-}
-#timeline-slider .prev.disabled, #timeline-slider .next.disabled {
-	display: none;
-}
-#timeline-slider .prev {
-	left: -25px;
-}
-#timeline-slider .next {
-	right: -25px;
-}
+
 .timeline-card {
 	width: 212px;
-	margin: 0 10px;
+	margin-right: 20px;
 	font-size: 16px;
 	line-height: 1.5;
 	white-space: normal;
@@ -1050,10 +1025,7 @@ body > section:first-of-type {
 	#timeline-slider {
 		width: 850px;
 	}
-	#timeline-slider .dots {
-		display: block;
-	}
-	#timeline-slider .prev, #timeline-slider .next {
+	#timeline-slider .pagination-bullets {
 		display: block;
 	}
 	.timeline-card {

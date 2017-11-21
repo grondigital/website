@@ -249,51 +249,35 @@ $(function() {
 /**
  * Timeline slider
  */
-$(function () {
-	var slider = document.getElementById('timeline-slider');
-	if (slider) {
-		//see "Single element - dot navigation" at http://meandmax.github.io/lory/
-		var dot_count         = slider.querySelectorAll('.js_slide').length;
-		var dot_container     = slider.querySelector('.js_dots');
-		var dot_list_item     = document.createElement('li');
-		
-		function handleDotEvent(e) {
-			if (e.type === 'before.lory.init') {
-				for (var i = 0, len = dot_count; i < len; i++) {
-					var clone = dot_list_item.cloneNode();
-					dot_container.appendChild(clone);
-				}
-				dot_container.childNodes[0].classList.add('active');
+$(function() {
+	var slider = new Swiper('#timeline-slider .swiper-container', {
+		//spaceBetween: 20,
+		slidesPerView: 'auto',
+		slidesPerGroup: 5,
+		breakpoints: {
+			1169: {
+				slidesPerGroup: 3
+			},
+			899: {
+				slidesPerGroup: 2
+			},
+			609: {
+				slidesPerGroup: 1
 			}
-			if (e.type === 'after.lory.init') {
-				for (var i = 0, len = dot_count; i < len; i++) {
-					dot_container.childNodes[i].addEventListener('click', function(e) {
-						timeline_slider.slideTo(Array.prototype.indexOf.call(dot_container.childNodes, e.target));
-					});
-				}
-			}
-			if (e.type === 'after.lory.slide') {
-				for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
-					dot_container.childNodes[i].classList.remove('active');
-				}
-				dot_container.childNodes[e.detail.currentSlide].classList.add('active');
-			}
-			if (e.type === 'on.lory.resize') {
-				for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
-					dot_container.childNodes[i].classList.remove('active');
-				}
-				dot_container.childNodes[0].classList.add('active');
-			}
+		},
+		pagination: {
+			el: '#timeline-slider .pagination-bullets',
+			clickable: true,
+			bulletClass: 'bullet',
+			bulletActiveClass: 'active'
+		},
+		navigation: {
+			nextEl: '#timeline-slider .next',
+			prevEl: '#timeline-slider .prev',
+			disabledClass: 'disabled',
+			hiddenClass: 'disabled'
 		}
-		slider.addEventListener('before.lory.init', handleDotEvent);
-		slider.addEventListener('after.lory.init', handleDotEvent);
-		slider.addEventListener('after.lory.slide', handleDotEvent);
-		slider.addEventListener('on.lory.resize', handleDotEvent);
-		
-		var timeline_slider= lory(slider, {
-			enableMouseEvents: true
-		});
-	}
+	});
 });
 
 /**

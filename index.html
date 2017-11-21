@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
 	<link rel="stylesheet" href="styles/fontello.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="styles/aos.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/css/swiper.min.css">
 	<link rel="stylesheet" href="styles/main.css" type="text/css" media="all" />
 </head>
 <body>
@@ -203,10 +204,10 @@
 	<section id="timeline-section" class="home-section">
 		<div class="container">
 			<div id="timeline-wrapper">
-				<div id="timeline-slider" class="timeline slider js_slider">
-					<div class="frame js_frame">
-						<div class="slides js_slides">
-							<div class="timeline-card js_slide">
+				<div id="timeline-slider" class="timeline">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Pre-ICO</h4>
 									<p class="ico-round-date">Starts on<br/>5 December 2017</p>
@@ -220,7 +221,7 @@
 									<a href="#contact-section">Enquire</a>
 								</div>
 							</div>
-							<div class="timeline-card js_slide">
+							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 1</h4>
 									<p class="ico-round-date">Starts on<br/>20 December 2017</p>
@@ -233,7 +234,7 @@
 									<span>soon</span>
 								</div>
 							</div>
-							<div class="timeline-card js_slide">
+							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 2</h4>
 									<p class="ico-round-date">Starts on<br/>4 January 2018</p>
@@ -246,7 +247,7 @@
 									<span>soon</span>
 								</div>
 							</div>
-							<div class="timeline-card js_slide">
+							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 3</h4>
 									<p class="ico-round-date">Starts on<br/>19 January 2018</p>
@@ -259,7 +260,7 @@
 									<span>soon</span>
 								</div>
 							</div>
-							<div class="timeline-card js_slide">
+							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 4</h4>
 									<p class="ico-round-date">Starts on<br/>3 February 2018</p>
@@ -274,9 +275,9 @@
 							</div>
 						</div>
 					</div>
-					<span class="js_prev prev icon-angle-left"></span>
-					<span class="js_next next icon-angle-right"></span>
-					<ul class="js_dots dots"></ul>
+					<div class="pagination-bullets"></div>
+					<div class="prev icon-angle-left"></div>
+					<div class="next icon-angle-right"></div>
 				</div>
 			</div>
 		</div>
@@ -667,7 +668,7 @@
 	<script src="scripts/lib/aos.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="scripts/lib/particles.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.3/lory.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/js/swiper.min.js"></script>
 	<script src="scripts/main.js"></script>
 </body>
 </html>
