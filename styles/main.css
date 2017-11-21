@@ -1108,6 +1108,7 @@ body > section:first-of-type {
 }
 #crypto-icons img {
 	width: 35px;
+	height: 60px;
 }
 #crypto-icons img.icon-btc {
 	width: 50px;
