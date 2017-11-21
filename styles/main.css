@@ -1223,10 +1223,16 @@ body > section:first-of-type {
 }
 
 #team [class|="icon"] {
-    text-decoration: none;
+	text-decoration: none;
 }
-#team .icon-linkedin {
-    color: #0077B5;
+#team .icon-linkedin::before {
+	width: 1.4em;
+	height: 1.4em;
+	margin: 0;
+	border-radius: 3px;
+	line-height: 1.4em;
+	background: #0077B5;
+	color: white;
 }
 
 /**
