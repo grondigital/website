@@ -1108,12 +1108,13 @@ body > section:first-of-type {
 }
 #crypto-icons img {
 	width: 35px;
+	height: 60px;
 }
-#crypto-icons img.icon-ltc {
-	width: 30px;
+#crypto-icons img.icon-btc {
+	width: 50px;
 }
-#crypto-icons img.icon-dash {
-	width: 47px;
+#crypto-icons img.icon-bch {
+	width: 60px;
 }
 
 
@@ -1276,15 +1277,6 @@ body > section:first-of-type {
 #footer-widgets > * {
 	max-width: 195px;
 }
-@media (max-width: 450px) {
-	#footer-widgets > * {
-		max-width: 130px;
-	}
-	#widget-token-swap {
-		order: 5;
-		max-width: 290px;
-	}
-}
 #footer-widgets h4 {
 	margin-bottom: 20px;
 	font-weight: 600;
@@ -1317,6 +1309,19 @@ body > section:first-of-type {
 }
 #footer-widgets .social a:hover {
 	text-decoration: none;
+}
+
+@media (max-width: 450px) {
+	#footer-widgets > * {
+		max-width: 130px;
+	}
+	#widget-token-swap {
+		order: 5;
+		max-width: 290px;
+	}
+	#footer-widgets .social a {
+		margin-right: 0;
+	}
 }
 
 
