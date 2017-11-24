@@ -1,9 +1,14 @@
 html {
+	height: 100%;
 	background: #ffffff;
 	color: #6b7a8f;
 	font: normal 16px/1.5 "Open Sans", Arial, sans-serif;
 }
-
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
 
 /*
  * Common HTML elements
@@ -500,6 +505,7 @@ body > section:first-of-type {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	z-index: 70;
 	background: rgba(22, 37, 65, 0.86);
 }
 
@@ -591,6 +597,7 @@ body > section:first-of-type {
 	font-size: 30px;
 }
 .content-section {
+	flex-grow: 1;
 	text-align: justify;
 }
 .content-subsection {
@@ -1107,14 +1114,8 @@ body > section:first-of-type {
 	justify-content: space-around;
 }
 #crypto-icons img {
-	width: 35px;
-	height: 60px;
-}
-#crypto-icons img.icon-btc {
-	width: 50px;
-}
-#crypto-icons img.icon-bch {
-	width: 60px;
+	width: 75px;
+	height: 75px;
 }
 
 
