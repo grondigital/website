@@ -1113,14 +1113,8 @@ body > section:first-of-type {
 	justify-content: space-around;
 }
 #crypto-icons img {
-	width: 35px;
-	height: 60px;
-}
-#crypto-icons img.icon-btc {
-	width: 50px;
-}
-#crypto-icons img.icon-bch {
-	width: 60px;
+	width: 75px;
+	height: 75px;
 }
 
 
