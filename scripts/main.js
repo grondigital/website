@@ -250,6 +250,9 @@ $(function() {
  * Timeline slider
  */
 $(function() {
+	if (!window.Swiper)
+		return;
+	
 	var slider = new Swiper('#timeline-slider .swiper-container', {
 		//spaceBetween: 20,
 		slidesPerView: 'auto',
