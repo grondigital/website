@@ -710,12 +710,6 @@ body > section:first-of-type {
 	vertical-align: middle;
 }
 
-#main-header .btn {
-	display: inline;
-	padding: 0.5em 0.75em;
-	color: #f18036;
-}
-
 /**
  * Top menu
  */
@@ -731,12 +725,30 @@ body > section:first-of-type {
 }
 #top-menu li {
 	display: inline;
-	margin-left: 35px;
+	margin-right: 15px;
+	margin-left: 20px;
+}
+#top-menu li.highlighted {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#top-menu li:first-child {
+	margin-left: 0;
+}
+#top-menu li:last-child {
+	margin-right: 0;
 }
 #top-menu a {
 	text-decoration: none;
 }
-#top-menu a:hover:not(.btn) {
+#top-menu .highlighted a {
+	display: inline-block;
+	padding: 0.5em 0.75em;
+	line-height: 1.4;
+	border: 1px solid #f18036;
+	color: #f18036;
+}
+#top-menu li:not(.highlighted) a:hover {
 	border-bottom: 3px solid #f18036;
 	color: #415275;
 }
@@ -774,6 +786,9 @@ body > section:first-of-type {
 		display: block;
 		margin: 25px 0;
 		line-height: 1.5;
+	}
+	#top-menu li.highlighted {
+		margin: 15px 0;
 	}
 }
 
@@ -1181,55 +1196,55 @@ body > section:first-of-type {
 
 
 /**
- * Team section
+ * Team & Advisors sections
  */
-#team-section > .container {
+#team-section > .container, #advisors-section > .container {
 	padding-bottom: 0;
 }
-#team > * {
+.team > * {
 	margin-bottom: 50px;
 }
-#team .person-header {
+.team .person-header {
 	margin-bottom: 30px;
 }
-#team .avatar {
+.team .avatar {
 	vertical-align: middle;
 	width: 100px;
 	margin-right: 10px;
 	border-radius: 50%;
 }
-#team .person {
+.team .person {
 	display: inline-block;
 	max-width: 235px;
 	vertical-align: middle;
 	line-height: 1.6;
 }
 @media (max-width: 374px) {
-	#team .person {
+	.team .person {
 		max-width: 180px;
 	}
 }
-#team .person h4,
-#team .person p {
+.team .person h4,
+.team .person p {
 	margin-bottom: 0;
 	font-size: 16px;
 	font-weight: 600;
 	-webkit-font-smoothing: antialiased;
 }
-#team .person .position {
+.team .person .position {
 	color: #f18036;
 }
-#team .description {
+.team .description {
 	text-align: justify;
 }
-#team .description p:last-child {
+.team .description p:last-child {
 	margin-bottom: 0;
 }
 
-#team a[class|="icon"] {
+.team a[class|="icon"] {
 	text-decoration: none;
 }
-#team .icon-linkedin::before {
+.team .icon-linkedin::before {
 	width: 1.4em;
 	height: 1.4em;
 	margin: 0;
