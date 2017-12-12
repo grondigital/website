@@ -748,7 +748,8 @@ body > section:first-of-type {
 	border: 1px solid #f18036;
 	color: #f18036;
 }
-#top-menu li:not(.highlighted) a:hover {
+#top-menu li:not(.highlighted) a:hover,
+#top-menu li:not(.highlighted) a.active {
 	border-bottom: 3px solid #f18036;
 	color: #415275;
 }
