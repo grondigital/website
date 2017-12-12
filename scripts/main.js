@@ -210,6 +210,73 @@ $(function() {
 });
 
 /**
+ * Main menu item highlighting
+ */
+$(function() {
+	var $menu = $('#top-menu'),
+	    $links = $menu.find('a'),
+	    isScrolling = false; //whether we're doing scroll animation now
+	
+	/**
+	 * Set active main menu item by link hash
+	 * 
+	 * @param {string} hash
+	 */
+	function setActiveItem(hash) {
+		var $currentLink = (hash === 'top-section')? $menu.find('li:first-child a') : $menu.find('a[href*="' + hash + '"]');
+		if ($currentLink.length) {
+			$links.removeClass('active');
+			$currentLink.addClass('active');
+		}
+	}
+	
+	/**
+	 * Called when user scrolls to a section
+	 * 
+	 * Activates menu item if we're not animating scroll now
+	 * @param {string} id Section ID.
+	 */
+	function onEnterSection(id) {
+		if (!isScrolling) {
+			setActiveItem(id);
+		}
+	}
+	
+	//set active menu item on link click and determine scroll animation status
+	$(window).on('scrollStart', function(e, id) {
+		isScrolling = true;
+		setActiveItem(id);
+	}).on('scrollEnd', function(e, id) {
+		isScrolling = false;
+	});
+	
+	//2 waypoints are created for each section:
+	// first is triggered when user scrolls down and top of section hits center of the screen
+	// second is triggered when user scrolls up and bottom of section reaches center of the screen
+	var $sections = $('section');
+	$sections.waypoint(function(dir) {
+		var id = this.element.id;
+		if (dir === 'down' && id !== '') {
+			onEnterSection(id);
+		}
+	}, {
+		offset: '50%'
+	});
+	$sections.waypoint(function(dir) {
+		var id = this.element.id;
+		if (dir === 'up' && id !== '') {
+			onEnterSection(id);
+		}
+	}, {
+		offset: function() {
+			//center of screen minus element height,
+			//see example here: http://imakewebthings.com/waypoints/api/viewport-height/
+			return Waypoint.viewportHeight()*0.5 - this.element.clientHeight;
+		}
+	});
+});
+
+/**
  * Animate On Scroll initialization
  */
 $(function() {
@@ -327,12 +394,16 @@ $(function() {
 				return false;
 			}
 			
-			match = document.getElementById(href.slice(1));
+			var id = href.slice(1);
+			match = document.getElementById(id);
 			
 			if (match) {
 				anchorOffset = $(match).offset().top - this.getFixedOffset();
 				$('[data-aos]').removeAttr('data-aos');
-				$('html, body').animate({scrollTop: anchorOffset}, 1000);
+				$(window).trigger('scrollStart', [id]);
+				$('html, body').animate({scrollTop: anchorOffset}, 1000).promise().then(function() {
+					$(window).trigger('scrollEnd', [id]);
+				});
 				
 				// Add the state to history as-per normal anchor links
 				if (HISTORY_SUPPORT && pushToHistory) {
