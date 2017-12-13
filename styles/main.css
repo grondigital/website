@@ -1177,6 +1177,9 @@ body > section:first-of-type {
 /**
  * Partners section
  */
+#partners-section .container {
+	padding-bottom: 20px;
+}
 #partners {
 	justify-content: space-around;
 	-webkit-touch-callout: none;
@@ -1184,6 +1187,9 @@ body > section:first-of-type {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+#partners a {
+	margin-bottom: 20px;
 }
 #partners img {
 	max-width: 170px;
