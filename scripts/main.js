@@ -282,7 +282,8 @@ $(function() {
 $(function() {
 	AOS.init({
 		easing: 'ease-out-back',
-		once: true
+		once: true,
+		disable: (Object.prototype.toString.call(window.operamini) === "[object OperaMini]")
 	});
 });
 
