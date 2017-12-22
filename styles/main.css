@@ -59,6 +59,12 @@ a {
 	text-decoration: underline;
 }
 
+a.no-line,
+a.no-line:hover,
+a.no-line:focus {
+	text-decoration: none;
+}
+
 input, button, textarea {
 	box-sizing: border-box;
 }
