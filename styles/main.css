@@ -63,6 +63,7 @@ a.no-line,
 a.no-line:hover,
 a.no-line:focus {
 	text-decoration: none;
+    color: inherit;
 }
 
 input, button, textarea {
