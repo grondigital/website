@@ -212,7 +212,7 @@ body > section:first-of-type {
 }
 
 .divider {
-	border-bottom: 1px solid #f3f4f6;
+	border-bottom: 2px solid #f3f4f6;
 }
 
 .flex-container {
