@@ -184,13 +184,16 @@ body > section:first-of-type {
 .gray {
 	background-color: #f3f4f6;
 }
-#ico-counter-section, #partners-section, #main-footer {
+#ico-counter-section, #whats-in-section, #partners-section, #main-footer {
 	background-image: url("../images/bg/bg.png");
 	background-size: cover;
 	background-position-x: center;
 }
 #ico-counter-section {
 	background-position-y: 80%;
+}
+#whats-in-section {
+	background-position-y: top;
 }
 #partners-section {
 	background-position-y: 20%;
@@ -1142,6 +1145,51 @@ body > section:first-of-type {
 #crypto-icons img {
 	width: 75px;
 	height: 75px;
+}
+
+
+/**
+ * What's in for me section
+ */
+#whats-in-section .container {
+	padding-bottom: 0;
+}
+#whats-in {
+	padding-top: 20px;
+}
+.whats-in-item {
+	width: 360px;
+	margin-bottom: 50px;
+}
+.whats-in-header {
+	margin-bottom: 20px;
+}
+.whats-in-header img {
+	width: 91px;
+	height: 91px;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+.whats-in-header h4 {
+	display: inline-block;
+	/*max-width: 254px;*/
+	max-width: 184px;
+	margin: 0;
+	vertical-align: middle;
+	color: #f18036;
+}
+.whats-in-body ul {
+	margin: 0;
+}
+
+@media (max-width: 389px) {
+	.whats-in-item {
+		width: 100%;
+		min-width: 290px;
+	}
+	.whats-in-header h4 {
+		/*max-width: 184px;*/
+	}
 }
 
 
