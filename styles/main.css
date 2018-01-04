@@ -601,6 +601,23 @@ body > section:first-of-type {
 /**
  * Main content
  */
+.home-content {
+	text-align: center;
+}
+.home-content img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto 70px auto;
+}
+@media (max-width: 767px) {
+	.home-content {
+		text-align: justify;
+	}
+	.home-content img {
+		margin-bottom: 30px;
+	}
+}
+
 .title-section {
 	text-align: center;
 }
@@ -900,19 +917,6 @@ body > section:first-of-type {
 
 
 /**
- * Platform description section
- */
-#platform-description-section {
-	text-align: center;
-}
-@media (max-width: 767px) {
-	#platform-description-section {
-		text-align: justify;
-	}
-}
-
-
-/**
  * Blurbs section
  */
 #blurbs-section .container {
@@ -969,16 +973,11 @@ body > section:first-of-type {
 /**
  * Products section
  */
-#products-section {
-	text-align: center;
-}
 #products-section h4 {
 	text-align: center;
 }
 #products-section img {
-	max-width: 100%;
 	width: 549.5px; /* all images in this section are 1099px wide */
-	margin: 0 auto 70px auto;
 }
 #products-section .product {
 	margin-bottom: 30px;
@@ -1000,15 +999,12 @@ body > section:first-of-type {
 	margin-bottom: 0;
 }
 
-@media (max-width: 767px) {
-	#products-section {
-		text-align: justify;
-	}
-	#products-section img {
-		margin-bottom: 30px;
-	}
+/**
+ * Wallet section
+ */
+#wallet-section img {
+	width: 417px;
 }
-
 
 /**
  * ICO counter section
