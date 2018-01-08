@@ -26,9 +26,23 @@ function getCookie(cname) {
  */
 $(function() {
 	// Set the date we're counting down to
-	var countDownDate = new Date("Jan 9, 2018 00:00:00").getTime();
-	var $timer = $('#timer');
+	var roundDates = [
+		new Date('2018-01-09T00:00:00Z').getTime(),
+		new Date('2018-02-06T00:00:00Z').getTime(),
+		new Date('2018-02-20T00:00:00Z').getTime(),
+		new Date('2018-03-06T00:00:00Z').getTime(),
+		new Date('2018-03-20T00:00:00Z').getTime()
+	];
+	// select first round date which is after current
+	var now = new Date('2018-02-10T00:00:00Z').getTime(), countDownDate;
+	for (var i=0; i<roundDates.length; i++) {
+		countDownDate = roundDates[i];
+		if (now < countDownDate) {
+			break;
+		}
+	}
 	
+	var $timer = $('#timer');
 	if ($timer.length) {
 		// Update the count down every 1 second
 		setInterval(function () {
