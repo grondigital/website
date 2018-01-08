@@ -44,7 +44,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/css/swiper.min.css">
 	<link rel="stylesheet" href="styles/main.css" type="text/css" media="all" />
 </head>
-<body>
+<body class="ico-current-pre-pre">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src=“https://www.googletagmanager.com/ns.html?id=GTM-5CSPLQJ”
 	                  height=“0" width=“0” style=“display:none;visibility:hidden”></iframe></noscript>
@@ -91,7 +91,7 @@
 		</div>
 	</section>
 	
-	<section id="platform-description-section" class="home-section">
+	<section id="platform-description-section" class="home-section home-content">
 		<div class="container">
 			<h2 class="section-header">What is Gron Digital?</h2>
 			<p>
@@ -102,6 +102,114 @@
 				casino operators, affiliates, regulators and players are a few examples of the participants within the Gron
 				Digital eco-system.
 			</p>
+		</div>
+	</section>
+	
+	<section id="whats-in-section" class="home-section blue">
+		<div class="container">
+			<h2 class="section-header">What's in for me</h2>
+			<div id="whats-in" class="flex-container flex-cols-3">
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/player.svg" alt="Player" /><h4>Player</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Transparency</li>
+							<li>Protection. Licensed</li>
+							<li>Guaranteed Payouts</li>
+							<li>Easy Payment Methods</li>
+						</ul>
+					</div>
+				</div>
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/owner.svg" alt="Owner" /><h4>Owner</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Guaranteed Payment Method</li>
+							<li>Easy Payout Facility</li>
+							<li>Access to True RNG</li>
+							<li>Payment for Consumed only Services</li>
+						</ul>
+					</div>
+				</div>
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/bookmaker.svg" alt="Bookmaker" /><h4>Bookmaker</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Easy Payment Methods</li>
+							<li>No Chargebacks</li>
+							<li>Reliable Feed & Results</li>
+							<li>Transparency with the Regulator and Player</li>
+						</ul>
+					</div>
+				</div>
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/developer.svg" alt="Developer" />
+						<h4>Developer</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Easy Integration</li>
+							<li>Market Exposure</li>
+							<li>Guaranteed Usage Payment</li>
+						</ul>
+					</div>
+				</div>
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/regulator.svg" alt="Regulator" /><h4>Regulator</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Transparent Audit Trail</li>
+							<li>Dispute Resolution</li>
+							<li>Built-in Licensing and KYC</li>
+						</ul>
+					</div>
+				</div>
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/provider.svg" alt="Odds &amp; Results Provider" /><h4>Odds &amp; Results Provider</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Guaranteed Payment for Provision of Services</li>
+							<li>Unified Platform</li>
+							<li>Market Exposure</li>
+						</ul>
+					</div>
+				</div>
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/affiliate.svg" alt="Affiliate" /><h4>Affiliate</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Guaranteed and Instant Payment</li>
+							<li>Business Continuity</li>
+							<li>Player's Reactivation Resolution</li>
+						</ul>
+					</div>
+				</div>
+				<div class="whats-in-item">
+					<div class="whats-in-header">
+						<img src="images/whats-in/bank-roller.svg" alt="Bank Roller" /><h4>Bank Roller</h4>
+					</div>
+					<div class="whats-in-body">
+						<ul>
+							<li>Risk Backing for Reward</li>
+							<li>Instant Payment</li>
+							<li>Transparent Audit Trail</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 	
@@ -192,7 +300,7 @@
 		</div>
 	</section>
 	
-	<section id="products-section" class="home-section">
+	<section id="products-section" class="home-section home-content">
 		<div class="container">
 			<h2 class="section-header">Established Products</h2>
 			<p>Gron Digital appreciates the time-to-market concept. We believe reliable and quality products take time and
@@ -233,9 +341,12 @@
 			<h2 class="section-header"><a href="/ico" class="no-line">Initial Coin Offering</a></h2>
 			<div id="ico-counter-container" class="flex-container flex-cols-3-nowrap">
 				<div class="col-vertical-center">
-					570,000,000 GRO will be sold<br/>1ETH = 10,000 GRO
+					<span>
+						570,000,000 GRO will be sold<br/>1ETH = 10,000 GRO <span class="highlighted">+ 4000 GRO bonus</span>
+					</span>
 				</div>
-				<div class="col-vertical-center">
+				<div id="col-timer" class="col-vertical-center">
+					<p class="timer-title ico-shown-pre">40% bonus offer ends in:</p>
 					<div id="timer" class="timer">
 						<div>
 							<div class="timer-cell timer-day"></div>
@@ -256,7 +367,8 @@
 					</div>
 				</div>
 				<div class="col-vertical-center">
-					Pre-ICO starts on<br/>9 January 2018
+					<div class="ico-shown-pre-pre">Pre-ICO starts on<br />9 January 2018</div>
+					<div class="ico-shown-pre">Public sale starts on<br />6 February 2018</div>
 				</div>
 			</div>
 			<a class="btn animated highlighted" href="#contact-section">Special Deals Enquiry</a>
@@ -265,18 +377,19 @@
 	
 	<section id="timeline-section" class="home-section">
 		<div class="container">
-			<div id="timeline-wrapper">
+			<div id="timeline-wrapper" class="divider">
 				<div id="timeline-slider" class="timeline">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Pre-ICO</h4>
-									<p class="ico-round-date">Starts on<br/>9 January 2018</p>
+									<p class="ico-round-date ico-shown-pre-pre">Starts on<br/>9 January 2018</p>
+									<p class="ico-round-live ico-shown-pre">Live</p>
 									<p class="ico-round-bonus">+40% Bonus</p>
 								</div>
 								<div class="timeline-price">
-									<p>Minimum Pledge 50ETH<br/>
+									<p>Minimum Pledge 20ETH<br/>
 										1ETH will be swapped for 14,000 GRO</p>
 								</div>
 								<div class="timeline-action">
@@ -286,20 +399,21 @@
 							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 1</h4>
-									<p class="ico-round-date">Starts on<br/>23 January 2018</p>
+									<p class="ico-round-date ico-shown-pre-pre ico-shown-pre">Starts on<br/>6 February 2018</p>
 									<p class="ico-round-bonus">+30% Bonus</p>
 								</div>
 								<div class="timeline-price">
 									<p>1ETH will be swapped for 13,000 GRO</p>
 								</div>
 								<div class="timeline-action">
-									<span>soon</span>
+									<a href="#contact-section" class="ico-shown-1">Enquire</a>
+									<span class="ico-shown-pre-pre ico-shown-pre">soon</span>
 								</div>
 							</div>
 							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 2</h4>
-									<p class="ico-round-date">Starts on<br/>6 February 2018</p>
+									<p class="ico-round-date">Starts on<br/>20 February 2018</p>
 									<p class="ico-round-bonus">+20% Bonus</p>
 								</div>
 								<div class="timeline-price">
@@ -312,7 +426,7 @@
 							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 3</h4>
-									<p class="ico-round-date">Starts on<br/>20 February 2018</p>
+									<p class="ico-round-date">Starts on<br/>6 March 2018</p>
 									<p class="ico-round-bonus">+10% Bonus</p>
 								</div>
 								<div class="timeline-price">
@@ -325,7 +439,7 @@
 							<div class="timeline-card swiper-slide">
 								<div class="ico-round">
 									<h4>Round 4</h4>
-									<p class="ico-round-date">Starts on<br/>6 March 2018</p>
+									<p class="ico-round-date">Starts on<br/>20 March 2018</p>
 									<p class="ico-round-bonus">No Bonus</p>
 								</div>
 								<div class="timeline-price">
@@ -438,7 +552,7 @@
 						<h4>2018 Q1</h4>
 						<ul>
 							<li>pre-ICO starts 9 January 2018</li>
-							<li>ICO starts 23 January 2018</li>
+							<li>ICO starts 6 February 2018</li>
 							<li>Listing GRO on Major Exchanges</li>
 							<li>Development of Gron Digital Platform</li>
 						</ul>
@@ -814,6 +928,7 @@
 					</div>
 				</div>
 			</div>
+			<div class="divider"></div>
 		</div>
 	</section>
 	
@@ -958,7 +1073,7 @@
 	
 	<section id="copyright-section" class="home-section">
 		<div class="container">
-			Copyright &copy; 2017 Gron Digital. All rights reserved.
+			Copyright &copy; 2018 Gron Digital. All rights reserved.
 		</div>
 	</section>
 	

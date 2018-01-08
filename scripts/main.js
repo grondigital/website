@@ -26,9 +26,41 @@ function getCookie(cname) {
  */
 $(function() {
 	// Set the date we're counting down to
-	var countDownDate = new Date("Jan 9, 2018 00:00:00").getTime();
-	var $timer = $('#timer');
+	var roundDates = [
+		new Date('2018-01-09T00:00:00Z').getTime(), //pre-ICO
+		new Date('2018-02-06T00:00:00Z').getTime(), //round 1
+		new Date('2018-02-20T00:00:00Z').getTime(), //round 2
+		new Date('2018-03-06T00:00:00Z').getTime(), //round 3
+		new Date('2018-03-20T00:00:00Z').getTime()  //round 4
+	];
+	// select first round date which is after current
+	var now = new Date().getTime(), countDownDate, currentRound = 4;
+	for (var i=0; i<roundDates.length; i++) {
+		countDownDate = roundDates[i]; //TODO: what will happen after round 4 will be started?
+		if (now < countDownDate) {
+			switch (i) {
+				case 0:
+					currentRound = 'pre-pre';
+					break;
+				
+				case 1:
+					currentRound = 'pre';
+					break;
+				
+				default:
+					currentRound = i-1;
+			}
+			
+			break;
+		}
+	}
 	
+	//set body classes according to current ICO stage
+	$('body')
+	  .removeClass('ico-current-pre-pre ico-current-pre ico-current-1 ico-current-2 ico-current-3 ico-current-4')
+	  .addClass('ico-current-'+currentRound);
+	
+	var $timer = $('#timer');
 	if ($timer.length) {
 		// Update the count down every 1 second
 		setInterval(function () {
@@ -196,7 +228,7 @@ $(function() {
 		$contactFormLoader.show();
 		
 		$.post($contactForm.attr("action"), formData).done(function() {
-			$contactForm.replaceWith('<div class="thank-you">Thank you!</div>');
+			$contactForm.replaceWith('<div class="thank-you">Thank you for enquiry. We will get back to you shortly.</div>');
 		}).fail(function() {
 			$contactForm.prepend('<div class="error">Something went wrong! Please, try again later.</div>')
 		}).always(function() {

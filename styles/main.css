@@ -184,13 +184,16 @@ body > section:first-of-type {
 .gray {
 	background-color: #f3f4f6;
 }
-#ico-counter-section, #partners-section, #main-footer {
+#ico-counter-section, #whats-in-section, #partners-section, #main-footer {
 	background-image: url("../images/bg/bg.png");
 	background-size: cover;
 	background-position-x: center;
 }
 #ico-counter-section {
 	background-position-y: 80%;
+}
+#whats-in-section {
+	background-position-y: top;
 }
 #partners-section {
 	background-position-y: 20%;
@@ -209,6 +212,10 @@ body > section:first-of-type {
 	min-width: 320px;
 	margin: 0 auto;
 	padding: 50px 15px 40px 15px;
+}
+
+.divider {
+	border-bottom: 2px solid #f3f4f6;
 }
 
 .flex-container {
@@ -592,8 +599,41 @@ body > section:first-of-type {
 
 
 /**
+ * Conditional hiding depending on current ICO round
+ */
+.ico-shown-pre-pre, .ico-shown-pre, .ico-shown-1, .ico-shown-2, .ico-shown-3, .ico-shown-4 {
+	display: none!important;
+}
+.ico-current-pre-pre .ico-shown-pre-pre,
+.ico-current-pre .ico-shown-pre,
+.ico-current-1 .ico-shown-1,
+.ico-current-1 .ico-shown-2,
+.ico-current-1 .ico-shown-3,
+.ico-current-4 .ico-shown-4 {
+	display: block!important;
+}
+
+
+/**
  * Main content
  */
+.home-content {
+	text-align: center;
+}
+.home-content img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto 70px auto;
+}
+@media (max-width: 767px) {
+	.home-content {
+		text-align: justify;
+	}
+	.home-content img {
+		margin-bottom: 30px;
+	}
+}
+
 .title-section {
 	text-align: center;
 }
@@ -893,19 +933,6 @@ body > section:first-of-type {
 
 
 /**
- * Platform description section
- */
-#platform-description-section {
-	text-align: center;
-}
-@media (max-width: 767px) {
-	#platform-description-section {
-		text-align: justify;
-	}
-}
-
-
-/**
  * Blurbs section
  */
 #blurbs-section .container {
@@ -962,16 +989,11 @@ body > section:first-of-type {
 /**
  * Products section
  */
-#products-section {
-	text-align: center;
-}
 #products-section h4 {
 	text-align: center;
 }
 #products-section img {
-	max-width: 100%;
 	width: 549.5px; /* all images in this section are 1099px wide */
-	margin: 0 auto 70px auto;
 }
 #products-section .product {
 	margin-bottom: 30px;
@@ -993,15 +1015,6 @@ body > section:first-of-type {
 	margin-bottom: 0;
 }
 
-@media (max-width: 767px) {
-	#products-section {
-		text-align: justify;
-	}
-	#products-section img {
-		margin-bottom: 30px;
-	}
-}
-
 
 /**
  * ICO counter section
@@ -1010,6 +1023,33 @@ body > section:first-of-type {
 	text-align: center;
 	font-size: 18px;
 }
+#ico-counter-container .highlighted {
+	font-weight: bold;
+	color: #f18036;
+}
+#ico-counter-container > * {
+	/*padding-top: 2em;*/
+}
+#col-timer {
+	position: relative;
+}
+#col-timer .timer-title {
+	/*position: absolute;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	/*right: 0;*/
+	margin-bottom: 10px;
+	font-weight: bold;
+	/*text-align: center;*/
+}
+/*@media (max-width: 767px) {
+	#ico-counter-container > * {
+		padding-top: 0;
+	}
+	#col-timer {
+		padding-top: 2em;
+	}
+}*/
 
 
 /**
@@ -1023,7 +1063,6 @@ body > section:first-of-type {
 }
 #timeline-wrapper {
 	padding-bottom: 15px;
-	border-bottom: 1px solid #f3f4f6;
 }
 #timeline-slider {
 	position: relative;
@@ -1089,6 +1128,7 @@ body > section:first-of-type {
 }
 
 .ico-round {
+	min-height: 110px;
 	padding: 20px 5px;
 	color: #f3f4f6;
 	font-size: 18px;
@@ -1097,6 +1137,10 @@ body > section:first-of-type {
 	margin: 0;
 	color: #ffffff;
 	font-weight: bold;
+}
+.ico-round-live {
+	font-size: 36px;
+	text-transform: uppercase;
 }
 .ico-round-bonus {
 	color: #f18036;
@@ -1139,6 +1183,40 @@ body > section:first-of-type {
 #crypto-icons img {
 	width: 75px;
 	height: 75px;
+}
+
+
+/**
+ * What's in for me section
+ */
+#whats-in-section .container {
+	padding-bottom: 0;
+}
+#whats-in {
+	padding-top: 20px;
+}
+.whats-in-item {
+	width: 260px;
+	margin-bottom: 50px;
+}
+.whats-in-header {
+	margin-bottom: 20px;
+}
+.whats-in-header img {
+	width: 91px;
+	height: 91px;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+.whats-in-header h4 {
+	display: inline-block;
+	max-width: 154px;
+	margin: 0;
+	vertical-align: middle;
+	color: #f18036;
+}
+.whats-in-body ul {
+	margin: 0;
 }
 
 
