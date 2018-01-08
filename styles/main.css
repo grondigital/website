@@ -1154,7 +1154,7 @@ body > section:first-of-type {
 	padding-top: 20px;
 }
 .whats-in-item {
-	width: 360px;
+	width: 260px;
 	margin-bottom: 50px;
 }
 .whats-in-header {
@@ -1168,24 +1168,13 @@ body > section:first-of-type {
 }
 .whats-in-header h4 {
 	display: inline-block;
-	/*max-width: 254px;*/
-	max-width: 184px;
+	max-width: 154px;
 	margin: 0;
 	vertical-align: middle;
 	color: #f18036;
 }
 .whats-in-body ul {
 	margin: 0;
-}
-
-@media (max-width: 389px) {
-	.whats-in-item {
-		width: 100%;
-		min-width: 290px;
-	}
-	.whats-in-header h4 {
-		/*max-width: 184px;*/
-	}
 }
 
 
