@@ -1000,13 +1000,6 @@ body > section:first-of-type {
 }
 
 /**
- * Wallet section
- */
-#wallet-section img {
-	width: 417px;
-}
-
-/**
  * ICO counter section
  */
 #ico-counter-section {
