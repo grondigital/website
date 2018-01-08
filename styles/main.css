@@ -599,6 +599,22 @@ body > section:first-of-type {
 
 
 /**
+ * Conditional hiding depending on current ICO round
+ */
+.ico-shown-pre-pre, .ico-shown-pre, .ico-shown-1, .ico-shown-2, .ico-shown-3, .ico-shown-4 {
+	display: none!important;
+}
+.ico-current-pre-pre .ico-shown-pre-pre,
+.ico-current-pre .ico-shown-pre,
+.ico-current-1 .ico-shown-1,
+.ico-current-1 .ico-shown-2,
+.ico-current-1 .ico-shown-3,
+.ico-current-4 .ico-shown-4 {
+	display: block!important;
+}
+
+
+/**
  * Main content
  */
 .home-content {
@@ -999,6 +1015,7 @@ body > section:first-of-type {
 	margin-bottom: 0;
 }
 
+
 /**
  * ICO counter section
  */
@@ -1006,6 +1023,33 @@ body > section:first-of-type {
 	text-align: center;
 	font-size: 18px;
 }
+#ico-counter-container .highlighted {
+	font-weight: bold;
+	color: #f18036;
+}
+#ico-counter-container > * {
+	/*padding-top: 2em;*/
+}
+#col-timer {
+	position: relative;
+}
+#col-timer .timer-title {
+	/*position: absolute;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	/*right: 0;*/
+	margin-bottom: 10px;
+	font-weight: bold;
+	/*text-align: center;*/
+}
+/*@media (max-width: 767px) {
+	#ico-counter-container > * {
+		padding-top: 0;
+	}
+	#col-timer {
+		padding-top: 2em;
+	}
+}*/
 
 
 /**
@@ -1084,6 +1128,7 @@ body > section:first-of-type {
 }
 
 .ico-round {
+	min-height: 110px;
 	padding: 20px 5px;
 	color: #f3f4f6;
 	font-size: 18px;
@@ -1092,6 +1137,10 @@ body > section:first-of-type {
 	margin: 0;
 	color: #ffffff;
 	font-weight: bold;
+}
+.ico-round-live {
+	font-size: 36px;
+	text-transform: uppercase;
 }
 .ico-round-bonus {
 	color: #f18036;
