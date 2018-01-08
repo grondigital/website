@@ -196,7 +196,7 @@ $(function() {
 		$contactFormLoader.show();
 		
 		$.post($contactForm.attr("action"), formData).done(function() {
-			$contactForm.replaceWith('<div class="thank-you">Thank you!</div>');
+			$contactForm.replaceWith('<div class="thank-you">Your e-mail was sent. We will get back to you shortly.</div>');
 		}).fail(function() {
 			$contactForm.prepend('<div class="error">Something went wrong! Please, try again later.</div>')
 		}).always(function() {
