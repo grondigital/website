@@ -34,7 +34,7 @@ $(function() {
 		new Date('2018-03-20T00:00:00Z').getTime()
 	];
 	// select first round date which is after current
-	var now = new Date('2018-02-10T00:00:00Z').getTime(), countDownDate;
+	var now = new Date().getTime(), countDownDate;
 	for (var i=0; i<roundDates.length; i++) {
 		countDownDate = roundDates[i];
 		if (now < countDownDate) {
