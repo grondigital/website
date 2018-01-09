@@ -60,7 +60,7 @@ $(function() {
 	  .removeClass('ico-current-pre-pre ico-current-pre ico-current-1 ico-current-2 ico-current-3 ico-current-4')
 	  .addClass('ico-current-'+currentRound);
 	
-	var $timer = $('#timer');
+	var $timer = $('.timer');
 	if ($timer.length) {
 		// Update the count down every 1 second
 		setInterval(function () {
