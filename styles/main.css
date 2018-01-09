@@ -933,6 +933,43 @@ body > section:first-of-type {
 
 
 /**
+ * Platform description section
+ */
+#platform-description-section {
+	padding-bottom: 10px;
+	text-align: justify;
+}
+#platform-description-section .container {
+	padding-bottom: 10px;
+}
+#platform-text, #platform-scheme {
+	box-sizing: border-box;
+	margin-bottom: 40px;
+}
+#platform-text {
+	padding-right: 50px;
+}
+#platform-scheme {
+	padding-right: 15px;
+}
+#platform-scheme img {
+	display: block;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+@media (max-width: 1199px) {
+	#platform-text, #platform-scheme {
+		width: 100%;
+		padding: 0;
+	}
+	#platform-text {
+		order: 1;
+	}
+}
+
+
+/**
  * Blurbs section
  */
 #blurbs-section .container {
