@@ -285,7 +285,11 @@ body > section:first-of-type {
 .timer {
 	display: flex;
 	justify-content: center;
+	visibility: hidden;
 	text-align: center;
+}
+.timer.shown {
+	visibility: visible;
 }
 .ico-timer {
 	font-size: 14px;
@@ -608,6 +612,7 @@ body > section:first-of-type {
 #subscribe-header-text {
 	display: inline-block;
 	vertical-align: middle;
+	max-width: 400px;
 }
 #subscribe-header h4,
 #subscribe-header p {
@@ -892,6 +897,7 @@ body > section:first-of-type {
  * ICO banner section
  */
 #ico-banner-section {
+	background-color: #1d2f54;
 	background-image: url("../images/bg/bg-banner.png");
 	background-size: cover;
 	background-position-x: center;
