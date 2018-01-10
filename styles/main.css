@@ -285,7 +285,11 @@ body > section:first-of-type {
 .timer {
 	display: flex;
 	justify-content: center;
+	visibility: hidden;
 	text-align: center;
+}
+.timer.shown {
+	visibility: visible;
 }
 .ico-timer {
 	font-size: 14px;
