@@ -197,6 +197,13 @@ $(function() {
 		return false; //discard other mouse events - hover, click
 	});
 	
+	//scroll animation status
+	var isScrolling = false;
+	$(window).on('scrollStart', function(e, id) {
+		isScrolling = true;
+	}).on('scrollEnd', function(e, id) {
+		isScrolling = false;
+	});
 	
 	//subscribe form
 	var $subFormShim = $('#subscribe-shim'), 
@@ -230,7 +237,10 @@ $(function() {
 	});
 	if ($subForm.length) {
 		$('#timeline-section').waypoint(function() {
-			if (!getCookie('subscribe_form') && getQueryParam('no-subscribe')===null)
+			if (
+				!getCookie('subscribe_form') &&
+				!isScrolling
+			)
 				showSubForm();
 		});
 	}
