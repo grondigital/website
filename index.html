@@ -102,7 +102,7 @@
 					<div id="ico-banner-bonus-text">bonus</div>
 				</div>
 				<div id="ico-banner-action" class="col-vertical-center">
-					<a href="#contact-section" class="btn btn-orange">Enquire now</a>
+					<button name="participate" class="btn btn-orange">Enquire now</button>
 				</div>
 			</div>
 		</div>
@@ -415,7 +415,7 @@
 					<div class="ico-shown-pre">Public sale starts on<br />6 February 2018</div>
 				</div>
 			</div>
-			<a class="btn animated highlighted" href="#contact-section">Special Deals Enquiry</a>
+			<button name="participate" class="btn animated highlighted">Special Deals Enquiry</button>
 		</div>
 	</section>
 	
@@ -436,7 +436,7 @@
 									<p>1ETH will be swapped for 14,000 GRO</p>
 								</div>
 								<div class="timeline-action">
-									<a href="#contact-section" class="btn btn-orange">Enquire</a>
+									<button name="participate" class="btn btn-orange">Enquire</button>
 								</div>
 							</div>
 							<div class="timeline-card swiper-slide">
@@ -449,7 +449,7 @@
 									<p>1ETH will be swapped for 13,000 GRO</p>
 								</div>
 								<div class="timeline-action">
-									<a href="#contact-section" class="btn btn-orange ico-shown-1">Enquire</a>
+									<button name="participate" class="btn btn-orange ico-shown-1">Enquire</button>
 									<span class="ico-shown-pre-pre ico-shown-pre">soon</span>
 								</div>
 							</div>
@@ -1151,7 +1151,7 @@
 	
 	<div id="shim" class="shim"></div>
 	
-	<div id="subscribe-shim" class="shim"><div id="subscribe-form">
+	<div id="subscribe-shim" class="shim popup-shim"><div id="subscribe-form">
 		<a href="#" class="close-popup icon-cancel"></a>
 		<div id="subscribe-header">
 			<img src="images/share.svg" id="share-img" alt="Subscribe to Gron Digital Gambling and Betting ICO news" />
@@ -1168,6 +1168,76 @@
 				<input type="email" name="email" id="subscribe-email" title="Email" placeholder="Type your email..." required /><!--
 				--><input name="submit" type="submit" value="Submit" id="subscribe-submit" class="btn highlighted" />
 			</form>
+		</div>
+	</div></div>
+	
+	<div id="participate-shim" class="shim popup-shim"><div id="participate" class="popup">
+		<a href="#" class="close-popup icon-cancel"></a>
+		<div class="popup-header">
+			<h4>Participate in the Gron Digital Token Pre-Sale Round</h4>
+		</div>
+		<div class="popup-body">
+			<form id="participate-form" name="participate" action="thank-you" netlify>
+				<div class="form-step">
+					<h4>
+						Thank you for your interest to participate in the Gron Digital Pre-ICO. We have allocated limited number of
+						tokens for selected investors.
+					</h4>
+					<p>
+						<input type="email" name="email" placeholder="Email *" required />
+					</p>
+					<p class="input-columns">
+						<input type="text" name="first-name" placeholder="First Name" />
+						<input type="text" name="surname" placeholder="Surname" />
+					</p>
+					<p class="checkbox">
+						<input type="checkbox" name="check-participate" id="check-participate" required />
+						<label for="check-participate">
+							I confirm that I am eligible to lawfully participate in Gron Digital token sale and that I fulfill all the
+							legal requirements as outlined in <a href="/terms-and-conditions" target="_blank">Terms &amp;
+							Conditions</a>. I hereby confirm that I am not currently located in, or otherwise a resident of a country,
+							territory which prohibits participation in the Gron Digital token sale.
+						</label>
+					</p>
+					<p class="checkbox">
+						<input type="checkbox" name="check-whitepaper" id="check-whitepaper" required />
+						<label for="check-whitepaper">
+							I hereby confirm that I have read the <a href="/whitepaper" target="_blank">White Paper</a>.
+						</label>
+					</p>
+					<p class="checkbox">
+						<input type="checkbox" name="check-terms-conditions" id="check-terms-conditions" required />
+						<label for="check-terms-conditions">
+							I have read and understood the <a href="/terms-and-conditions" target="_blank">Terms &amp; Conditions</a>
+							and I unconditionally agree to be bound by and confirm all terms, conditions, limitations, obligations,
+							affirmations, representations and warranties included therein.
+						</label>
+					</p>
+					<p class="checkbox">
+						<input type="checkbox" name="check-age" id="check-age" required />
+						<label for="check-age">
+							I am 18+
+						</label>
+					</p>
+					<p>
+						<textarea name="message" placeholder="Message"></textarea>
+					</p>
+					<p class="centered">
+						<button type="submit" class="btn btn-orange">Submit</button>
+					</p>
+				</div>
+				<div id="participate-thank" class="form-step">
+					<h4>Thank you!</h4>
+					<p>
+						Your request is being processed.<br />
+						We will get back to you shortly.
+					</p>
+					<p class="centered">
+						<button type="button" name="close" class="btn btn-orange">OK</button>
+					</p>
+				</div>
+			</form>
+			<div class="loader"></div>
 		</div>
 	</div></div>
 	

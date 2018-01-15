@@ -33,6 +33,27 @@ function getQueryParam(name, url) {
 }
 
 /**
+ * Functions to lock scrolling
+ */
+$(function () {
+  var $html = $('html'),
+    $body = $('body');
+  lockBody = function () {
+    var oWidth = $body.outerWidth(true);
+    $body.css({overflow: 'hidden'});
+    var sbWidth = $body.outerWidth(true) - oWidth;
+    
+    if (sbWidth!==0) {
+      $html.css({marginRight: sbWidth});
+    }
+  };
+  unlockBody = function () {
+    $body.css({overflow: 'visible'});
+    $html.css({marginRight: 0});
+  }
+});
+
+/**
  * ICO counter
  */
 $(function() {
@@ -110,24 +131,6 @@ $(function() {
  * Common manipulations
  */
 $(function() {
-	//functions to lock scrolling
-	var $html = $('html'),
-		$body = $('body');
-	function lockBody() {
-		var oWidth = $body.outerWidth(true);
-		$body.css({overflow: 'hidden'});
-		var sbWidth = $body.outerWidth(true) - oWidth;
-		
-		if (sbWidth!==0) {
-			$html.css({marginRight: sbWidth});
-		}
-	}
-	function unlockBody() {
-		$body.css({overflow: 'visible'});
-		$html.css({marginRight: 0});
-	}
-	
-	
 	//change header style on scroll
 	var $header = $('#main-header');
 	$('body > section:first-of-type').waypoint(function(dir) {
@@ -253,6 +256,96 @@ $(function() {
 			$contactFormContainer.removeClass('loading');
 			$contactForm.find(':input').prop('disabled', false);
 			$contactFormLoader.hide();
+		});
+		
+		return false;
+	});
+});
+
+/**
+ * The Participate popup
+ */
+$(function () {
+	//TODO: unify this with subscribe popup
+	var $shim = $('#participate-shim'),
+	    $popup = $('#participate'),
+	    $form = $('#participate-form'),
+	    $loader = $popup.find('.loader'),
+	    $required = $form.find(':required'),
+	    $submit = $form.find(':submit');
+	
+	var currentStep = 1, $steps = $popup.find('.form-step');
+	function showPopup() {
+		currentStep = 1;
+		lockBody();
+		showStep(currentStep);
+		checkRequired();
+		$shim.show();
+	}
+	function hidePopup() {
+		unlockBody();
+		$shim.hide();
+	}
+	function showStep(step) {
+		$steps.hide();
+		$steps.eq(step-1).show();
+	}
+	function checkRequired() {
+		var passed = true;
+		for (var i=0; i < $required.length; i++) {
+			var $input = $required.eq(i);
+			
+			if ($input.is('[type="checkbox"]')) {
+				if (!$input.is(':checked')) {
+					passed = false;
+				}
+			} else if ($input.val()==='') {
+				passed = false;
+			}
+		}
+		$submit.prop('disabled', !passed);
+	}
+	
+	$popup.on('click', '.close-popup, [name="close"]', function () {
+		hidePopup();
+		return false;
+	});
+	//hide on click on shim...
+	$shim.on('click.participate', function () {
+		hidePopup();
+	});
+	//... but do not close if clicked on popup
+	$popup.on('click', function (e) {
+		e.stopPropagation();
+	});
+	
+	//check required inputs
+	$required.change(function () {
+		checkRequired();
+	});
+	
+	$('button[name="participate"]').click(function () {
+		showPopup();
+		return false;
+	});
+	
+	$form.submit(function() {
+		var formData = $form.serialize();
+		
+		$form.find('.error').remove();
+		$popup.addClass('loading');
+		$form.find(':input').prop('disabled', true);
+		$loader.show();
+		
+		$.post($form.attr("action"), formData).done(function () {
+			currentStep = 2;
+			showStep(currentStep);
+		}).fail(function () {
+			$submit.before('<div class="error">Something went wrong! Please, try again later.</div>');
+		}).always(function () {
+			$popup.removeClass('loading');
+			$form.find(':input').prop('disabled', false);
+			$loader.hide();
 		});
 		
 		return false;
