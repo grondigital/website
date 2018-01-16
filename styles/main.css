@@ -1305,29 +1305,13 @@ body > section:first-of-type {
 	font-weight: bold;
 	color: #f18036;
 }
-#ico-counter-container > * {
-	/*padding-top: 2em;*/
-}
 #col-timer {
 	position: relative;
 }
 #col-timer .timer-title {
-	/*position: absolute;*/
-	/*top: 0;*/
-	/*left: 0;*/
-	/*right: 0;*/
 	margin-bottom: 10px;
 	font-weight: bold;
-	/*text-align: center;*/
 }
-/*@media (max-width: 767px) {
-	#ico-counter-container > * {
-		padding-top: 0;
-	}
-	#col-timer {
-		padding-top: 2em;
-	}
-}*/
 
 
 /**
