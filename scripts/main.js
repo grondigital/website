@@ -33,6 +33,27 @@ function getQueryParam(name, url) {
 }
 
 /**
+ * Functions to lock scrolling
+ */
+$(function () {
+  var $html = $('html'),
+    $body = $('body');
+  lockBody = function () {
+    var oWidth = $body.outerWidth(true);
+    $body.css({overflow: 'hidden'});
+    var sbWidth = $body.outerWidth(true) - oWidth;
+    
+    if (sbWidth!==0) {
+      $html.css({marginRight: sbWidth});
+    }
+  };
+  unlockBody = function () {
+    $body.css({overflow: 'visible'});
+    $html.css({marginRight: 0});
+  }
+});
+
+/**
  * ICO counter
  */
 $(function() {
@@ -110,24 +131,6 @@ $(function() {
  * Common manipulations
  */
 $(function() {
-	//functions to lock scrolling
-	var $html = $('html'),
-		$body = $('body');
-	function lockBody() {
-		var oWidth = $body.outerWidth(true);
-		$body.css({overflow: 'hidden'});
-		var sbWidth = $body.outerWidth(true) - oWidth;
-		
-		if (sbWidth!==0) {
-			$html.css({marginRight: sbWidth});
-		}
-	}
-	function unlockBody() {
-		$body.css({overflow: 'visible'});
-		$html.css({marginRight: 0});
-	}
-	
-	
 	//change header style on scroll
 	var $header = $('#main-header');
 	$('body > section:first-of-type').waypoint(function(dir) {
@@ -194,6 +197,13 @@ $(function() {
 		return false; //discard other mouse events - hover, click
 	});
 	
+	//scroll animation status
+	var isScrolling = false;
+	$(window).on('scrollStart', function(e, id) {
+		isScrolling = true;
+	}).on('scrollEnd', function(e, id) {
+		isScrolling = false;
+	});
 	
 	//subscribe form
 	var $subFormShim = $('#subscribe-shim'), 
@@ -227,7 +237,10 @@ $(function() {
 	});
 	if ($subForm.length) {
 		$('#timeline-section').waypoint(function() {
-			if (!getCookie('subscribe_form') && getQueryParam('no-subscribe')===null)
+			if (
+				!getCookie('subscribe_form') &&
+				!isScrolling
+			)
 				showSubForm();
 		});
 	}
@@ -253,6 +266,71 @@ $(function() {
 			$contactFormContainer.removeClass('loading');
 			$contactForm.find(':input').prop('disabled', false);
 			$contactFormLoader.hide();
+		});
+		
+		return false;
+	});
+});
+
+/**
+ * The Participate form
+ */
+$(function () {
+	//TODO: unify this with Subscribe & Contact Us forms
+	var $form = $('#participate-form');
+	
+	if (!$form.length)
+		return;
+	
+	var $container = $('#participate'),
+	    $loader = $container.find('.loader'),
+	    $required = $form.find(':required'),
+	    $submit = $form.find(':submit');
+	
+	var currentStep = 1, $steps = $form.find('.form-step');
+	function showStep(step) {
+		$steps.hide();
+		$steps.eq(step-1).show();
+	}
+	function checkRequired() {
+		var passed = true;
+		for (var i=0; i < $required.length; i++) {
+			var $input = $required.eq(i);
+			
+			if ($input.is('[type="checkbox"]')) {
+				if (!$input.is(':checked')) {
+					passed = false;
+				}
+			} else if ($input.val()==='') {
+				passed = false;
+			}
+		}
+		$submit.prop('disabled', !passed);
+	}
+	
+	//check required inputs
+	checkRequired();
+	$required.change(function () {
+		checkRequired();
+	});
+	
+	$form.submit(function() {
+		var formData = $form.serialize();
+		
+		$form.find('.error').remove();
+		$container.addClass('loading');
+		$form.find(':input').prop('disabled', true);
+		$loader.show();
+		
+		$.post($form.attr("action"), formData).done(function () {
+			currentStep = 2;
+			showStep(currentStep);
+		}).fail(function () {
+			$submit.before('<div class="error">Something went wrong! Please, try again later.</div>');
+		}).always(function () {
+			$container.removeClass('loading');
+			$form.find(':input').prop('disabled', false);
+			$loader.hide();
 		});
 		
 		return false;
