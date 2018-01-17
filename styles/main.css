@@ -93,6 +93,9 @@ textarea::placeholder {
 /**
  * Common classes
  */
+.hidden {
+	display: none !important;
+}
 .btn {
 	position: relative;
 	display: inline-block;
