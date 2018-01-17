@@ -66,8 +66,9 @@
 <section class="content-section">
 	<div class="container">
 		<div id="participate">
-			<form id="participate-form" name="participate" action="thank-you" netlify>
+			<form id="participate-form" name="participate" action="thank-you" netlify netlify-honeypot="honey">
 				<div class="form-step">
+					<input type="text" name="honey" class="hidden" />
 					<p>
 						<input type="email" name="email" placeholder="Email *" required />
 					</p>

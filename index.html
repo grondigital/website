@@ -1093,7 +1093,8 @@
 		<div class="container">
 			<h2 class="section-header">Contact Us</h2>
 			<div id="contact-form-container">
-				<form id="contact-form" name="contact" action="thank-you" netlify>
+				<form id="contact-form" name="contact" action="thank-you" netlify netlify-honeypot="honey">
+					<input type="text" name="honey" class="hidden" />
 					<input type="text" name="name" placeholder="Name" />
 					<input type="email" name="email" placeholder="Email *" required />
 					<textarea name="message" placeholder="Message"></textarea>
