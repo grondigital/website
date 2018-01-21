@@ -314,27 +314,27 @@ $(function () {
 		checkRequired();
 	});
 	
-	$form.submit(function() {
-		var formData = $form.serialize();
-		
-		$form.find('.error').remove();
-		$container.addClass('loading');
-		$form.find(':input').prop('disabled', true);
-		$loader.show();
-		
-		$.post($form.attr("action"), formData).done(function () {
-			currentStep = 2;
-			showStep(currentStep);
-		}).fail(function () {
-			$submit.before('<div class="error">Something went wrong! Please, try again later.</div>');
-		}).always(function () {
-			$container.removeClass('loading');
-			$form.find(':input').prop('disabled', false);
-			$loader.hide();
-		});
-		
-		return false;
-	});
+	//$form.submit(function() {
+	//	var formData = $form.serialize();
+	//	
+	//	$form.find('.error').remove();
+	//	$container.addClass('loading');
+	//	$form.find(':input').prop('disabled', true);
+	//	$loader.show();
+	//	
+	//	$.post($form.attr("action"), formData).done(function () {
+	//		currentStep = 2;
+	//		showStep(currentStep);
+	//	}).fail(function () {
+	//		$submit.before('<div class="error">Something went wrong! Please, try again later.</div>');
+	//	}).always(function () {
+	//		$container.removeClass('loading');
+	//		$form.find(':input').prop('disabled', false);
+	//		$loader.hide();
+	//	});
+	//	
+	//	return false;
+	//});
 });
 
 /**
