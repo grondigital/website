@@ -66,21 +66,20 @@
 <section class="content-section">
 	<div class="container">
 		<div id="participate">
-			<form id="participate-form" name="participate" action="thank-you" netlify netlify-honeypot="honey">
+			<form id="participate-form" name="participate" action="https://api.chuk.tk/preico" method="post">
 				<div class="form-step">
-					<input type="text" name="honey" class="hidden" />
 					<p>
-						<input type="email" name="email" placeholder="Email *" required />
+						<input type="email" name="contributor[email]" placeholder="Email *" required />
 					</p>
 					<p class="input-columns">
-						<input type="text" name="first-name" placeholder="First Name *" required />
-						<input type="text" name="surname" placeholder="Surname *" required />
+						<input type="text" name="contributor[name]" placeholder="First Name *" required />
+						<input type="text" name="contributor[surname]" placeholder="Surname *" required />
 					</p>
 					<p>
-						<textarea name="message" placeholder="Message (optional)"></textarea>
+						<textarea name="contributor[message_text]" placeholder="Message (optional)"></textarea>
 					</p>
 					<p class="checkbox">
-						<input type="checkbox" name="check-participate" id="check-participate" required />
+						<input type="checkbox" name="contributor[is_legal]" value="true" id="check-participate" required />
 						<label for="check-participate">
 							I confirm that I am eligible to lawfully participate in Gron Digital token sale and that I fulfill all the
 							legal requirements as outlined in <a href="/terms-and-conditions" target="_blank">Terms &amp;
@@ -89,13 +88,13 @@
 						</label>
 					</p>
 					<p class="checkbox">
-						<input type="checkbox" name="check-whitepaper" id="check-whitepaper" required />
+						<input type="checkbox" name="contributor[is_read_wp]" value="true" id="check-whitepaper" required />
 						<label for="check-whitepaper">
 							I hereby confirm that I have read the <a href="/whitepaper" target="_blank">White Paper</a>.
 						</label>
 					</p>
 					<p class="checkbox">
-						<input type="checkbox" name="check-terms-conditions" id="check-terms-conditions" required />
+						<input type="checkbox" name="contributor[is_read_tandc]" value="true" id="check-terms-conditions" required />
 						<label for="check-terms-conditions">
 							I have read and understood the <a href="/terms-and-conditions" target="_blank">Terms &amp; Conditions</a>
 							and I unconditionally agree to be bound by and confirm all terms, conditions, limitations, obligations,
@@ -103,7 +102,7 @@
 						</label>
 					</p>
 					<p class="checkbox">
-						<input type="checkbox" name="check-age" id="check-age" required />
+						<input type="checkbox" name="contributor[is_eighteen]" value="true" id="check-age" required />
 						<label for="check-age">
 							I am 18+
 						</label>
