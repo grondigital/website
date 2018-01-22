@@ -79,9 +79,14 @@ $(function () {
 			label = $this.val();
 		}
 		
-		dataLayer.push({
+		dataLayer && dataLayer.push({
 			'event': 'eventTracking',
 			'category': category,
+			'action': action,
+			'label': label
+		});
+		
+		fbq && fbq('trackCustom', category, {
 			'action': action,
 			'label': label
 		});
