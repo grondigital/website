@@ -54,6 +54,46 @@ $(function () {
 });
 
 /**
+ * Event tracking
+ */
+$(function () {
+	var $tracked = $('[data-ev-category]');
+	$tracked.click(function () {
+		var $this = $(this);
+		
+		var category = $(this).data('ev-category'),
+				action = $(this).data('ev-action') ? $(this).data('ev-action') : '',
+				label = $(this).data('ev-label') ? $(this).data('ev-label') : '';
+		
+		//special default values for links and buttons
+		if (action==='' && $this.is('a')) {
+			action = $this.attr('href');
+		}
+		if (action==='' && ($this.is('button') || $this.is('input[type="submit"]'))) {
+			action = $this.attr('name');
+		}
+		if (label==='' && ($this.is('a') || $this.is('button'))) {
+			label = $.trim($this.text());
+		}
+		if (label==='' && $this.is('input[type="submit"]')) {
+			label = $this.val();
+		}
+		
+		dataLayer && dataLayer.push({
+			'event': 'eventTracking',
+			'category': category,
+			'action': action,
+			'label': label
+		});
+		
+		fbq && fbq('trackCustom', category, {
+			'action': action,
+			'label': label
+		});
+	});
+});
+
+/**
  * ICO counter
  */
 $(function() {
