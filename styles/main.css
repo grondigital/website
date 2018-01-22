@@ -879,6 +879,9 @@ body > section:first-of-type {
 	text-align: left;
 	cursor: pointer;
 }
+.content-section .faq-entry.shown .faq-title {
+	color: #f18036;
+}
 .content-section .faq-title::after {
 	content: '\f107';
 	position: absolute;
@@ -890,6 +893,7 @@ body > section:first-of-type {
 	height: auto;
 	margin-top: -9px;
 	background: none;
+	color: #415275;
 	font: normal 18px 'fontello';
 }
 .content-section .faq-entry.shown .faq-title::after {
