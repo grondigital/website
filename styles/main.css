@@ -955,8 +955,8 @@ body > section:first-of-type {
 }
 #top-menu li {
 	display: inline;
-	margin-right: 15px;
-	margin-left: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 #top-menu li.highlighted {
 	margin-left: 5px;
