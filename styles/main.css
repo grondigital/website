@@ -1185,7 +1185,7 @@ body > section:first-of-type {
 	text-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
 }
 #top-text .btn {
-	width: 195px;
+	/*width: 195px;*/
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
