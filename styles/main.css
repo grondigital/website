@@ -1615,6 +1615,7 @@ body > section:first-of-type {
 	display: inline-block;
 	max-width: 235px;
 	vertical-align: middle;
+	font-size: 12px;
 	line-height: 1.6;
 }
 @media (max-width: 374px) {
@@ -1625,11 +1626,15 @@ body > section:first-of-type {
 .team .person h4,
 .team .person p {
 	margin-bottom: 0;
+}
+.team .person h4,
+.team .person .position {
 	font-size: 16px;
 	font-weight: 600;
 	-webkit-font-smoothing: antialiased;
 }
-.team .person .position {
+.team .person .position,
+.team .person .position a {
 	color: #f18036;
 }
 .team .description {
@@ -1641,6 +1646,9 @@ body > section:first-of-type {
 
 .team a[class|="icon"] {
 	text-decoration: none;
+}
+.team .icon-linkedin {
+	font-size: 16px;
 }
 .team .icon-linkedin::before {
 	width: 1.4em;
