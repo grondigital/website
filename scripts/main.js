@@ -531,6 +531,24 @@ $(function() {
 });
 
 /**
+ * Media slider
+ */
+$(function() {
+	if (!window.Swiper)
+		return;
+	
+	var slider = new Swiper('#media-section .swiper-container', {
+		slidesPerView: 1,
+		pagination: {
+			el: '#media-section .pagination-bullets',
+			clickable: true,
+			bulletClass: 'bullet',
+			bulletActiveClass: 'active'
+		}
+	});
+});
+
+/**
  * Smooth page scrolling
  * 
  * See:
