@@ -228,7 +228,7 @@ body > section:first-of-type {
 .gray {
 	background-color: #f3f4f6;
 }
-#ico-counter-section, #whats-in-section, #partners-section, #main-footer {
+#ico-counter-section, #whats-in-section, #partners-section, #media-section, #main-footer {
 	background-image: url("../images/bg/bg.png");
 	background-size: cover;
 	background-position-x: center;
@@ -245,6 +245,9 @@ body > section:first-of-type {
 }
 #partners-section > * {
 	transform: scaleX(-1); /* flip content back */
+}
+#media-section {
+	background-position-y: top;
 }
 #main-footer {
 	background-position-y: bottom;
@@ -597,6 +600,13 @@ body > section:first-of-type {
 }
 .pagination-bullets .bullet.active {
 	background: #415275;
+}
+.blue .pagination-bullets .bullet {
+	background: #ffffff;
+	opacity: 0.4;
+}
+.blue .pagination-bullets .bullet.active {
+	opacity: 1;
 }
 
 
@@ -1175,7 +1185,7 @@ body > section:first-of-type {
 	text-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
 }
 #top-text .btn {
-	width: 195px;
+	/*width: 195px;*/
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
@@ -1605,6 +1615,7 @@ body > section:first-of-type {
 	display: inline-block;
 	max-width: 235px;
 	vertical-align: middle;
+	font-size: 12px;
 	line-height: 1.6;
 }
 @media (max-width: 374px) {
@@ -1615,11 +1626,15 @@ body > section:first-of-type {
 .team .person h4,
 .team .person p {
 	margin-bottom: 0;
+}
+.team .person h4,
+.team .person .position {
 	font-size: 16px;
 	font-weight: 600;
 	-webkit-font-smoothing: antialiased;
 }
-.team .person .position {
+.team .person .position,
+.team .person .position a {
 	color: #f18036;
 }
 .team .description {
@@ -1632,6 +1647,9 @@ body > section:first-of-type {
 .team a[class|="icon"] {
 	text-decoration: none;
 }
+.team .icon-linkedin {
+	font-size: 16px;
+}
 .team .icon-linkedin::before {
 	width: 1.4em;
 	height: 1.4em;
@@ -1640,6 +1658,43 @@ body > section:first-of-type {
 	font-size: 14px;
 	line-height: 1.4em;
 	color: #0077B5;
+}
+
+/**
+ * Media section
+ */
+#media-section .pagination-bullets {
+	margin-bottom: 0;
+}
+.media-article {
+	text-align: center;
+}
+@media (max-width: 767px) {
+	.media-article {
+		text-align: justify;
+	}
+}
+.media-article p {
+	margin: 0 0 15px 0;
+}
+.media-article p:last-child {
+	margin-bottom: 0;
+}
+.media-logo {
+	display: block;
+	margin: 0 auto;
+}
+.media-name {
+	text-align: center;
+}
+.media-name, .media-name a {
+	color: #f18036;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+}
+.media-name a:hover {
+	text-decoration: underline;
 }
 
 /**
