@@ -494,6 +494,30 @@ $(function() {
 });
 
 /**
+ * YouTube API load callback
+ */
+function onYouTubeIframeAPIReady() {
+	var player = new YT.Player('gro-video', {
+		events: {
+			'onStateChange': onPlayerStateChange
+		}
+	});
+	
+	function onPlayerStateChange(event) {
+		//show CTA button when video ends
+		var $btn = $('#video-btn');
+		switch (event.data) {
+			case YT.PlayerState.ENDED:
+				$btn.show();
+				break;
+			
+			default:
+				$btn.hide();
+		}
+	}
+}
+
+/**
  * Timeline slider
  */
 $(function() {
@@ -537,13 +561,19 @@ $(function() {
 	if (!window.Swiper)
 		return;
 	
-	var slider = new Swiper('#media-section .swiper-container', {
+	var slider = new Swiper('#media-slider .swiper-container', {
 		slidesPerView: 1,
 		pagination: {
-			el: '#media-section .pagination-bullets',
+			el: '#media-slider .pagination-bullets',
 			clickable: true,
 			bulletClass: 'bullet',
 			bulletActiveClass: 'active'
+		},
+		navigation: {
+			nextEl: '#media-slider .next',
+			prevEl: '#media-slider .prev',
+			disabledClass: 'disabled',
+			hiddenClass: 'disabled'
 		}
 	});
 });
