@@ -1663,16 +1663,26 @@ body > section:first-of-type {
 /**
  * Media section
  */
-#media-section .pagination-bullets {
+#media-slider {
+	position: relative;
+	margin: 0 20px;
+}
+#media-slider .prev, #media-slider .next {
+	top: 45px;
+	margin-top: -37px;
+	font-size: 50px;
+}
+#media-slider .prev {
+	left: -35px;
+}
+#media-slider .next {
+	right: -35px;
+}
+#media-slider .pagination-bullets {
 	margin-bottom: 0;
 }
 .media-article {
 	text-align: center;
-}
-@media (max-width: 767px) {
-	.media-article {
-		text-align: justify;
-	}
 }
 .media-article p {
 	margin: 0 0 15px 0;
@@ -1695,6 +1705,15 @@ body > section:first-of-type {
 }
 .media-name a:hover {
 	text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+	#media-slider .prev, #media-slider .next {
+		top: 40%;
+	}
+	.media-article {
+		text-align: justify;
+	}
 }
 
 /**

@@ -537,13 +537,19 @@ $(function() {
 	if (!window.Swiper)
 		return;
 	
-	var slider = new Swiper('#media-section .swiper-container', {
+	var slider = new Swiper('#media-slider .swiper-container', {
 		slidesPerView: 1,
 		pagination: {
-			el: '#media-section .pagination-bullets',
+			el: '#media-slider .pagination-bullets',
 			clickable: true,
 			bulletClass: 'bullet',
 			bulletActiveClass: 'active'
+		},
+		navigation: {
+			nextEl: '#media-slider .next',
+			prevEl: '#media-slider .prev',
+			disabledClass: 'disabled',
+			hiddenClass: 'disabled'
 		}
 	});
 });
