@@ -109,6 +109,9 @@ textarea::placeholder {
 	text-decoration: none;
 	cursor: pointer;
 }
+.btn:hover {
+	text-decoration: none;
+}
 .btn:disabled {
 	cursor: auto;
 }
@@ -1857,11 +1860,12 @@ body > section:first-of-type {
 	text-decoration-line: none;
 	text-decoration-style: dotted;
 }
-#footer-widgets a:hover {
+#footer-widgets a:not(.btn):hover {
 	text-decoration-line: underline;
 }
 
 #footer-widgets .social {
+	margin-bottom: 15px;
 	font-size: 22px;
 	line-height: 2;
 }
@@ -1870,6 +1874,11 @@ body > section:first-of-type {
 }
 #footer-widgets .social a:hover {
 	text-decoration: none;
+}
+
+#subscribe-btn {
+	max-width: 100%;
+	width: 177px;
 }
 
 @media (max-width: 450px) {
