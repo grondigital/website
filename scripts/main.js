@@ -494,6 +494,30 @@ $(function() {
 });
 
 /**
+ * YouTube API load callback
+ */
+function onYouTubeIframeAPIReady() {
+	var player = new YT.Player('gro-video', {
+		events: {
+			'onStateChange': onPlayerStateChange
+		}
+	});
+	
+	function onPlayerStateChange(event) {
+		//show CTA button when video ends
+		var $btn = $('#video-btn');
+		switch (event.data) {
+			case YT.PlayerState.ENDED:
+				$btn.show();
+				break;
+			
+			default:
+				$btn.hide();
+		}
+	}
+}
+
+/**
  * Timeline slider
  */
 $(function() {

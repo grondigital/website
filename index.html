@@ -345,7 +345,9 @@
 		<div class="container">
 			<h2 class="section-header">What is the GRO token?</h2>
 			<div class="video-wrapper"><div class="video-container">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/nyP77yj4lO8?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				<iframe id="gro-video" width="560" height="315" src="https://www.youtube.com/embed/nyP77yj4lO8?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				<a href="/participate" id="video-btn" class="btn btn-orange" data-ev-category="Participate"
+				   data-ev-label="Participate Now (video)" style="display: none;">Participate Now</a>
 			</div></div>
 		</div>
 	</section>
@@ -1350,5 +1352,11 @@
 	<script src="scripts/lib/particles.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/js/swiper.min.js"></script>
 	<script src="scripts/main.js"></script>
+	<script>
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	</script>
 </body>
 </html>
