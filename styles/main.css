@@ -1320,6 +1320,14 @@ body > section:first-of-type {
 	box-shadow: 0 0 30px 15px rgba(66, 84, 112, 0.8);
 	white-space: nowrap;
 }
+@media (max-width: 599px) {
+	#video-btn {
+		top: 50%;
+		right: auto;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
 
 
 /**
