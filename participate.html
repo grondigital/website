@@ -69,47 +69,31 @@
 		<div id="participate">
 			<form id="participate-form" name="participate" action="https://api.chuk.tk/preico" method="post">
 				<div class="form-step">
+					<input type="hidden" name="contributor[name]" placeholder="First Name *" value="(empty)" />
+					<input type="hidden" name="contributor[surname]" placeholder="Surname *" value="(empty)" />
+					<input type="hidden" name="contributor[message_text]" placeholder="Message (optional)" />
+					<input type="hidden" name="contributor[is_legal]" value="true" id="check-participate" />
+					<input type="hidden" name="contributor[is_read_wp]" value="true" id="check-whitepaper" />
+					<input type="hidden" name="contributor[is_read_tandc]" value="true" id="check-terms-conditions" />
+					<input type="hidden" name="contributor[is_eighteen]" value="true" id="check-age" />
 					<p>
 						<input type="email" name="contributor[email]" placeholder="Email *" required />
 					</p>
-					<p class="input-columns">
-						<input type="text" name="contributor[name]" placeholder="First Name *" required />
-						<input type="text" name="contributor[surname]" placeholder="Surname *" required />
-					</p>
-					<p>
-						<textarea name="contributor[message_text]" placeholder="Message (optional)"></textarea>
-					</p>
 					<p class="checkbox">
-						<input type="checkbox" name="contributor[is_legal]" value="true" id="check-participate" required />
-						<label for="check-participate">
+						<input type="checkbox" name="contributor[is_agreed]" value="true" id="is_agreed" required />
+						<label for="is_agreed">
 							I confirm that I am eligible to lawfully participate in Gron Digital token sale and that I fulfill all the
 							legal requirements as outlined in <a href="/terms-and-conditions" target="_blank">Terms &amp;
 							Conditions</a>. I hereby confirm that I am not currently located in, or otherwise a resident of a country,
 							territory which prohibits participation in the Gron Digital token sale.
-						</label>
-					</p>
-					<p class="checkbox">
-						<input type="checkbox" name="contributor[is_read_wp]" value="true" id="check-whitepaper" required />
-						<label for="check-whitepaper">
-							I hereby confirm that I have read the <a href="/whitepaper" target="_blank">White Paper</a>.
-						</label>
-					</p>
-					<p class="checkbox">
-						<input type="checkbox" name="contributor[is_read_tandc]" value="true" id="check-terms-conditions" required />
-						<label for="check-terms-conditions">
-							I have read and understood the <a href="/terms-and-conditions" target="_blank">Terms &amp; Conditions</a>
-							and I unconditionally agree to be bound by and confirm all terms, conditions, limitations, obligations,
-							affirmations, representations and warranties included therein.
-						</label>
-					</p>
-					<p class="checkbox">
-						<input type="checkbox" name="contributor[is_eighteen]" value="true" id="check-age" required />
-						<label for="check-age">
-							I am 18+
+							I have read and understood the <a href="/whitepaper" target="_blank">White Paper</a> and the <a
+								href="/terms-and-conditions" target="_blank">Terms &amp; Conditions</a> and I unconditionally agree to
+							be bound by and confirm all terms, conditions, limitations, obligations, affirmations, representations and
+							warranties included therein. I am 18+.
 						</label>
 					</p>
 					<p class="centered">
-						<button type="submit" class="btn btn-orange" data-ev-category="Participate" data-ev-action="submit">
+						<button type="submit" class="btn btn-orange" disabled data-ev-category="Participate" data-ev-action="submit">
 							Submit
 						</button>
 					</p>
