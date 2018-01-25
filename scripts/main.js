@@ -269,14 +269,6 @@ $(function() {
 		hideSubForm();
 		return false;
 	});
-	//hide on click on shim...
-	$subFormShim.on('click.subForm', function() {
-		hideSubForm();
-	});
-	//... but do not close if clicked on form
-	$subForm.on('click', function(e) {
-		e.stopPropagation();
-	});
 	
 	$('#subscribe-btn').click(function() {
 		showSubForm();
