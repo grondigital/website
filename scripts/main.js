@@ -56,6 +56,23 @@ $(function () {
 /**
  * Event tracking
  */
+function trk(category, action, label) {
+	category = category || '';
+	action = action || '';
+	label = label || '';
+	
+	dataLayer && dataLayer.push({
+		'event': 'eventTracking',
+		'category': category,
+		'action': action,
+		'label': label
+	});
+	
+	fbq && fbq('trackCustom', category, {
+		'action': action,
+		'label': label
+	});
+}
 $(function () {
 	var $tracked = $('[data-ev-category]');
 	$tracked.click(function () {
@@ -79,17 +96,7 @@ $(function () {
 			label = $this.val();
 		}
 		
-		dataLayer && dataLayer.push({
-			'event': 'eventTracking',
-			'category': category,
-			'action': action,
-			'label': label
-		});
-		
-		fbq && fbq('trackCustom', category, {
-			'action': action,
-			'label': label
-		});
+		trk(category, action, label);
 	});
 });
 
@@ -285,6 +292,9 @@ $(function() {
 		});
 	}
 	
+	$subForm.submit(function () {
+		trk('Subscribe', 'submit', 'Submit');
+	});
 	
 	//Contact us form
 	var $contactFormContainer = $('#contact-form-container'),
@@ -298,6 +308,7 @@ $(function() {
 		$contactForm.find(':input').prop('disabled', true);
 		$contactFormLoader.show();
 		
+		trk('Participate', 'Contact us', 'Send Message');
 		$.post($contactForm.attr("action"), formData).done(function() {
 			$contactForm.replaceWith('<div class="thank-you">Thank you for enquiry. We will get back to you shortly.</div>');
 		}).fail(function() {
@@ -352,6 +363,10 @@ $(function () {
 	checkRequired();
 	$required.change(function () {
 		checkRequired();
+	});
+	
+	$form.submit(function () {
+		trk('Participate', 'submit', 'Submit');
 	});
 	
 	//$form.submit(function() {
