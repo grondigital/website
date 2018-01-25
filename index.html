@@ -1352,11 +1352,12 @@
 	<script src="scripts/lib/particles.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/js/swiper.min.js"></script>
 	<script src="scripts/main.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
 	<script>
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		//somehow this function works more reliably than onYouTubeIframeAPIReady()
+		YT.ready(function () {
+			onYouTubeReady();
+		});
 	</script>
 </body>
 </html>

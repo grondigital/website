@@ -496,7 +496,7 @@ $(function() {
 /**
  * YouTube API load callback
  */
-function onYouTubeIframeAPIReady() {
+function onYouTubeReady() {
 	var player = new YT.Player('gro-video', {
 		events: {
 			'onStateChange': onPlayerStateChange
@@ -510,7 +510,7 @@ function onYouTubeIframeAPIReady() {
 			case YT.PlayerState.ENDED:
 				$btn.show();
 				break;
-			
+				
 			default:
 				$btn.hide();
 		}
