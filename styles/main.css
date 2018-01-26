@@ -267,6 +267,9 @@ body > section:first-of-type {
 .divider {
 	border-bottom: 2px solid #f3f4f6;
 }
+.blue .divider {
+	border-color: #68758e;
+}
 
 .flex-container {
 	display: flex;
@@ -317,6 +320,12 @@ body > section:first-of-type {
 		flex-basis: auto;
 		width: 100%;
 	}
+}
+.flex-cols-4 {
+	justify-content: space-around;
+}
+.flex-cols-4 > * {
+	width: 260px;
 }
 
 .col-vertical-center {
@@ -763,6 +772,38 @@ body > section:first-of-type {
 	}
 }
 
+/**
+ * Link to top
+ */
+#to-top-section > .container {
+	position: relative;
+	padding: 0;
+}
+#to-top-positioner {
+	position: absolute;
+	right: 0;
+}
+@media (max-width: 1264px) {
+	#to-top-positioner {
+		right: 50px;
+	}
+}
+#to-top {
+	display: block;
+	position: fixed;
+	z-index: 60;
+	bottom: 20px;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	box-shadow: 3px 3px 3px 0 rgba(33, 51, 82, 0.1);
+	background: #2c3955;
+	color: white;
+	text-align: center;
+	font-size: 22px;
+	line-height: 31px;
+	text-decoration: none;
+}
 
 /**
  * Conditional hiding depending on current ICO round
@@ -1137,14 +1178,13 @@ body > section:first-of-type {
  */
 #top-section {
 	position: relative;
-	color: #e8eaee;
-	font-size: 18px;
 	line-height: 1.25;
 }
 
 #top-section .container {
 	position: relative;
 	z-index: 50;
+	padding-bottom: 20px;
 }
 #particles {
 	position: absolute;
@@ -1155,8 +1195,8 @@ body > section:first-of-type {
 	z-index: 20;
 }
 
-#top-image-wrapper {
-	padding: 40px 0;
+#hero {
+	padding-bottom: 20px;
 }
 #top-image-container {
 	max-width: 494px;
@@ -1184,7 +1224,12 @@ body > section:first-of-type {
 	opacity: 0;
 }
 
+#top-text {
+	color: #e8eaee;
+	font-size: 18px;
+}
 #top-text h1 {
+	margin-bottom: 20px;
 	text-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
 }
 #top-text .btn {
@@ -1193,10 +1238,13 @@ body > section:first-of-type {
 	margin-bottom: 20px;
 }
 #top-text p {
-	margin-bottom: 40px;
+	margin-bottom: 15px;
 }
 #top-text p:last-child {
 	margin-bottom: 0;
+}
+#top-buttons {
+	margin-top: 10px;
 }
 #top-text .btn:last-child {
 	margin-right: 0;
@@ -1205,9 +1253,6 @@ body > section:first-of-type {
 
 /* styles for top section in one-column layout */
 @media (max-width: 1039px) {
-	#top-image-wrapper {
-		padding-top: 0;
-	}
 	#top-image-container {
 		margin-left: auto;
 		margin-right: auto;
@@ -1220,6 +1265,45 @@ body > section:first-of-type {
 		margin-left: 10px;
 		margin-right: 10px;
 	}
+}
+
+#reasons {
+	padding-top: 20px;
+}
+#reasons h3 {
+	margin: 0 0 20px 0;
+	color: #ffffff;
+	text-align: center;
+	font-size: 26px;
+	font-weight: 600;
+	text-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
+}
+.reason {
+	margin-bottom: 20px;
+}
+.reason-number {
+	float: left;
+	width: 65px;
+	height: 65px;
+	border: 3px solid #f18036;
+	border-radius: 50%;
+	background: rgba(241, 129, 54, 0.05);
+	box-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
+	color: #f18036;
+	text-align: center;
+	font-size: 40px;
+	line-height: 61px;
+}
+.reason-content {
+	margin-left: 80px;
+	font-size: 14px;
+	font-weight: 600;
+}
+#reasons .highlighted {
+	padding: 0 3px;
+	border-radius: 4px;
+	background: #f18036;
+	color: #425372;
 }
 
 
@@ -1521,7 +1605,6 @@ body > section:first-of-type {
 	padding-top: 20px;
 }
 .whats-in-item {
-	width: 260px;
 	margin-bottom: 50px;
 }
 .whats-in-header {

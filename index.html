@@ -113,7 +113,7 @@
 	<section id="top-section" class="blue home-section">
 		<canvas id="particles"></canvas>
 		<div class="container">
-			<div class="flex-container flex-cols-2">
+			<div id="hero" class="flex-container flex-cols-2">
 				<div id="top-image-wrapper"><div id="top-image-container">
 					<div id="top-image">
 						<img id="top-image-bw" src="images/HeroImage-bw.svg" alt="ICO gambling and betting on the blockchain"/>
@@ -122,15 +122,51 @@
 					</div>
 				</div></div>
 				<div id="top-text" class="col-vertical-center">
-					<h1>Gambling &amp; Betting Open Platform built on the Blockchain</h1>
-					<p>Collaborate with experienced industry specialists and trusted financial and developer partners on Gron
-						Digital, a regulated Platform offering Smart Contracts. Now you can own a stake in the gambling and betting
-						world, online. Participate to invest, invest to win.<br/>
-						It’s time to disrupt the industry. Start contributing now.</p>
+					<h1>Gambling &amp; Betting<br/>Open Platform built on the Blockchain</h1>
 					<p>
+						Collaborate with experienced industry specialists and trusted financial and developer partners on Gron Digital, a regulated Platform offering Smart Contracts.
+					</p>
+					<p>
+						Now you can own a stake in the gambling and betting world, online. Participate to invest, invest to win.
+					</p>
+					<p>
+						It’s time to disrupt the industry. Start contributing now.
+					</p>
+					<p id="top-buttons">
 						<a class="btn animated highlighted" href="/participate" data-ev-category="Participate"
 						   data-ev-label="Buy Tokens Now (Hero)">Buy Tokens Now</a>
 					</p>
+				</div>
+			</div>
+			<div class="divider"></div>
+			<div id="reasons">
+				<h3>4 Reasons You Need Our Token</h3>
+				<div class="flex-container flex-cols-4">
+					<div class="reason">
+						<div class="reason-number">1</div>
+						<div class="reason-content">
+							Up to <span class="highlighted">+50%</span> increased value for Players using GRO in participating Casinos
+							and SportsBook
+						</div>
+					</div>
+					<div class="reason">
+						<div class="reason-number">2</div>
+						<div class="reason-content">
+							Token Model designed to meet Blockchain and regulatory requirements
+						</div>
+					</div>
+					<div class="reason">
+						<div class="reason-number">3</div>
+						<div class="reason-content">
+							Consistently increasing demand due to the size of the Online Gambling and Betting Industry / Market.
+						</div>
+					</div>
+					<div class="reason">
+						<div class="reason-number">4</div>
+						<div class="reason-content">
+							Limited release of GRO within the current Token Sale
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -158,7 +194,7 @@
 	<section id="whats-in-section" class="home-section blue">
 		<div class="container">
 			<h2 class="section-header">What's in for me</h2>
-			<div id="whats-in" class="flex-container flex-cols-3">
+			<div id="whats-in" class="flex-container flex-cols-4">
 				<div class="whats-in-item">
 					<div class="whats-in-header">
 						<img src="images/whats-in/player.svg" alt="Player" /><h4>Player</h4>
@@ -1238,6 +1274,23 @@
 								</a>
 							</p>
 						</div>
+						<div class="media-article swiper-slide">
+							<p>
+								“The startup is using technology built on the blockchain, providing a secure, transparent, auditable,
+								and fair platform. The platform places all role players within a single space that is transparent and
+								trustworthy. It uses smart contracts that act as autonomous trust agents and govern all transactions.
+								These contracts fulfil sets of predetermined conditions based on coded rules embedded within the
+								blockchain making them the ideal tool for both the player and the service provider.”
+							</p>
+							<p>
+								<img src="images/media/bizcommunity.png" alt="Bizcommunity" class="media-logo"/>
+							</p>
+							<p class="media-name">
+								<a href="http://www.bizcommunity.com/Article/196/706/172678.html" target="_blank">
+									- Bizcommunity
+								</a>
+							</p>
+						</div>
 					</div>
 				</div>
 				<div class="pagination-bullets"></div>
@@ -1257,7 +1310,7 @@
 					<input type="email" name="email" placeholder="Email *" required />
 					<textarea name="message" placeholder="Message"></textarea>
 					<div class="centered">
-						<button type="submit" class="btn highlighted" data-ev-category="Participate" data-ev-action="Contact us">
+						<button type="submit" class="btn highlighted">
 							Send Message
 						</button>
 					</div>
@@ -1322,6 +1375,12 @@
 		</div>
 	</section>
 	
+	<div id="to-top-section">
+		<div class="container">
+			<div id="to-top-positioner"><a id="to-top" class="icon-angle-up" href="#" style="display: none;"></a></div>
+		</div>
+	</div>
+	
 	<div id="shim" class="shim"></div>
 	
 	<div id="subscribe-shim" class="shim popup-shim"><div id="subscribe-form">
@@ -1339,8 +1398,7 @@
 				<input type="hidden" name="listname" value="awlist4809394" />
 				<input type="hidden" name="redirect" value="https://www.aweber.com/thankyou-coi.htm?m=text" />
 				<input type="email" name="email" id="subscribe-email" title="Email" placeholder="Type your email..." required /><!--
-				--><input name="submit" type="submit" value="Submit" id="subscribe-submit" class="btn highlighted"
-				          data-ev-category="Subscribe" />
+				--><input name="submit" type="submit" value="Submit" id="subscribe-submit" class="btn highlighted" />
 			</form>
 		</div>
 	</div></div>
@@ -1352,11 +1410,12 @@
 	<script src="scripts/lib/particles.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/js/swiper.min.js"></script>
 	<script src="scripts/main.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
 	<script>
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		//somehow this function works more reliably than onYouTubeIframeAPIReady()
+		YT.ready(function () {
+			onYouTubeReady();
+		});
 	</script>
 </body>
 </html>
