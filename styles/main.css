@@ -772,6 +772,38 @@ body > section:first-of-type {
 	}
 }
 
+/**
+ * Link to top
+ */
+#to-top-section > .container {
+	position: relative;
+	padding: 0;
+}
+#to-top-positioner {
+	position: absolute;
+	right: 0;
+}
+@media (max-width: 1264px) {
+	#to-top-positioner {
+		right: 50px;
+	}
+}
+#to-top {
+	display: block;
+	position: fixed;
+	z-index: 60;
+	bottom: 20px;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	box-shadow: 3px 3px 3px 0 rgba(33, 51, 82, 0.1);
+	background: #2c3955;
+	color: white;
+	text-align: center;
+	font-size: 22px;
+	line-height: 31px;
+	text-decoration: none;
+}
 
 /**
  * Conditional hiding depending on current ICO round

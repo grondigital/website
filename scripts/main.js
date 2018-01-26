@@ -179,12 +179,15 @@ $(function() {
  */
 $(function() {
 	//change header style on scroll
-	var $header = $('#main-header');
+	var $header = $('#main-header'),
+	    $topLink = $('#to-top');
 	$('body > section:first-of-type').waypoint(function(dir) {
 		if (dir === 'down') {
 			$header.addClass('fixed-header');
+			$topLink.show();
 		} else {
 			$header.removeClass('fixed-header');
+			$topLink.hide();
 		}
 	}, {
 		offset: -50
@@ -398,7 +401,9 @@ $(function() {
 	 * @param {string} hash
 	 */
 	function setActiveItem(hash) {
-		var $currentLink = (hash === 'top-section')? $menu.find('li:first-child a') : $menu.find('a[href*="' + hash + '"]');
+		var $currentLink = (hash === 'top-section' || hash === 'ico-banner-section')?
+		    $menu.find('li:first-child a') :
+		    $menu.find('a[href*="' + hash + '"]');
 		if ($currentLink.length) {
 			$links.removeClass('active');
 			$currentLink.addClass('active');
@@ -623,30 +628,39 @@ $(function() {
 		 * @return {Boolean} - Was the href an anchor.
 		 */
 		scrollIfAnchor: function(href, pushToHistory) {
-			var match, anchorOffset;
-			
 			if (!this.ANCHOR_REGEX.test(href)) {
 				return false;
 			}
 			
 			var id = href.slice(1);
-			match = document.getElementById(id);
 			
-			if (match) {
-				anchorOffset = $(match).offset().top - this.getFixedOffset();
-				$('[data-aos]').removeAttr('data-aos');
-				$(window).trigger('scrollStart', [id]);
-				$('html, body').animate({scrollTop: anchorOffset}, 1000).promise().then(function() {
-					$(window).trigger('scrollEnd', [id]);
-				});
-				
-				// Add the state to history as-per normal anchor links
-				if (HISTORY_SUPPORT && pushToHistory) {
-					history.pushState({}, document.title, location.pathname + href);
+			return this.scrollTo(id, pushToHistory);
+		},
+		
+		scrollTo: function(idOffset, pushToHistory) {
+			var offset, match, evParams = [];
+			if (typeof idOffset==='number') {
+				offset = idOffset;
+			} else {
+				match = document.getElementById(idOffset);
+				evParams.push(idOffset);
+				if (match) {
+					offset = $(match).offset().top - this.getFixedOffset();
+					
+					// Add the state to history as-per normal anchor links
+					if (HISTORY_SUPPORT && pushToHistory) {
+						history.pushState({}, document.title, location.pathname + '#' + idOffset);
+					}
+				} else {
+					return false;
 				}
 			}
 			
-			return !!match;
+			$('[data-aos]').removeAttr('data-aos');
+			$(window).trigger('scrollStart', evParams);
+			$('html, body').animate({scrollTop: offset}, 1000).promise().then(function() {
+				$(window).trigger('scrollEnd', evParams);
+			});
 		},
 		
 		/**
@@ -671,6 +685,17 @@ $(function() {
 	};
 	
 	$(document).ready($.proxy(anchorScrolls, 'init'));
+	$(function () {
+		//The "Back to top" button
+		//scroll to page top or to top section if it exists - so menu items will be set active
+		//TODO: activate menu items depending only on current scroll position, not on link anchors
+		var topSectionId = 'ico-banner-section', target;
+		target = document.getElementById(topSectionId)? topSectionId : 0;
+		$('#to-top').click(function () {
+			anchorScrolls.scrollTo(target, false);
+			return false;
+		});
+	});
 })(window.document, window.history, window.location);
 
 (function() {
