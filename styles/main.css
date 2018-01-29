@@ -811,10 +811,15 @@ body > section:first-of-type {
 
 #social-float {
 	position: fixed;
-	top: 20%;
+	top: 275px;
 	right: 10px;
 	z-index: 60;
 	text-align: right;
+}
+@media (max-width: 1023px) {
+	#social-float {
+		top: 320px;
+	}
 }
 #social-float a {
 	display: inline-block;
