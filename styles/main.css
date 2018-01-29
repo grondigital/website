@@ -66,6 +66,10 @@ a.no-line:focus {
 	color: inherit;
 }
 
+.strike {
+	text-decoration: line-through;
+}
+
 input, button, textarea {
 	box-sizing: border-box;
 }
@@ -895,7 +899,7 @@ body > section:first-of-type {
 	padding: 0 0 0 1em;
 	list-style: disc outside;
 }
-.content-section p + ul {
+.content-section p + ul, .content-section p + ol {
 	margin-top: -30px;
 }
 
