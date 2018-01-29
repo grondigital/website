@@ -247,6 +247,42 @@ $(function() {
 		return false; //discard other mouse events - hover, click
 	});
 	
+	//touches & clicks on floating social links
+	var $socFloat = $('#social-float a'),
+	    socFloatDrag = false;
+	//standard hover for desktop browsers
+	$socFloat.hover(function() {
+		$(this).addClass('hover');
+	}, function() {
+		$(this).removeClass('hover');
+	});
+	//touch click (except draggling) for mobile browsers
+	$socFloat.on('touchmove', function() {
+		socFloatDrag = true;
+	});
+	$socFloat.on('touchend', function(e) {
+		if (socFloatDrag) {
+			socFloatDrag = false;
+			return;
+		}
+		
+		var $this = $(this);
+		
+		//disable desktop hover emulation if user used his finger
+		$(this).off('mouseenter mouseleave');
+		
+		//is touch was on social logo
+		var isImg = e.target.nodeName.toLowerCase() === 'img';
+		
+		//discard other mouse events (click) if touch was on logo
+		if (isImg) {
+			e.preventDefault();
+		}
+		
+		//always change hover state
+		$this.toggleClass('hover');
+	});
+	
 	//scroll animation status
 	var isScrolling = false;
 	$(window).on('scrollStart', function(e, id) {
@@ -273,7 +309,7 @@ $(function() {
 		return false;
 	});
 	
-	$('#subscribe-btn').click(function() {
+	$('.subscribe-btn').click(function() {
 		showSubForm();
 		return false;
 	});
