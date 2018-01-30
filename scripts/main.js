@@ -505,16 +505,6 @@ $(function() {
 
 
 /**
- * FAQ spoilers
- */
-$(function () {
-	$('.faq-title').click(function () {
-		$(this).closest('.faq-entry').toggleClass('shown').find('.faq-content').toggle(300);
-	});
-});
-
-
-/**
  * Particle background
  */
 $(function() {

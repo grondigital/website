@@ -973,40 +973,6 @@ body > section:first-of-type {
 
 
 /**
- * FAQ
- */
-.content-section .faq-title {
-	position: relative;
-	padding: 10px 30px 10px 15px;
-	text-align: left;
-	cursor: pointer;
-}
-.content-section .faq-entry.shown .faq-title {
-	color: #f18036;
-}
-.content-section .faq-title::after {
-	content: '\f107';
-	position: absolute;
-	top: 50%;
-	right: 15px;
-	bottom: auto;
-	left: auto;
-	width: auto;
-	height: auto;
-	margin-top: -9px;
-	background: none;
-	color: #415275;
-	font: normal 18px 'fontello';
-}
-.content-section .faq-entry.shown .faq-title::after {
-	content: '\f106';
-}
-.faq-content {
-	display: none;
-}
-
-
-/**
  * Header
  */
 #main-header {
