@@ -547,6 +547,8 @@ $(function () {
 	}
 	
 	var $eth = $('#eth-amount'), $gro = $('#gro-amount');
+	if (!$eth.length || !$gro.length)
+		return;
 	
 	$eth.on('input propertychange', function () {
 		var eth = forceNumber($eth),
