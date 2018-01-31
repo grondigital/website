@@ -424,6 +424,78 @@ $(function () {
 });
 
 /**
+ * The Sign Up form
+ */
+$(function () {
+	var $form = $('#signup-form');
+	
+	if (!$form.length)
+		return;
+	
+	var $submit = $form.find(':submit');
+	
+	//form step switching
+	var currentStep, $currentStep, $steps = $form.find('.form-step'),
+	    $required,
+	    $crumbs = $form.find('.form-crumb');
+	function showStep(step) {
+		currentStep = step;
+		$currentStep = $steps.eq(currentStep-1);
+		
+		//show current step and hide others
+		$steps.hide();
+		$currentStep.show();
+		
+		//update form crumbs
+		$crumbs.removeClass('active past');
+		$crumbs.eq(currentStep-1).addClass('active');
+		$crumbs.filter(':lt('+(currentStep-1)+')').addClass('past');
+		
+		$required && $required.off('.checkRequired');
+		//enable/disable current Next step button
+		$required = $currentStep.find(':required');
+		var $nextBtn = $currentStep.find('button[data-form-step="next"], button[type="submit"]');
+		
+		$nextBtn.attr('disabled', !checkInputs($required));
+		$required.on('change.checkRequired', function () {console.log('check');
+			$nextBtn.attr('disabled', !checkInputs($required));
+		});
+	}
+	function checkInputs($inputs) {
+		var passed = true;
+		for (var i=0; i < $inputs.length; i++) {
+			var $input = $inputs.eq(i);
+			
+			if ($input.is('[type="checkbox"]')) {
+				if (!$input.is(':checked')) {
+					passed = false;
+				}
+			} else if ($input.val()==='') {
+				passed = false;
+			}
+		}
+		
+		return passed;
+	}
+	
+	//switch form steps
+	$form.find('[data-form-step]').click(function () {
+		switch ($(this).data('form-step')) {
+			case 'next':
+				showStep(currentStep+1);
+				break;
+				
+			case 'prev':
+				showStep(currentStep-1);
+				break;
+		}
+	});
+	
+	showStep(1);
+});
+
+
+/**
  * Main menu item highlighting
  */
 $(function() {
@@ -500,16 +572,6 @@ $(function() {
 		easing: 'ease-out-back',
 		once: true,
 		disable: (Object.prototype.toString.call(window.operamini) === "[object OperaMini]")
-	});
-});
-
-
-/**
- * FAQ spoilers
- */
-$(function () {
-	$('.faq-title').click(function () {
-		$(this).closest('.faq-entry').toggleClass('shown').find('.faq-content').toggle(300);
 	});
 });
 
