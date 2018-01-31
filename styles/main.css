@@ -220,6 +220,63 @@ textarea::placeholder {
 	text-align: center;
 }
 
+.form-crumbs {
+	display: flex;
+	margin-bottom: 15px;
+	padding-right: 37px;
+}
+.form-crumb {
+	flex: 1;
+	position: relative;
+	background: #f3f4f6;
+	height: 75px;
+	padding-left: 30px;
+	border: 1px solid #dadada;
+	box-shadow: 3px 3px 4px 0 rgba(80, 80, 80, 0.2);
+	color: #818181;
+	text-align: center;
+	font-size: 18px;
+	line-height: 75px;
+	font-weight: 600;
+}
+.form-crumb::after {
+	content: '';
+	display: block;
+	position: absolute;
+	right: -28px;
+	top: 10px;
+	z-index: 10;
+	width: 53px; /* 75/sqrt(2) */
+	height: 54px;
+	transform: rotate(45deg);
+	background: #f3f4f6;
+	border-top: 1px solid #dadada;
+	border-right: 1px solid #dadada;
+}
+.form-crumb:last-child::after {
+	box-shadow: 6px 0 4px -3px rgba(80, 80, 80, 0.2);
+}
+
+.form-crumb.past,
+.form-crumb.active {
+	background: #f18036;
+	border-color: #f18036;
+	color: #ffffff;
+}
+.form-crumb.past::after,
+.form-crumb.active::after {
+	background: #f18036;
+}
+.form-crumb.active::after {
+	border-color: #f18036;
+}
+
+
+.form-step {
+	padding: 15px;
+}
+
+
 /**
  * Home sections
  */
@@ -892,8 +949,15 @@ body > section:first-of-type {
 .title-section {
 	text-align: center;
 }
-.title-section:not(.gray) > .container {
+.title-section > .container {
 	padding-bottom: 0;
+}
+.title-section.blue > .container,
+.title-section.gray > .container {
+	padding-bottom: 40px;
+}
+.title-section.stepform-title-section > .container {
+	padding-bottom: 80px;
 }
 .title-section h1 {
 	font-size: 30px;
@@ -901,6 +965,10 @@ body > section:first-of-type {
 .content-section {
 	flex-grow: 1;
 	text-align: justify;
+}
+.content-section.stepform-section > .container {
+	margin-top: -38px;
+	padding-top: 0;
 }
 .content-subsection {
 	margin-left: 35px;
@@ -1942,6 +2010,12 @@ body > section:first-of-type {
 	#participate-form .input-columns input:last-child {
 		margin-bottom: 0;
 	}
+}
+
+
+#tandc {
+	max-height: 50vh;
+	overflow-y: auto;
 }
 
 
