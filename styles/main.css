@@ -275,7 +275,9 @@ textarea::placeholder {
 .form-step {
 	padding: 15px;
 }
-
+.form-section {
+	padding: 30px;
+}
 
 /**
  * Home sections
@@ -286,7 +288,7 @@ body > section:first-of-type {
 .blue {
 	background-color: #425372;
 }
-.blue, .blue h1, .blue h2, .blue h4, .blue a {
+.blue, .blue h1, .blue h2, .blue h3, .blue h4, .blue a {
 	color: #ffffff;
 }
 .gray {
@@ -1354,7 +1356,6 @@ body > section:first-of-type {
 }
 #reasons h3 {
 	margin: 0 0 20px 0;
-	color: #ffffff;
 	text-align: center;
 	font-size: 26px;
 	font-weight: 600;
@@ -2016,6 +2017,30 @@ body > section:first-of-type {
 #tandc {
 	max-height: 50vh;
 	overflow-y: auto;
+}
+
+#contribution-address {
+	width: 80%;
+}
+#calculator {
+	display: flex;
+	margin-bottom: 30px;
+}
+#calculator > * {
+	flex: 1;
+}
+#calculator-summary {
+	display: flex;
+}
+#calculator-summary > * {
+	flex: 1;
+}
+#calculator-summary p {
+	margin: 0;
+}
+#calculator-summary .highlighted {
+	font-size: 200%;
+	font-weight: 600;
 }
 
 

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Participate in the GRO Token Sale Now | Gron Digital</title>
+	<title>Gron Digital Contribution Sign up | Gron Digital</title>
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -54,60 +54,75 @@
 	</div>
 </header>
 
-<section class="gray title-section">
+<section class="blue title-section stepform-title-section">
 	<div class="container">
-		<h1 class="section-header">Participate in the GRO Token Sale Now</h1>
-		<p>Exclusive Pre-ICO +40% Bonus on your purchase. For a limited time, we will issue 10,000 GRO + 4,000 GRO for the
-			contribution of 1 ETH.</p>
-		<p>We have allocated a limited number of tokens for selected investors. Please enter your details to secure your
-			submission.</p>
+		<h1 class="section-header">Gron Digital Contribution Sign up</h1>
 	</div>
 </section>
 
-<section class="content-section">
+<section class="content-section stepform-section">
 	<div class="container">
-		<div id="participate">
-			<form id="participate-form" name="participate" action="https://api.chuk.tk/preico" method="post">
-				<div class="form-step">
-					<input type="hidden" name="contributor[name]" placeholder="First Name *" value="(empty)" />
-					<input type="hidden" name="contributor[surname]" placeholder="Surname *" value="(empty)" />
-					<input type="hidden" name="contributor[message_text]" placeholder="Message (optional)" />
-					<input type="hidden" name="contributor[is_legal]" value="true" id="check-participate" />
-					<input type="hidden" name="contributor[is_read_wp]" value="true" id="check-whitepaper" />
-					<input type="hidden" name="contributor[is_read_tandc]" value="true" id="check-terms-conditions" />
-					<input type="hidden" name="contributor[is_eighteen]" value="true" id="check-age" />
-					<p>
-						<input type="email" name="contributor[email]" placeholder="Email *" required />
-					</p>
-					<p class="checkbox">
-						<input type="checkbox" name="contributor[is_agreed]" value="true" id="is_agreed" required />
-						<label for="is_agreed">
-							I confirm that I am eligible to lawfully participate in Gron Digital token sale and that I fulfill all the
-							legal requirements as outlined in <a href="/terms-and-conditions" target="_blank">Terms &amp;
-							Conditions</a>. I hereby confirm that I am not currently located in, or otherwise a resident of a country,
-							territory which prohibits participation in the Gron Digital token sale.
-							I have read and understood the <a href="/whitepaper" target="_blank">White Paper</a> and the <a
-								href="/terms-and-conditions" target="_blank">Terms &amp; Conditions</a> and I unconditionally agree to
-							be bound by and confirm all terms, conditions, limitations, obligations, affirmations, representations and
-							warranties included therein. I am 18+.
-						</label>
-					</p>
-					<p class="centered">
-						<button type="submit" class="btn btn-orange" disabled>
-							Submit
-						</button>
-					</p>
+		<div id="contribute">
+			<div class="form-crumbs">
+				<div class="form-crumb past">Citizenship Enquiry</div>
+				<div class="form-crumb past">Terms</div>
+				<div class="form-crumb past">Notification Email</div>
+				<div class="form-crumb active">Title Here</div>
+			</div>
+			<div class="form-step">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget aliquet ipsum, at ultricies massa.
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In metus velit,
+					pharetra eget auctor eget, tincidunt ut tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+					dignissim gravida sagittis.
+				</p>
+				<p>
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam mollis orci ut
+					mauris vehicula, non malesuada enim aliquam. Nam dictum sagittis velit, vel suscipit velit suscipit consequat.
+					Nulla non velit suscipit, finibus risus a, rhoncus purus. Quisque ornare urna id lacus volutpat, vitae
+					vestibulum libero fringilla.
+				</p>
+				<div class="form-section gray">
+					<label>Contribution address<br/>
+						<input type="text" id="contribution-address" value="0x23E6E55f7a3dc9a86aCaDf2E059eA3Cb0397EfCF" readonly />
+						<button class="icon-docs" id="copy-address"></button>
+					</label>
 				</div>
-				<div id="participate-thank" class="form-step" style="display: none;">
-					<h4>Thank you for submitting!</h4>
-					<p class="thank-text">
-						Your request is being processed.<br />
-						We will get back to you shortly.
-					</p>
-					<p class="centered"><a href="/">Home</a></p>
+				<div class="form-section blue">
+					<h3>Calculator</h3>
+					<div id="calculator">
+						<div>
+							<label>Amount of ETH<br/>
+								<input type="text" id="eth-amount" placeholder="0"/>
+								ETH
+							</label>
+						</div>
+						<div>
+							<span class="icon-retweet"></span>
+						</div>
+						<div>
+							<label># of GRO tokens<br/>
+								<input type="text" id="gro-amount" placeholder="0"/>
+								GRO
+							</label>
+						</div>
+					</div>
+					<div id="calculator-summary">
+						<div>
+							<p>Your BONUS</p>
+							<p class="highlighted">40%</p>
+						</div>
+						<div>
+							<p>You'll receive</p>
+							<p class="highlighted"><span class="gro-amount"></span> GRO</p>
+						</div>
+						<div>
+							<p>For amount of ETH</p>
+							<p class="highlighted"><span class="eth-amount"></span> ETH</p>
+						</div>
+					</div>
 				</div>
-			</form>
-			<div class="loader"></div>
+			</div>
 		</div>
 	</div>
 </section>
