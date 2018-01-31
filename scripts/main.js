@@ -489,9 +489,90 @@ $(function () {
 				showStep(currentStep-1);
 				break;
 		}
+		return false;
 	});
 	
 	showStep(1);
+});
+
+/**
+ * The Contribution form
+ */
+$(function () {
+	var ethToGro = 14000; //TODO: automatically update exchange rate with ICO rounds
+	
+	var $address = $('#contribution-address');
+	$('#copy-address').click(function () {
+		$address.select();
+		try {
+			document.execCommand('copy');
+		} catch (ex) {
+			
+		}
+	});
+	$address.click(function () {
+		$address.select();
+	});
+	
+	//force input to numerical values
+	function forceNumber($input) {
+		var value = $input.val().replace(/[^0-9.]/g, '');
+		$input.val(value);
+		
+		return parseFloat(value);
+	}
+	//convert ETH/GRO
+	function convert(fromCurrency, amount) {
+		if (isNaN(amount)) {
+			return 0;
+		}
+		
+		switch (fromCurrency) {
+			case 'eth':
+				amount = amount * ethToGro;
+				break;
+			
+			case 'gro':
+				amount = amount / ethToGro;
+				break;
+		}
+		
+		return amount;
+	}
+	function formatAmount(amount) {
+		if (isNaN(amount)) {
+			return 0;
+		}
+		return Math.round(amount * 1000) / 1000;
+	}
+	
+	var $eth = $('#eth-amount'), $gro = $('#gro-amount');
+	
+	$eth.on('input propertychange', function () {
+		var eth = forceNumber($eth),
+		    gro = convert('eth', eth);
+		
+		$gro.val(gro);
+		
+		$('.gro-amount').html(formatAmount(gro));
+		$('.eth-amount').html(formatAmount(eth));
+	});
+	
+	$gro.on('input propertychange', function () {
+		var gro = forceNumber($gro),
+		    eth = convert('gro', gro);
+		
+		$eth.val(eth);
+		
+		$('.gro-amount').html(formatAmount(gro));
+		$('.eth-amount').html(formatAmount(eth));
+	});
+	
+	//initial values
+	var eth = forceNumber($eth),
+	    gro = forceNumber($gro);
+	$('.gro-amount').html(formatAmount(gro));
+	$('.eth-amount').html(formatAmount(eth));
 });
 
 
