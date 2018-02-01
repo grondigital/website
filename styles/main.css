@@ -104,6 +104,7 @@ textarea::placeholder {
 	position: relative;
 	display: inline-block;
 	box-sizing: border-box;
+	min-width: 160px;
 	padding: 0.75em 1.5em;
 	border: 1px solid #f18036;
 	background: transparent;
@@ -124,13 +125,14 @@ textarea::placeholder {
 	color: #ffffff;
 }
 .btn.btn-orange {
-	border: none;
+	border-color: #f18036;
 	outline: none;
 	background: #f18036;
 	color: #ffffff;
 	font-weight: 600;
 }
 .btn.btn-orange:disabled {
+	border-color: #bec8dd;
 	background: #bec8dd;
 	color: #8a98b1;
 }
@@ -273,7 +275,7 @@ textarea::placeholder {
 
 
 .form-step {
-	padding: 15px;
+	padding: 15px 15px 0 15px;
 }
 .form-section {
 	padding: 30px;
@@ -319,6 +321,10 @@ body > section:first-of-type {
 	background-position-y: bottom;
 }
 
+.stepform-title-section.blue {
+	background: url("../images/bg/bg-title.png") center center / cover;
+}
+
 .container {
 	box-sizing: border-box;
 	max-width: 1170px;
@@ -328,10 +334,16 @@ body > section:first-of-type {
 }
 
 .divider {
+	border-top: none;
+	border-right: none;
 	border-bottom: 2px solid #f3f4f6;
+	border-left: none;
 }
 .blue .divider {
 	border-color: #68758e;
+}
+hr.divider {
+	margin: 15px 0;
 }
 
 .flex-container {
@@ -1655,6 +1667,7 @@ body > section:first-of-type {
 	display: block;
 	width: 100%;
 	padding: 0;
+	border: none;
 	line-height: 50px;
 	font-weight: bold;
 	text-decoration: none;
@@ -2015,8 +2028,21 @@ body > section:first-of-type {
 
 
 #tandc {
-	max-height: 50vh;
 	overflow-y: auto;
+	max-height: 50vh;
+	margin-bottom: 30px;
+	padding-right: 15px;
+}
+#tandc h1 {
+	font-size: 30px;
+}
+#signup-step-email p {
+	margin-bottom: 15px;
+}
+#signup-step-email input[type="text"],
+#signup-step-email input[type="email"] {
+	max-width: 100%;
+	width: 355px;
 }
 
 #contribution-address {
@@ -2090,6 +2116,7 @@ body > section:first-of-type {
 
 #footer-widgets .subscribe-btn {
 	max-width: 100%;
+	min-width: auto;
 	width: 177px;
 }
 
