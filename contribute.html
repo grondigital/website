@@ -83,43 +83,51 @@
 					vestibulum libero fringilla.
 				</p>
 				<div class="form-section gray">
-					<label>Contribution address<br/>
-						<input type="text" id="contribution-address" value="0x23E6E55f7a3dc9a86aCaDf2E059eA3Cb0397EfCF" readonly />
-						<button class="icon-docs" id="copy-address"></button>
-					</label>
+					<label for="contribution-address">Contribution address</label>
+					<div class="input-group">
+						<input type="text" id="contribution-address" class="form-control" value="0x23E6E55f7a3dc9a86aCaDf2E059eA3Cb0397EfCF" readonly />
+						<button id="copy-address" class="form-addon icon-docs"></button>
+					</div>
 				</div>
 				<div class="form-section blue">
-					<h3>Calculator</h3>
-					<div id="calculator">
-						<div>
-							<label>Amount of ETH<br/>
-								<input type="text" id="eth-amount" placeholder="0"/>
-								ETH
-							</label>
+					<fieldset id="calculator">
+						<legend>Calculator</legend>
+						<div class="form-block">
+							<div>
+								<label for="eth-amount">Amount of ETH</label>
+								<div class="input-group">
+									<input type="text" id="eth-amount" class="form-control" size="" placeholder="0"/>
+									<span class="form-addon">ETH</span>
+								</div>
+							</div>
+							<div id="calculator-divider">
+								<span class="icon-retweet"></span>
+							</div>
+							<div>
+								<label># of GRO tokens</label>
+								<div class="input-group">
+									<input type="text" id="gro-amount" class="form-control" size="" placeholder="0"/>
+									<span class="form-addon">GRO</span>
+								</div>
+							</div>
+							<div id="calculator-img">
+								<img src="images/big-g.svg" alt="GRO" />
+							</div>
 						</div>
-						<div>
-							<span class="icon-retweet"></span>
-						</div>
-						<div>
-							<label># of GRO tokens<br/>
-								<input type="text" id="gro-amount" placeholder="0"/>
-								GRO
-							</label>
-						</div>
+					</fieldset>
+				</div>
+				<div id="calculator-summary" class="form-section blue">
+					<div>
+						<p>Your BONUS</p>
+						<p class="highlighted">40%</p>
 					</div>
-					<div id="calculator-summary">
-						<div>
-							<p>Your BONUS</p>
-							<p class="highlighted">40%</p>
-						</div>
-						<div>
-							<p>You'll receive</p>
-							<p class="highlighted"><span class="gro-amount"></span> GRO</p>
-						</div>
-						<div>
-							<p>For amount of ETH</p>
-							<p class="highlighted"><span class="eth-amount"></span> ETH</p>
-						</div>
+					<div>
+						<p>You'll receive</p>
+						<p class="highlighted"><span class="gro-amount"></span> GRO</p>
+					</div>
+					<div>
+						<p>For amount of ETH</p>
+						<p class="highlighted"><span class="eth-amount"></span> ETH</p>
 					</div>
 				</div>
 			</div>

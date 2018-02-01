@@ -87,7 +87,7 @@
 				</div>
 				<div class="form-step" style="display: none;">
 					<div id="tandc">
-						<h1>Terms and Conditions</h1>
+						<h1 class="section-header">Terms and Conditions</h1>
 						
 						<h2>1. INTRODUCTION</h2>
 						<p>By purchasing ERC20-based GRO Tokens (“Tokens”, “GRO”) from Gron Digital (“Company”) during the Token
@@ -497,7 +497,7 @@
 						<button type="button" class="btn btn-orange" data-form-step="next">Accept and Continue</button>
 					</p>
 				</div>
-				<div class="form-step"  style="display: none;">
+				<div id="signup-step-email" class="form-step" style="display: none;">
 					<input type="hidden" name="contributor[message_text]" placeholder="Message (optional)" />
 					<input type="hidden" name="contributor[is_legal]" value="true" id="check-participate" />
 					<input type="hidden" name="contributor[is_read_wp]" value="true" id="check-whitepaper" />
@@ -506,9 +506,10 @@
 					<p>
 						<input type="email" name="contributor[email]" placeholder="Email *" required />
 					</p>
-					<p class="divider">
+					<p>
 						You will be notified when your tokens are available. We won't disclose your email to third parties.
 					</p>
+					<hr class="divider"/>
 					<p>
 						<input type="text" name="contributor[name]" placeholder="First Name" />
 					</p>
