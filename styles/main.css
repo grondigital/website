@@ -2056,7 +2056,7 @@ hr.divider {
 }
 
 #contribute, #signup {
-	background: linear-gradient(180deg, transparent 0, transparent 38px, #f3f4f6 39px, transparent 200px);
+	background: linear-gradient(180deg, transparent 0, transparent 38px, rgba(243, 244, 246, 1) 39px, rgba(243, 244, 246, 0) 200px);
 }
 
 #tandc {
