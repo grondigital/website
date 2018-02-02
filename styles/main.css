@@ -291,13 +291,14 @@ textarea::placeholder {
 	box-shadow: 6px 0 4px -3px rgba(80, 80, 80, 0.2);
 }
 
-.form-crumb.past,
+.form-crumb.past {
+	color: #f18036;
+}
 .form-crumb.active {
 	background: #f18036;
 	border-color: #f18036;
 	color: #ffffff;
 }
-.form-crumb.past::after,
 .form-crumb.active::after {
 	background: #f18036;
 }
