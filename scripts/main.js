@@ -543,7 +543,7 @@ $(function () {
 		if (isNaN(amount)) {
 			return 0;
 		}
-		return Math.round(amount * 1000) / 1000;
+		return Math.round(amount * 1e12) / 1e12;
 	}
 	
 	var $eth = $('#eth-amount'), $gro = $('#gro-amount');
