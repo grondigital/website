@@ -93,6 +93,14 @@ textarea::placeholder {
 	color: #7e8fb4;
 }
 
+.user-step {
+	color: #425372;
+	font-weight: bold;
+}
+.blue .user-step {
+	color: #ffffff;
+}
+
 
 /**
  * Common classes
@@ -200,6 +208,7 @@ textarea::placeholder {
 	display: flex;
 	flex-wrap: nowrap;
 	width: 100%;
+	box-sizing: border-box;
 }
 .input-group .form-control {
 	flex: 1 1 auto;
@@ -267,8 +276,10 @@ textarea::placeholder {
 	color: #818181;
 	text-align: center;
 	font-size: 18px;
-	line-height: 75px;
 	font-weight: 600;
+}
+.form-crumb:first-child {
+	padding-left: 5px;
 }
 .form-crumb::after {
 	content: '';
@@ -287,14 +298,41 @@ textarea::placeholder {
 .form-crumb:last-child::after {
 	box-shadow: 6px 0 4px -3px rgba(80, 80, 80, 0.2);
 }
+.form-crumb > span {
+	position: relative;
+	z-index: 20;
+}
+@media (max-width: 767px) {
+	.form-crumbs {
+		padding-right: 15px;
+	}
+	.form-crumb {
+		height: 40px;
+		padding-left: 15px;
+		font-size: 10px;
+	}
+	.form-crumb > span {
+		margin-right: -15px;
+	}
+	.form-crumb:first-child {
+		padding-left: 0;
+	}
+	.form-crumb::after {
+		top: 6px;
+		right: -15px;
+		width: 27px;
+		height: 28px;
+	}
+}
 
-.form-crumb.past,
+.form-crumb.past {
+	color: #f18036;
+}
 .form-crumb.active {
 	background: #f18036;
 	border-color: #f18036;
 	color: #ffffff;
 }
-.form-crumb.past::after,
 .form-crumb.active::after {
 	background: #f18036;
 }
@@ -304,10 +342,30 @@ textarea::placeholder {
 
 
 .form-step {
-	padding: 15px 15px 0 15px;
+	padding: 15px 30px 0 30px;
 }
 .form-section {
-	padding: 30px;
+	padding: 20px 30px;
+}
+.form-section > :last-child {
+	margin-bottom: 0;
+}
+@media (max-width: 767px) {
+	.form-step {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.form-section {
+		padding: 15px;
+	}
+}
+
+.form-section p.highlighted {
+	color: #f18036;
+}
+.form-section span.highlighted {
+	color: #f18036;
+	font-weight: bold;
 }
 
 /**
@@ -1012,6 +1070,11 @@ hr.divider {
 .content-section.stepform-section > .container {
 	margin-top: -38px;
 	padding-top: 0;
+}
+@media (max-width: 767px) {
+	.content-section.stepform-section > .container {
+		margin-top: -21px;
+	}
 }
 .content-subsection {
 	margin-left: 35px;
@@ -2055,10 +2118,25 @@ hr.divider {
 	}
 }
 
-#contribute, #signup {
-	background: linear-gradient(180deg, transparent 0, transparent 38px, #f3f4f6 39px, transparent 200px);
+#buy-tokens, #contribute {
+	background: linear-gradient(180deg, transparent 0, transparent 38px, rgba(243, 244, 246, 1) 39px, rgba(243, 244, 246, 0) 200px);
+}
+@media (max-width: 767px) {
+	#buy-tokens, #contribute {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		background: linear-gradient(180deg, transparent 0, transparent 20px, rgba(243, 244, 246, 1) 21px, rgba(243, 244, 246, 0) 200px);
+	}
 }
 
+@media (max-width: 767px) {
+	#contribute .btn {
+		min-width: auto;
+		font-size: 75%;
+	}
+}
 #tandc {
 	overflow-y: auto;
 	max-height: 50vh;
@@ -2068,19 +2146,15 @@ hr.divider {
 #tandc h1 {
 	font-size: 30px;
 }
-#signup-step-email p {
+#contribute-step-email p {
 	margin-bottom: 15px;
 }
-#signup-step-email input[type="text"],
-#signup-step-email input[type="email"] {
+#contribute-step-email input[type="text"],
+#contribute-step-email input[type="email"] {
 	max-width: 100%;
 	width: 355px;
 }
 
-#contribute label {
-	display: block;
-	margin-bottom: 15px;
-}
 #calculator {
 	padding: 5px 15px 15px 15px;
 	border: 2px solid #7a92bc;
@@ -2108,6 +2182,7 @@ hr.divider {
 }
 #calculator-divider {
 	padding-top: 1.1em;
+	text-align: center;
 	color: #f18036;
 	font-size: 36px;
 }
@@ -2119,6 +2194,9 @@ hr.divider {
 }
 
 #calculator label {
+	display: block;
+	margin-bottom: 15px;
+	text-align: left;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -2147,11 +2225,45 @@ hr.divider {
 	border-right-width: 2px;
 	border-radius: 0 4px 4px 0;
 }
+@media (max-width: 1023px) {
+	#calculator legend {
+		font-size: 20px;
+	}
+	#calculator-img {
+		display: none;
+	}
+	#calculator .form-control,
+	#calculator .form-addon {
+		font-size: 18px;
+	}
+	#calculator label {
+		margin-bottom: 5px;
+		font-size: 16px;
+	}
+	#calculator-divider {
+		padding-top: 0.7em;
+	}
+}
+@media (max-width: 767px) {
+	#calculator legend {
+		text-align: center;
+	}
+	#calculator .form-block > * {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#calculator .form-block {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	#calculator-divider {
+		padding-top: 0;
+	}
+}
 
 #calculator-summary {
 	display: flex;
-	margin-top: 1px;
-	background: url("../images/bg/bg-title.png") center center / cover;
+	background: url("../images/bg/bg-form.png") center center / cover;
 }
 #calculator-summary > * {
 	flex: 1;
@@ -2170,8 +2282,63 @@ hr.divider {
 	margin: 0;
 }
 #calculator-summary .highlighted {
+	color: #ffffff;
 	font-size: 200%;
 	font-weight: 600;
+}
+
+@media (max-width: 767px) {
+	#calculator-summary {
+		flex-direction: column;
+	}
+	#calculator-summary > * {
+		margin-bottom: 15px;
+	}
+	#calculator-summary > *:first-child {
+		padding-left: 20px;
+	}
+	#calculator-summary > *:last-child {
+		margin-bottom: 0;
+		padding-right: 20px;
+		border-right: 1px solid #8e98aa;
+	}
+	#calculator-summary .highlighted {
+		font-size: 130%;
+	}
+}
+
+#contribution-block {
+	text-align: left;
+}
+#contribution-block p {
+	margin-bottom: 5px;
+}
+#contribution-block > :last-child {
+	margin-bottom: 0;
+}
+#contribution-block label {
+	color: #425372;
+	font-weight: bold;
+}
+#contribution-details {
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 5px;
+	padding: 10px;
+	background: #e7e8e9;
+}
+#contribution-details label {
+	margin-right: 0.5em;
+}
+#copy-address {
+	cursor: pointer;
+}
+@media (max-width: 767px) {
+	#contribution-details label {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
 }
 
 

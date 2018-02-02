@@ -424,10 +424,10 @@ $(function () {
 });
 
 /**
- * The Sign Up form
+ * The Contribute form
  */
 $(function () {
-	var $form = $('#signup-form');
+	var $form = $('#contribute-form');
 	
 	if (!$form.length)
 		return;
@@ -457,7 +457,8 @@ $(function () {
 		var $nextBtn = $currentStep.find('button[data-form-step="next"], button[type="submit"]');
 		
 		$nextBtn.attr('disabled', !checkInputs($required));
-		$required.on('change.checkRequired', function () {console.log('check');
+		//TODO: does all this events needed?
+		$required.on('input.checkRequired propertychange.checkRequired change.checkRequired', function () {
 			$nextBtn.attr('disabled', !checkInputs($required));
 		});
 	}
@@ -470,7 +471,9 @@ $(function () {
 				if (!$input.is(':checked')) {
 					passed = false;
 				}
-			} else if ($input.val()==='') {
+			} else if ($input.is('[type="email"]')) {
+				passed = /.+@.+\..+/.test($input.val());
+			} if ($input.val()==='') {
 				passed = false;
 			}
 		}
@@ -496,7 +499,7 @@ $(function () {
 });
 
 /**
- * The Contribution form
+ * The Buy Tokens form
  */
 $(function () {
 	var ethToGro = 14000; //TODO: automatically update exchange rate with ICO rounds
@@ -543,7 +546,7 @@ $(function () {
 		if (isNaN(amount)) {
 			return 0;
 		}
-		return Math.round(amount * 1000) / 1000;
+		return Math.round(amount * 1e12) / 1e12;
 	}
 	
 	var $eth = $('#eth-amount'), $gro = $('#gro-amount');
@@ -554,7 +557,7 @@ $(function () {
 		var eth = forceNumber($eth),
 		    gro = convert('eth', eth);
 		
-		$gro.val(gro);
+		$gro.val(gro? gro : '');
 		
 		$('.gro-amount').html(formatAmount(gro));
 		$('.eth-amount').html(formatAmount(eth));
@@ -564,7 +567,7 @@ $(function () {
 		var gro = forceNumber($gro),
 		    eth = convert('gro', gro);
 		
-		$eth.val(eth);
+		$eth.val(eth? eth : '');
 		
 		$('.gro-amount').html(formatAmount(gro));
 		$('.eth-amount').html(formatAmount(eth));

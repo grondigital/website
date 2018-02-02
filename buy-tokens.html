@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Buy tokens | Gron Digital</title>
+	<title>Gron Digital Tokens Sale | Gron Digital</title>
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -31,7 +31,7 @@
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CSPLQJ"
-									height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <header id="main-header" class="home-section">
 	<div class="container">
@@ -54,67 +54,100 @@
 	</div>
 </header>
 
-<section class="gray title-section">
+<section class="blue title-section stepform-title-section">
 	<div class="container">
-		<h1 class="section-header">Buy Tokens</h1>
+		<h1 class="section-header">Gron Digital Tokens Sale</h1>
 	</div>
 </section>
 
-<section class="content-section">
+<section class="content-section stepform-section">
 	<div class="container">
-		<p>Some general info about token sale and calculator</p>
-		<form id="calculator">
-			<input type="number" placeholder="BTC / BCH / ETH" />
-			<select>
-				<option>BTC</option>
-				<option>BCH</option>
-				<option>ETH</option>
-			</select>
-			<=>
-			<input type="number" placeholder="GRO" />
-		</form>
-	</div>
-</section>
-
-<section class="content-section gray">
-	<div class="container">
-		<p>How to buy tokens</p>
-		<form id="buy-tokens-form">
-			<p>
-				<input type="text" name="wallet" placeholder="You ETH wallet for receiving GRO tokens" required/>
-			</p>
-			<p>
-				<label for="currency">How would you pay?</label>
-				<select id="currency" name="currency">
-					<option>BTC</option>
-					<option>BCH</option>
-					<option>ETH</option>
-				</select>
-			</p>
-			<p><label><input type="checkbox" name="tc-agree" required/>I agree with <a href="/terms-and-conditions">Terms and
-				Conditions</a></label></p>
-			<p>
-				<button type="submit">Get personal address for payment</button>
-			</p>
-			
-			<p>
-				<label for="participate-amount">I would like to contribute</label><br />
-				<select name="currency" required>
-					<option value="" disabled selected>Currency</option>
-					<option value="ETH">ETH</option>
-					<option value="BTC">BTC</option>
-					<option value="BCH">BCH</option>
-				</select>
-				<input type="text" name="amount" id="participate-amount" placeholder="Amount" required />
-			</p>
-			<p>
-				<label for="participate-address">Send my GRO tokens to this address:</label>
-				<input type="text" name="eth-address" id="participate-address" placeholder="ETH Address" />
-			</p>
-			<p class="centered">
-				<button type="button" name="step-next" data-check>Continue</button>
-			</p>
-		</form>
+		<div id="buy-tokens">
+			<div class="form-crumbs">
+				<div class="form-crumb col-vertical-center past"><span>Citizenship Enquiry</span></div>
+				<div class="form-crumb col-vertical-center past"><span>Terms</span></div>
+				<div class="form-crumb col-vertical-center past"><span>Notification Email</span></div>
+				<div class="form-crumb col-vertical-center active"><span>Buy Tokens</span></div>
+			</div>
+			<div class="form-step">
+				<div id="calculator-block" class="form-section blue">
+					<p>
+						<span class="user-step">1.</span> Decide, using the calculator below, how many tokens you would like to buy
+					</p>
+					<fieldset id="calculator">
+						<legend>Calculator</legend>
+						<div class="form-block">
+							<div>
+								<label for="eth-amount">Amount of ETH</label>
+								<div class="input-group">
+									<input type="text" id="eth-amount" class="form-control" size="" placeholder="0"/>
+									<span class="form-addon">ETH</span>
+								</div>
+							</div>
+							<div id="calculator-divider">
+								<span class="icon-retweet"></span>
+							</div>
+							<div>
+								<label>Amount of GRO tokens</label>
+								<div class="input-group">
+									<input type="text" id="gro-amount" class="form-control" size="" placeholder="0"/>
+									<span class="form-addon">GRO</span>
+								</div>
+							</div>
+							<div id="calculator-img">
+								<img src="images/big-g.svg" alt="GRO" />
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div id="calculator-summary" class="form-section blue">
+					<div>
+						<p>Your BONUS</p>
+						<p class="highlighted">40%</p>
+					</div>
+					<div>
+						<p>You'll receive</p>
+						<p class="highlighted"><span class="gro-amount"></span> GRO</p>
+					</div>
+					<div>
+						<p>For an amount of ETH</p>
+						<p class="highlighted"><span class="eth-amount"></span> ETH</p>
+					</div>
+				</div>
+				<div id="contribution-block" class="form-section gray">
+					<p>
+						<span class="user-step">2.</span> From the ERC20
+						<a href="https://grondigital.com/faq#q-3" target="_blank">Token compatible wallet</a> send your ETH to
+					</p>
+					<div id="contribution-details" class="input-group">
+						<label for="contribution-address">Contribution contract address:</label>
+						<input type="text" id="contribution-address" class="form-control" value="0x997e3ADb550A85895F5BECF54a2751E6dF24edC8" readonly />
+						<button id="copy-address" class="form-addon icon-docs"></button>
+					</div>
+					<p>*Minimum contribution 0.1 ETH</p>
+					<p>*Make sure you set your GAS Limit to minimum 120000</p>
+					<p class="highlighted">*Do not send your ETH from any exchanges, as we won’t be able to send you GRO</p>
+				</div>
+				<div class="form-section divider">
+					<p>
+						<span class="user-step">3.</span> You will receive your <span class="highlighted">GRO + 40% bonus</span>
+						within a few minutes.
+					</p>
+				</div>
+				<div class="form-section">
+					<p>
+						In addition to our +40% Pre-ICO Bonus, we are also running the 1-in-10 Lottery, whereby you, the
+						contributor, will get an additional 10% of GRO, if your contribution transaction is written in the block
+						number ending with “0”. In other words, the block number is a multiple of 10. You can check if you are a
+						winner on the Etherscan website. This is an automated process if you are a winner the Gron Digital smart
+						contract will reward you with an additional 10% of GRO.
+					</p>
+					<p class="centered">
+						<img src="images/coin.png" alt="GRO"/>
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
