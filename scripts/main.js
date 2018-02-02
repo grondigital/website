@@ -554,7 +554,7 @@ $(function () {
 		var eth = forceNumber($eth),
 		    gro = convert('eth', eth);
 		
-		$gro.val(gro);
+		$gro.val(gro? gro : '');
 		
 		$('.gro-amount').html(formatAmount(gro));
 		$('.eth-amount').html(formatAmount(eth));
@@ -564,7 +564,7 @@ $(function () {
 		var gro = forceNumber($gro),
 		    eth = convert('gro', gro);
 		
-		$eth.val(eth);
+		$eth.val(eth? eth : '');
 		
 		$('.gro-amount').html(formatAmount(gro));
 		$('.eth-amount').html(formatAmount(eth));
