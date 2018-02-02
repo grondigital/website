@@ -70,26 +70,10 @@
 				<div class="form-crumb col-vertical-center active"><span>Buy Tokens</span></div>
 			</div>
 			<div class="form-step">
-				<ol>
-					<li>Copy contribution Ethereum address below</li>
-					<li>Send ETH (min 0.1 ETH) using your ERC20 Token compliant wallet such as MyEtherWallet, Mist. Learn more in
-						our FAQ.<br/>
-						<span class="text-highlight">
-							Do not send your ETH from any exchanges, as we won’t be able to send you GRO
-						</span>
-					<li>Set Gas Limit minimum to 120,000</li>
-				</ol>
-				<p>
-					You will receive your GRO + 40% bonus within a few minutes.
-				</p>
-				<div id="contribution-block" class="form-section gray">
-					<label for="contribution-address">Contribution contract address</label>
-					<div class="input-group">
-						<input type="text" id="contribution-address" class="form-control" value="0x23E6E55f7a3dc9a86aCaDf2E059eA3Cb0397EfCF" readonly />
-						<button id="copy-address" class="form-addon icon-docs"></button>
-					</div>
-				</div>
-				<div class="form-section blue">
+				<div id="calculator-block" class="form-section blue">
+					<p>
+						<span class="user-step">1.</span> Decide, using the calculator below, how many tokens you would like to buy;
+					</p>
 					<fieldset id="calculator">
 						<legend>Calculator</legend>
 						<div class="form-block">
@@ -129,6 +113,38 @@
 						<p>For an amount of ETH</p>
 						<p class="highlighted"><span class="eth-amount"></span> ETH</p>
 					</div>
+				</div>
+				<div id="contribution-block" class="form-section gray">
+					<p>
+						<span class="user-step">2.</span> From the ERC20
+						<a href="https://grondigital.com/faq#q-3" target="_blank">Token compatible wallet</a> send your ETH to
+					</p>
+					<div id="contribution-details" class="input-group">
+						<label for="contribution-address">Contribution contract address:</label>
+						<input type="text" id="contribution-address" class="form-control" value="0x997e3ADb550A85895F5BECF54a2751E6dF24edC8" readonly />
+						<button id="copy-address" class="form-addon icon-docs"></button>
+					</div>
+					<p>*Minimum contribution 0.05 ETH</p>
+					<p>*Make sure you set your GAS Limit to minimum 120000</p>
+					<p class="highlighted">*Do not send your ETH from any exchanges, as we won’t be able to send you GRO</p>
+				</div>
+				<div class="form-section divider">
+					<p>
+						<span class="user-step">3.</span> You will receive your <span class="highlighted">GRO + 40% bonus</span>
+						within a few minutes.
+					</p>
+				</div>
+				<div class="form-section">
+					<p>
+						In addition to our +40% Pre-ICO Bonus, we are also running the 1-in-10 Lottery, whereby you, the
+						contributor, will get an additional 10% of GRO, if your contribution transaction is written in the block
+						number ending with “0”. In other words, the block number is a multiple of 10. You can check if you are a
+						winner on the Etherscan website. This is an automated process if you are a winner the Gron Digital smart
+						contract will reward you with an additional 10% of GRO.
+					</p>
+					<p class="centered">
+						<img src="images/coin.png" alt="GRO"/>
+					</p>
 				</div>
 			</div>
 		</div>

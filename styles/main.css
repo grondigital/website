@@ -69,9 +69,6 @@ a.no-line:focus {
 .strike {
 	text-decoration: line-through;
 }
-.text-highlight {
-	color: red;
-}
 
 input, button, textarea {
 	box-sizing: border-box;
@@ -94,6 +91,14 @@ input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 textarea::placeholder {
 	color: #7e8fb4;
+}
+
+.user-step {
+	color: #425372;
+	font-weight: bold;
+}
+.blue .user-step {
+	color: #ffffff;
 }
 
 
@@ -203,6 +208,7 @@ textarea::placeholder {
 	display: flex;
 	flex-wrap: nowrap;
 	width: 100%;
+	box-sizing: border-box;
 }
 .input-group .form-control {
 	flex: 1 1 auto;
@@ -339,7 +345,10 @@ textarea::placeholder {
 	padding: 15px 30px 0 30px;
 }
 .form-section {
-	padding: 30px;
+	padding: 20px 30px;
+}
+.form-section > :last-child {
+	margin-bottom: 0;
 }
 @media (max-width: 767px) {
 	.form-step {
@@ -349,6 +358,14 @@ textarea::placeholder {
 	.form-section {
 		padding: 15px;
 	}
+}
+
+.form-section p.highlighted {
+	color: #f18036;
+}
+.form-section span.highlighted {
+	color: #f18036;
+	font-weight: bold;
 }
 
 /**
@@ -2138,13 +2155,6 @@ hr.divider {
 	width: 355px;
 }
 
-#buy-tokens label {
-	display: block;
-	margin-bottom: 15px;
-}
-#contribution-block {
-	font-size: 150%;
-}
 #calculator {
 	padding: 5px 15px 15px 15px;
 	border: 2px solid #7a92bc;
@@ -2184,6 +2194,8 @@ hr.divider {
 }
 
 #calculator label {
+	display: block;
+	margin-bottom: 15px;
 	text-align: left;
 	font-size: 18px;
 	font-weight: bold;
@@ -2251,8 +2263,7 @@ hr.divider {
 
 #calculator-summary {
 	display: flex;
-	margin-top: 1px;
-	background: url("../images/bg/bg-title.png") center center / cover;
+	background: url("../images/bg/bg-form.png") center center / cover;
 }
 #calculator-summary > * {
 	flex: 1;
@@ -2271,6 +2282,7 @@ hr.divider {
 	margin: 0;
 }
 #calculator-summary .highlighted {
+	color: #ffffff;
 	font-size: 200%;
 	font-weight: 600;
 }
@@ -2292,6 +2304,40 @@ hr.divider {
 	}
 	#calculator-summary .highlighted {
 		font-size: 130%;
+	}
+}
+
+#contribution-block {
+	text-align: left;
+}
+#contribution-block p {
+	margin-bottom: 5px;
+}
+#contribution-block > :last-child {
+	margin-bottom: 0;
+}
+#contribution-block label {
+	color: #425372;
+	font-weight: bold;
+}
+#contribution-details {
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 5px;
+	padding: 10px;
+	background: #e7e8e9;
+}
+#contribution-details label {
+	margin-right: 0.5em;
+}
+#copy-address {
+	cursor: pointer;
+}
+@media (max-width: 767px) {
+	#contribution-details label {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 5px;
 	}
 }
 
