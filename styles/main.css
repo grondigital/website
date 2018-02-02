@@ -270,8 +270,10 @@ textarea::placeholder {
 	color: #818181;
 	text-align: center;
 	font-size: 18px;
-	line-height: 75px;
 	font-weight: 600;
+}
+.form-crumb:first-child {
+	padding-left: 5px;
 }
 .form-crumb::after {
 	content: '';
@@ -289,6 +291,32 @@ textarea::placeholder {
 }
 .form-crumb:last-child::after {
 	box-shadow: 6px 0 4px -3px rgba(80, 80, 80, 0.2);
+}
+.form-crumb > span {
+	position: relative;
+	z-index: 20;
+}
+@media (max-width: 767px) {
+	.form-crumbs {
+		padding-right: 15px;
+	}
+	.form-crumb {
+		height: 40px;
+		padding-left: 15px;
+		font-size: 10px;
+	}
+	.form-crumb > span {
+		margin-right: -15px;
+	}
+	.form-crumb:first-child {
+		padding-left: 0;
+	}
+	.form-crumb::after {
+		top: 6px;
+		right: -15px;
+		width: 27px;
+		height: 28px;
+	}
 }
 
 .form-crumb.past {
@@ -1016,6 +1044,11 @@ hr.divider {
 .content-section.stepform-section > .container {
 	margin-top: -38px;
 	padding-top: 0;
+}
+@media (max-width: 767px) {
+	.content-section.stepform-section > .container {
+		margin-top: -21px;
+	}
 }
 .content-subsection {
 	margin-left: 35px;
@@ -2062,7 +2095,18 @@ hr.divider {
 #buy-tokens, #contribute {
 	background: linear-gradient(180deg, transparent 0, transparent 38px, rgba(243, 244, 246, 1) 39px, rgba(243, 244, 246, 0) 200px);
 }
+@media (max-width: 767px) {
+	#buy-tokens, #contribute {
+		background: linear-gradient(180deg, transparent 0, transparent 20px, rgba(243, 244, 246, 1) 21px, rgba(243, 244, 246, 0) 200px);
+	}
+}
 
+@media (max-width: 767px) {
+	#contribute .btn {
+		min-width: auto;
+		font-size: 75%;
+	}
+}
 #tandc {
 	overflow-y: auto;
 	max-height: 50vh;
