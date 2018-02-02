@@ -424,7 +424,7 @@ $(function () {
 });
 
 /**
- * The Sign Up form
+ * The Contribute form
  */
 $(function () {
 	var $form = $('#contribute-form');
@@ -457,7 +457,8 @@ $(function () {
 		var $nextBtn = $currentStep.find('button[data-form-step="next"], button[type="submit"]');
 		
 		$nextBtn.attr('disabled', !checkInputs($required));
-		$required.on('change.checkRequired', function () {console.log('check');
+		//TODO: does all this events needed?
+		$required.on('input.checkRequired propertychange.checkRequired change.checkRequired', function () {
 			$nextBtn.attr('disabled', !checkInputs($required));
 		});
 	}
@@ -470,7 +471,9 @@ $(function () {
 				if (!$input.is(':checked')) {
 					passed = false;
 				}
-			} else if ($input.val()==='') {
+			} else if ($input.is('[type="email"]')) {
+				passed = /.+@.+\..+/.test($input.val());
+			} if ($input.val()==='') {
 				passed = false;
 			}
 		}
