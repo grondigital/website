@@ -427,7 +427,7 @@ $(function () {
  * The Sign Up form
  */
 $(function () {
-	var $form = $('#signup-form');
+	var $form = $('#contribute-form');
 	
 	if (!$form.length)
 		return;
@@ -496,7 +496,7 @@ $(function () {
 });
 
 /**
- * The Contribution form
+ * The Buy Tokens form
  */
 $(function () {
 	var ethToGro = 14000; //TODO: automatically update exchange rate with ICO rounds

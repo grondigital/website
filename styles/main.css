@@ -2058,7 +2058,7 @@ hr.divider {
 	}
 }
 
-#contribute, #signup {
+#buy-tokens, #contribute {
 	background: linear-gradient(180deg, transparent 0, transparent 38px, rgba(243, 244, 246, 1) 39px, rgba(243, 244, 246, 0) 200px);
 }
 
@@ -2071,16 +2071,16 @@ hr.divider {
 #tandc h1 {
 	font-size: 30px;
 }
-#signup-step-email p {
+#contribute-step-email p {
 	margin-bottom: 15px;
 }
-#signup-step-email input[type="text"],
-#signup-step-email input[type="email"] {
+#contribute-step-email input[type="text"],
+#contribute-step-email input[type="email"] {
 	max-width: 100%;
 	width: 355px;
 }
 
-#contribute label {
+#buy-tokens label {
 	display: block;
 	margin-bottom: 15px;
 }
