@@ -2085,6 +2085,9 @@ hr.divider {
 	display: block;
 	margin-bottom: 15px;
 }
+#contribution-block {
+	font-size: 150%;
+}
 #calculator {
 	padding: 5px 15px 15px 15px;
 	border: 2px solid #7a92bc;
