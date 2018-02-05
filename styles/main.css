@@ -2037,87 +2037,8 @@ hr.divider {
 
 
 /**
- * Participate form
+ * Contribute and Buy Tokens form
  */
-#participate {
-	position: relative;
-}
-#participate .loader {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -25px;
-	margin-left: -25px;
-}
-#participate.loading #participate-form {
-	opacity: 0.5;
-}
-
-#participate-form input[type="text"],
-#participate-form input[type="email"],
-#participate-form textarea {
-	width: 100%;
-}
-#participate-form .input-columns {
-	display: flex;
-}
-#participate-form .input-columns input {
-	width: 50%;
-	margin-left: 15px;
-	margin-right: 15px;
-}
-#participate-form .input-columns input:first-child {
-	margin-left: 0;
-}
-#participate-form .input-columns input:last-child {
-	margin-right: 0;
-}
-#participate-form button {
-	min-width: 165px;
-}
-
-#participate-form .checkbox {
-	font-size: 12px;
-}
-#participate-form .checkbox input[type="checkbox"] + label::before {
-	top: 0.15em;
-	width: 12px;
-	height: 12px;
-	font-size: 12px;
-	line-height: 12px;
-}
-
-#participate-form [name="message"] {
-	height: 5em;
-	resize: vertical;
-}
-
-#participate-thank h4 {
-	margin-bottom: 30px;
-	text-align: center;
-	font-size: 34px;
-	color: #f18036;
-}
-#participate-thank .thank-text {
-	text-align: center;
-	font-size: 18px;
-	font-weight: bold;
-	color: #425372;
-}
-
-@media (max-width: 767px) {
-	#participate-form .input-columns {
-		display: block;
-	}
-	#participate-form .input-columns input {
-		width: 100%;
-		margin: 0 0 30px 0;
-	}
-	#participate-form .input-columns input:last-child {
-		margin-bottom: 0;
-	}
-}
-
 #buy-tokens, #contribute {
 	background: linear-gradient(180deg, transparent 0, transparent 38px, rgba(243, 244, 246, 1) 39px, rgba(243, 244, 246, 0) 200px);
 }
