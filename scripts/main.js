@@ -61,14 +61,14 @@ function trk(category, action, label) {
 	action = action || '';
 	label = label || '';
 	
-	dataLayer && dataLayer.push({
+	window.dataLayer && dataLayer.push({
 		'event': 'eventTracking',
 		'category': category,
 		'action': action,
 		'label': label
 	});
 	
-	fbq && fbq('trackCustom', category, {
+	window.fbq && fbq('trackCustom', category, {
 		'action': action,
 		'label': label
 	});
