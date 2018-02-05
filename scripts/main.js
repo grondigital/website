@@ -447,6 +447,9 @@ $(function () {
 	$address.click(function () {
 		$address.select();
 	});
+	$address.on('copy cut', function () {
+		trk('Contribute', 'copy-address', 'Copy contribution address');
+	});
 	
 	//force input to numerical values
 	function forceNumber($input) {
