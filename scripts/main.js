@@ -107,10 +107,10 @@ $(function() {
 	// Set the date we're counting down to
 	var roundDates = [
 		new Date('2018-01-09T00:00:00Z').getTime(), //pre-ICO
-		new Date('2018-02-06T00:00:00Z').getTime(), //round 1
-		new Date('2018-02-20T00:00:00Z').getTime(), //round 2
-		new Date('2018-03-06T00:00:00Z').getTime(), //round 3
-		new Date('2018-03-20T00:00:00Z').getTime()  //round 4
+		new Date('2018-02-27T00:00:00Z').getTime(), //round 1
+		new Date('2018-03-13T00:00:00Z').getTime(), //round 2
+		new Date('2018-03-27T00:00:00Z').getTime(), //round 3
+		new Date('2018-04-10T00:00:00Z').getTime()  //round 4
 	];
 	// select first round date which is after current
 	var now = new Date().getTime(), countDownDate, currentRound = 4;
@@ -355,75 +355,6 @@ $(function() {
 });
 
 /**
- * The Participate form
- */
-$(function () {
-	//TODO: unify this with Subscribe & Contact Us forms
-	var $form = $('#participate-form');
-	
-	if (!$form.length)
-		return;
-	
-	var $container = $('#participate'),
-	    $loader = $container.find('.loader'),
-	    $required = $form.find(':required'),
-	    $submit = $form.find(':submit');
-	
-	var currentStep = 1, $steps = $form.find('.form-step');
-	function showStep(step) {
-		$steps.hide();
-		$steps.eq(step-1).show();
-	}
-	function checkRequired() {
-		var passed = true;
-		for (var i=0; i < $required.length; i++) {
-			var $input = $required.eq(i);
-			
-			if ($input.is('[type="checkbox"]')) {
-				if (!$input.is(':checked')) {
-					passed = false;
-				}
-			} else if ($input.val()==='') {
-				passed = false;
-			}
-		}
-		$submit.prop('disabled', !passed);
-	}
-	
-	//check required inputs
-	checkRequired();
-	$required.change(function () {
-		checkRequired();
-	});
-	
-	$form.submit(function () {
-		trk('Participate', 'submit', 'Submit');
-	});
-	
-	//$form.submit(function() {
-	//	var formData = $form.serialize();
-	//	
-	//	$form.find('.error').remove();
-	//	$container.addClass('loading');
-	//	$form.find(':input').prop('disabled', true);
-	//	$loader.show();
-	//	
-	//	$.post($form.attr("action"), formData).done(function () {
-	//		currentStep = 2;
-	//		showStep(currentStep);
-	//	}).fail(function () {
-	//		$submit.before('<div class="error">Something went wrong! Please, try again later.</div>');
-	//	}).always(function () {
-	//		$container.removeClass('loading');
-	//		$form.find(':input').prop('disabled', false);
-	//		$loader.hide();
-	//	});
-	//	
-	//	return false;
-	//});
-});
-
-/**
  * The Contribute form
  */
 $(function () {
@@ -515,6 +446,9 @@ $(function () {
 	});
 	$address.click(function () {
 		$address.select();
+	});
+	$address.on('copy cut', function () {
+		trk('Contribute', 'copy-address', 'Copy contribution address');
 	});
 	
 	//force input to numerical values
