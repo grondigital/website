@@ -1603,12 +1603,6 @@ hr.divider {
 	}
 }
 
-@media (max-width: 1023px) {
-	.bar-middle {
-		height: 34px;
-	}
-}
-
 @media (max-width: 767px) {
 	.progress-bar {
 		width: 33.3333% !important;
