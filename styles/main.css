@@ -1443,7 +1443,18 @@ hr.divider {
 	margin-bottom: 0;
 }
 #top-buttons {
-	/*margin-top: 10px;*/
+	display: block;
+	margin-top: 37px;
+}
+@media (min-width: 1200px) {
+	#top-buttons {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 0;
+		margin-left: 20px;
+		position: relative;
+		top: -13px;
+	}
 }
 #top-text .btn:last-child {
 	margin-right: 0;
