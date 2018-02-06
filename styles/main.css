@@ -1372,6 +1372,7 @@ hr.divider {
 #top-section .container {
 	position: relative;
 	z-index: 50;
+	padding-top: 23px;
 	padding-bottom: 20px;
 }
 #particles {
@@ -1384,10 +1385,18 @@ hr.divider {
 }
 
 #hero {
-	padding-bottom: 20px;
+	padding-bottom: 30px;
+}
+#top-image-wrapper {
+	width: 200px;
 }
 #top-image-container {
-	max-width: 494px;
+	max-width: 420px;
+}
+@media (min-width: 1200px) {
+	#top-image-container {
+		margin-top: -30px;
+	}
 }
 #top-image {
 	position: relative;
@@ -1417,7 +1426,8 @@ hr.divider {
 	font-size: 18px;
 }
 #top-text h1 {
-	margin-bottom: 20px;
+	font-size: 40px;
+	margin-bottom: 24px;
 	text-shadow: 2px 2px 3px rgba(22, 37, 68, 0.55);
 }
 #top-text .btn {
@@ -1426,13 +1436,14 @@ hr.divider {
 	margin-bottom: 20px;
 }
 #top-text p {
-	margin-bottom: 15px;
+	margin-bottom: 27px;
+	line-height: 1.4445;
 }
 #top-text p:last-child {
 	margin-bottom: 0;
 }
 #top-buttons {
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 }
 #top-text .btn:last-child {
 	margin-right: 0;
@@ -1452,6 +1463,191 @@ hr.divider {
 	#top-text .btn:last-child {
 		margin-left: 10px;
 		margin-right: 10px;
+	}
+}
+
+#statistics {
+	padding: 41px 40px 18px 40px;
+	margin-bottom: 5px;
+	text-align: center;
+	background: #2a3a59 url("../images/bg/bg-stat.png") top center / cover;
+	box-shadow: 10px 17px 25px 0 rgba(14, 25, 47, 0.35);
+}
+
+#statistics .section-header::after {
+	margin-top: 23px;
+}
+
+.section-header + .progress-label {
+	margin-top: -23px;
+}
+
+.progress-label > div {
+	margin-bottom: 23px;
+	width: 40%;
+}
+
+.label-start {
+	text-align: left;
+	margin-left: 50px;
+}
+
+.label-finish {
+	text-align: right;
+}
+
+.progress {
+	display: flex;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+.progress-bar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 6px 5px;
+	background-color: #98abce;
+	color: #3d4f72;
+	transition: width 0.6s ease;
+	position: relative;
+}
+
+.progress-bar-animated {
+	animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 1rem 0;
+	}
+}
+
+.bg-available {
+	background: #f18136;
+	color: #ffffff;
+}
+
+.bg-sold {
+	background: #b3632e;
+	color: #ffffff;
+	background-image: linear-gradient(-45deg,
+	rgb(203, 109, 45) 25%, transparent 25%, transparent 50%,
+	rgb(203, 109, 45) 50%,
+	rgb(203, 109, 45) 75%, transparent 75%, transparent);
+	background-size: 1rem 1rem;
+}
+
+.bar-start::before,
+.bar-middle::before,
+.bar-middle::after,
+.bar-finish::after {
+	content: '';
+	display: block;
+	width: 2px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -26px;
+	background: #ffffff;
+}
+
+.bar-middle::before,
+.bar-middle::after {
+	height: 55px;
+	margin-top: -29px;
+	background: transparent;
+	background-image: linear-gradient(0deg,
+	#ffffff, #ffffff 8px,
+	transparent 8px, transparent 11px);
+	background-size: 100% 11px;
+}
+
+.bar-middle::after,
+.bar-finish::after {
+	left: initial;
+	right: 0;
+}
+
+.progress-desc .progress-bar {
+	font-weight: 400;
+	background: transparent;
+	color: #98abce;
+}
+
+.progress + .progress {
+	margin-top: 12px;
+}
+
+@media (max-width: 1199px) {
+	.progress {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.progress-label > div {
+		margin-bottom: 15px;
+	}
+	.label-start,
+	.label-finish {
+		font-size: 14px;
+	}
+	.label-start {
+		margin-left: 15px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.bar-middle {
+		height: 34px;
+	}
+}
+
+@media (max-width: 767px) {
+	.progress-bar {
+		width: 33.3333% !important;
+	}
+	.bar-middle {
+		height: 51px;
+	}
+	.bar-start::before,
+	.bar-finish::after {
+		height: 74px;
+		margin-top: -37px;
+	}
+	.bar-middle::before,
+	.bar-middle::after {
+		height: 77px;
+		margin-top: -40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.section-header + .progress-label {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 424px) {
+	.progress-label > div {
+		font-size: 12px;
+		width: 35%;
+	}
+
+	.bar-start,
+	.bar-middle,
+	.bar-finish {
+		font-size: 11px;
+	}
+
+	.progress-desc .progress-bar {
+		font-size: 13px;
 	}
 }
 
