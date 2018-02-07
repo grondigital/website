@@ -2309,6 +2309,7 @@ hr.divider {
 	}
 }
 #tandc {
+	-webkit-overflow-scrolling: touch;
 	overflow-y: auto;
 	max-height: 50vh;
 	margin-bottom: 30px;
