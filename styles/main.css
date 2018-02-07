@@ -2427,6 +2427,18 @@ hr.divider {
 	#calculator-summary .highlighted {
 		font-size: 130%;
 	}
+	#calculator-summary div {
+		display: flex;
+		align-items: center;
+	}
+	#calculator-summary p {
+		text-align: left;
+		width: 60%;
+	}
+	#calculator-summary p + p{
+		text-align: right;
+		width: 40%;
+	}
 }
 
 #contribution-block {
