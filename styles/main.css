@@ -1555,6 +1555,11 @@ hr.divider {
 	background-size: 1rem 1rem;
 }
 
+.bg-transparent {
+    background: transparent;
+    color: #ffffff;
+}
+
 .bar-start::before,
 .bar-middle::before,
 .bar-middle::after,
@@ -1614,45 +1619,89 @@ hr.divider {
 	}
 }
 
+@media (min-width: 768px) {
+	.progress-sm {
+		display: none;
+	}
+}
+
 @media (max-width: 767px) {
+	#statistics {
+		padding: 24px 40px 44px 40px;
+	}
+
+	#statistics .section-header {
+		font-size: 25px;
+		margin-bottom: 50px;
+	}
+
+	#statistics .section-header::after {
+		margin-top: 15px;
+	}
+
+	.label-start {
+		margin-left: -5px;
+	}
+
+	.label-finish {
+		margin-right: -19px;
+	}
+
+	.label-gro {
+		display: none;
+	}
+
+	.progress-lg {
+		display: none;
+	}
+
+	.progress-label > div {
+		margin-bottom: 30px;
+	}
+
+	.progress + .progress {
+		margin-top: 33px;
+	}
+
 	.progress-bar {
-		width: 33.3333% !important;
+		font-size: 12px;
+		font-weight: 400;
+		height: 18px;
 	}
-	.bar-middle {
-		height: 51px;
+
+	.progress-bar .text-label {
+		display: block;
+		width: 200px;
+		position: absolute;
+		top: -20px;
+		left: 7px;
+		color: #98abce;
 	}
+
+	.bar-finish {
+		padding-right: 10px;
+	}
+
 	.bar-start::before,
 	.bar-finish::after {
-		height: 74px;
-		margin-top: -37px;
-	}
-	.bar-middle::before,
-	.bar-middle::after {
-		height: 77px;
-		margin-top: -40px;
-	}
-}
-
-@media (max-width: 767px) {
-	.section-header + .progress-label {
-		margin-top: 0;
-	}
-}
-
-@media (max-width: 424px) {
-	.progress-label > div {
-		font-size: 12px;
-		width: 35%;
+		height: 63px;
+		margin-top: -34px;
 	}
 
-	.bar-start,
-	.bar-middle,
-	.bar-finish {
-		font-size: 11px;
-	}
-
-	.progress-desc .progress-bar {
-		font-size: 13px;
+	.bar-start::after {
+		content: '';
+		display: block;
+		width: 2px;
+		height: 44px;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		margin-top: -23px;
+		background: transparent;
+		background-image: linear-gradient(0deg,
+		#ffffff, #ffffff 8px,
+		transparent 8px, transparent 11px);
+		background-size: 100% 11px;
 	}
 }
 
@@ -2260,6 +2309,7 @@ hr.divider {
 	}
 }
 #tandc {
+	-webkit-overflow-scrolling: touch;
 	overflow-y: auto;
 	max-height: 50vh;
 	margin-bottom: 30px;
@@ -2426,6 +2476,18 @@ hr.divider {
 	}
 	#calculator-summary .highlighted {
 		font-size: 130%;
+	}
+	#calculator-summary div {
+		display: flex;
+		align-items: center;
+	}
+	#calculator-summary p {
+		text-align: left;
+		width: 60%;
+	}
+	#calculator-summary p + p{
+		text-align: right;
+		width: 40%;
 	}
 }
 
