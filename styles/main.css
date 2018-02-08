@@ -1478,7 +1478,7 @@ hr.divider {
 }
 
 #statistics {
-	padding: 41px 40px 18px 40px;
+	padding: 41px 40px 77px 40px;
 	margin-bottom: 5px;
 	text-align: center;
 	background: #2a3a59 url("../images/bg/bg-stat.png") top center / cover;
@@ -1489,7 +1489,7 @@ hr.divider {
 	margin-top: 23px;
 }
 
-.section-header + .progress-label {
+.progress-label {
 	margin-top: -23px;
 }
 
@@ -1525,6 +1525,16 @@ hr.divider {
 	color: #3d4f72;
 	transition: width 0.6s ease;
 	position: relative;
+}
+
+.progress-number {
+	position: absolute;
+	width: 100px;
+	top: 49px;
+	left: 50%;
+	margin-left: -50px;
+	font-weight: 400;
+	color: #98abce;
 }
 
 .progress-bar-animated {
@@ -1592,24 +1602,10 @@ hr.divider {
 	right: 0;
 }
 
-.progress-desc .progress-bar {
-	font-weight: 400;
-	background: transparent;
-	color: #98abce;
-}
-
-.progress + .progress {
-	margin-top: 12px;
-}
-
 @media (max-width: 1199px) {
-	.progress {
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.progress-label > div {
-		margin-bottom: 15px;
-	}
+
+	/* md */
+
 	.label-start,
 	.label-finish {
 		font-size: 14px;
@@ -1617,91 +1613,86 @@ hr.divider {
 	.label-start {
 		margin-left: 15px;
 	}
-}
-
-@media (min-width: 768px) {
-	.progress-sm {
-		display: none;
+	.progress {
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
 @media (max-width: 767px) {
+
+	/* sm */
+
 	#statistics {
-		padding: 24px 40px 44px 40px;
+		padding: 21px 20px 77px 20px;
 	}
 
 	#statistics .section-header {
 		font-size: 25px;
-		margin-bottom: 50px;
+		margin-bottom: 103px;
 	}
 
 	#statistics .section-header::after {
 		margin-top: 15px;
 	}
 
-	.label-start {
-		margin-left: -5px;
+	.progress-label {
+		margin-top: 0;
+		margin-bottom: -51px;
 	}
 
-	.label-finish {
-		margin-right: -19px;
+	.progress-label > div {
+		width: 35%;
 	}
+
+	.label-start,
+	.label-finish {
+		font-size: 10px;
+	}
+
+	.label-start { padding-left: 5px; }
+	.label-finish { padding-right: 5px; }
 
 	.label-gro {
 		display: none;
 	}
 
-	.progress-lg {
-		display: none;
-	}
-
-	.progress-label > div {
-		margin-bottom: 30px;
-	}
-
-	.progress + .progress {
-		margin-top: 33px;
-	}
-
 	.progress-bar {
+		padding: 5px;
+	}
+
+	.progress-text {
 		font-size: 12px;
 		font-weight: 400;
-		height: 18px;
-	}
-
-	.progress-bar .text-label {
-		display: block;
-		width: 200px;
 		position: absolute;
-		top: -20px;
-		left: 7px;
-		color: #98abce;
+		width: 100px;
+		color: #ffffff;
 	}
 
-	.bar-finish {
-		padding-right: 10px;
+	.progress-number {
+		font-size: 12px;
 	}
+
+	.bar-start .progress-text { top: -64px; left: 1px; text-align: left; }
+	.bar-middle .progress-text { top: 31px; left: 50%; margin-left: -50px; }
+	.bar-finish .progress-text { top: -64px; right: 1px; text-align: right; }
+
+	.bar-start .progress-number { top: -35px; left: 1px; margin-left: 0; text-align: left; }
+	.bar-middle .progress-number { top: 46px; }
+	.bar-finish .progress-number { top: -35px; left: initial; right: 1px; margin-left: 0; text-align: right; }
 
 	.bar-start::before,
 	.bar-finish::after {
-		height: 63px;
-		margin-top: -34px;
+		height: 34px;
+		margin-top: -17px;
 	}
 
-	.bar-start::after {
-		content: '';
-		display: block;
-		width: 2px;
-		height: 44px;
-		position: absolute;
-		right: 0;
-		top: 50%;
-		margin-top: -23px;
-		background: transparent;
-		background-image: linear-gradient(0deg,
-		#ffffff, #ffffff 8px,
-		transparent 8px, transparent 11px);
-		background-size: 100% 11px;
+	.bar-middle::before,
+	.bar-middle::after {
+		height: 40px;
+		margin-top: -22px;
+		background-image: linear-gradient(0deg, #ffffff, #ffffff 4px, transparent 4px, transparent 8px);
+		background-size: 100% 8px;
 	}
 }
 
