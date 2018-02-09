@@ -1328,6 +1328,12 @@ hr.divider {
 	}
 }
 
+#top-menu li.highlight a,
+#top-menu li.highlight a:hover,
+#top-menu li.highlight a.active{
+	color: #f18036;
+	border: none;
+}
 
 /**
  * ICO banner section
