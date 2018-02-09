@@ -75,6 +75,7 @@ input, button, textarea {
 }
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea {
 	padding: 0.75em;
 	border: 1px solid #7e8fb4;
@@ -84,11 +85,13 @@ textarea {
 }
 .gray input[type="text"],
 .gray input[type="email"],
+.gray input[type="password"],
 .gray textarea {
 	border-color: #dfdfdf;
 }
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
+input[type="password"]::placeholder,
 textarea::placeholder {
 	color: #7e8fb4;
 }
@@ -366,6 +369,22 @@ textarea::placeholder {
 .form-section span.highlighted {
 	color: #f18036;
 	font-weight: bold;
+}
+
+.content-form {
+	width: 100%;
+	max-width: 555px;
+	margin: 0 auto;
+}
+.content-form input[type="text"],
+.content-form input[type="email"],
+.content-form input[type="password"],
+.content-form textarea {
+	display: block;
+	width: 100%;
+}
+.input-block {
+	margin-bottom: 10px;
 }
 
 /**
@@ -1063,6 +1082,37 @@ hr.divider {
 .title-section h1 {
 	font-size: 30px;
 }
+
+.title-section-large {
+	background: url("../images/bg/bg-title-large.png") center center / cover;
+}
+.title-section-large .title-hero {
+	vertical-align: middle;
+	margin-right: 80px;
+}
+.title-section-large h1 {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0;
+	max-width: calc(100% - 370px);
+	font-size: 40px;
+	text-shadow: 2px 2px 3px rgba(22,37,68,.55);
+}
+@media (max-width: 767px) {
+	.title-section-large {
+		text-align: center;
+	}
+	.title-section-large .title-hero {
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+	.title-section-large h1 {
+		display: block;
+		max-width: none;
+	}
+}
+
+
 .content-section {
 	flex-grow: 1;
 	text-align: justify;
@@ -2514,6 +2564,19 @@ hr.divider {
 		margin-right: 0;
 		margin-bottom: 5px;
 	}
+}
+
+
+/**
+ * Affiliate Sign Up form
+ */
+#aff-submit-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#aff-submit-block span {
+	font-size: 18px;
 }
 
 
