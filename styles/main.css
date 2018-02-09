@@ -1787,10 +1787,15 @@ hr.divider {
 	font-weight: 600;
 }
 #reasons .highlighted {
-	padding: 0 3px;
+	position: relative;
+	top: -2px;
+	padding: 1px 7px;
 	border-radius: 4px;
-	background: #f18036;
-	color: #425372;
+	font-size: 17px;
+	font-weight: 700;
+	letter-spacing: -0.055em;
+	background: #f6872f;
+	color: #ffffff;
 }
 
 
