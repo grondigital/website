@@ -386,6 +386,9 @@ textarea::placeholder {
 .input-block {
 	margin-bottom: 10px;
 }
+.content-form a {
+	color: #f18036;
+}
 
 /**
  * Home sections
@@ -2574,23 +2577,8 @@ hr.divider {
 
 
 /**
- * Affiliate Sign Up form
- */
-#aff-submit-block {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-#aff-submit-block span {
-	font-size: 18px;
-}
-
-
-/**
  * Affiliate Program
  */
-
-
 #affiliate-program-intro-section p {
 	font-size: 18px;
 	line-height: 1.6667;
