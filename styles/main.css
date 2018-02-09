@@ -1300,7 +1300,7 @@ hr.divider {
 	border-bottom: none;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
 	#top-menu .menu-button {
 		display: inline;
 	}
@@ -1328,6 +1328,12 @@ hr.divider {
 	}
 }
 
+#top-menu li.highlight a,
+#top-menu li.highlight a:hover,
+#top-menu li.highlight a.active{
+	color: #f18036;
+	border: none;
+}
 
 /**
  * ICO banner section
