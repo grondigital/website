@@ -578,6 +578,12 @@ hr.divider {
 	text-align: center;
 }
 
+.center-justified {
+	text-align: justify;
+	-moz-text-align-last: center;
+	text-align-last: center;
+}
+
 /**
  * Timeline
  */
@@ -2516,6 +2522,71 @@ hr.divider {
 	}
 }
 
+
+/**
+ * Affiliate Program
+ */
+
+
+#affiliate-program-intro-section p {
+	font-size: 18px;
+	line-height: 1.6667;
+}
+
+#affiliate-program-description-section .container {
+	padding-top: 0;
+}
+
+#affiliate-program-description-section .blurb-affiliate {
+	max-width: 520px;
+	margin-right: auto;
+}
+
+#affiliate-program-description-section .btn-join {
+	display: block;
+	max-width: 520px;
+	margin-left: auto;
+}
+
+@media (max-width: 1039px) {
+	#affiliate-program-description-section .blurb-affiliate {
+		margin-left: auto;
+	}
+
+	#affiliate-program-description-section .btn-join {
+		margin-right: auto;
+	}
+}
+
+.blurb-affiliate ul {
+	list-style: none;
+	padding-left: 11px;
+	position: relative;
+	top: -5px;
+}
+
+.blurb-affiliate ul li {
+	position: relative;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.blurb-affiliate ul li::before {
+	content: '';
+	display: block;
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	top: 12px;
+	left: -11px;
+	border-radius: 50%;
+	background-color: #f18036;
+}
+
+.btn.btn-join {
+	font-size: 22px;
+	padding: 1em 1.5em;
+}
 
 /**
  * Footer
