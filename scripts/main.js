@@ -101,6 +101,16 @@ $(function () {
 });
 
 /**
+ * Remember campaign source
+ */
+(function () {
+	var source = getQueryParam('utm_source');
+	if (source !== null) {
+		setCookie('camp_source', source, 7);
+	}
+})();
+
+/**
  * ICO counter
  */
 $(function() {
@@ -191,6 +201,14 @@ $(function() {
 		}
 	}, {
 		offset: -50
+	});
+
+	$(window).scroll(function () {
+		if ($(window).scrollTop() + $(window).height() === $(document).height()) {
+			$topLink.animate({bottom: 74}, 300);
+		} else {
+			$topLink.filter(':not(:animated)').animate({bottom: 20}, 300);
+		}
 	});
 	
 	$('#logo, #partners').on('contextmenu', false);
@@ -363,7 +381,18 @@ $(function () {
 	if (!$form.length)
 		return;
 	
-	var $submit = $form.find(':submit');
+	if (getCookie('camp_source') === 'icoanimals') {
+		var $addrBlock = $form.find('#eth-address'),
+		    $addr = $addrBlock.find('input');
+		
+		$addr.prop('required', true);
+		$addrBlock.show();
+		
+		$form.submit(function () {
+			var img = document.createElement('img');
+			img.src = '//grondigital.icoref.link/success?afc_address=' + $addr.val();
+		});
+	}
 	
 	//form step switching
 	var currentStep, $currentStep, $steps = $form.find('.form-step'),

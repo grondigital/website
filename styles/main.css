@@ -75,6 +75,7 @@ input, button, textarea {
 }
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea {
 	padding: 0.75em;
 	border: 1px solid #7e8fb4;
@@ -84,11 +85,13 @@ textarea {
 }
 .gray input[type="text"],
 .gray input[type="email"],
+.gray input[type="password"],
 .gray textarea {
 	border-color: #dfdfdf;
 }
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
+input[type="password"]::placeholder,
 textarea::placeholder {
 	color: #7e8fb4;
 }
@@ -368,6 +371,25 @@ textarea::placeholder {
 	font-weight: bold;
 }
 
+.content-form {
+	width: 100%;
+	max-width: 555px;
+	margin: 0 auto;
+}
+.content-form input[type="text"],
+.content-form input[type="email"],
+.content-form input[type="password"],
+.content-form textarea {
+	display: block;
+	width: 100%;
+}
+.input-block {
+	margin-bottom: 10px;
+}
+.content-form a {
+	color: #f18036;
+}
+
 /**
  * Home sections
  */
@@ -576,6 +598,12 @@ hr.divider {
 
 .centered {
 	text-align: center;
+}
+
+.center-justified {
+	text-align: justify;
+	-moz-text-align-last: center;
+	text-align-last: center;
 }
 
 /**
@@ -1063,6 +1091,37 @@ hr.divider {
 .title-section h1 {
 	font-size: 30px;
 }
+
+.title-section-large {
+	background: url("../images/bg/bg-title-large.png") center center / cover;
+}
+.title-section-large .title-hero {
+	vertical-align: middle;
+	margin-right: 80px;
+}
+.title-section-large h1 {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0;
+	max-width: calc(100% - 370px);
+	font-size: 40px;
+	text-shadow: 2px 2px 3px rgba(22,37,68,.55);
+}
+@media (max-width: 767px) {
+	.title-section-large {
+		text-align: center;
+	}
+	.title-section-large .title-hero {
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+	.title-section-large h1 {
+		display: block;
+		max-width: none;
+	}
+}
+
+
 .content-section {
 	flex-grow: 1;
 	text-align: justify;
@@ -1728,10 +1787,15 @@ hr.divider {
 	font-weight: 600;
 }
 #reasons .highlighted {
-	padding: 0 3px;
+	position: relative;
+	top: -2px;
+	padding: 1px 7px;
 	border-radius: 4px;
-	background: #f18036;
-	color: #425372;
+	font-size: 17px;
+	font-weight: 700;
+	letter-spacing: -0.055em;
+	background: #f6872f;
+	color: #ffffff;
 }
 
 
@@ -2299,6 +2363,11 @@ hr.divider {
 		font-size: 75%;
 	}
 }
+
+#contribute-form .highlighted {
+	color: red;
+}
+
 #tandc {
 	-webkit-overflow-scrolling: touch;
 	overflow-y: auto;
@@ -2516,6 +2585,69 @@ hr.divider {
 	}
 }
 
+
+/**
+ * Affiliate Program
+ */
+#affiliate-program-intro-section p {
+	font-size: 18px;
+	line-height: 1.6667;
+}
+
+#affiliate-program-description-section .container {
+	padding-top: 0;
+}
+
+#affiliate-program-description-section .blurb-affiliate {
+	max-width: 520px;
+	margin-right: auto;
+}
+
+#affiliate-program-description-section .btn-join {
+	display: block;
+	max-width: 520px;
+	margin-left: auto;
+}
+
+@media (max-width: 1039px) {
+	#affiliate-program-description-section .blurb-affiliate {
+		margin-left: auto;
+	}
+
+	#affiliate-program-description-section .btn-join {
+		margin-right: auto;
+	}
+}
+
+.blurb-affiliate ul {
+	list-style: none;
+	padding-left: 11px;
+	position: relative;
+	top: -5px;
+}
+
+.blurb-affiliate ul li {
+	position: relative;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.blurb-affiliate ul li::before {
+	content: '';
+	display: block;
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	top: 12px;
+	left: -11px;
+	border-radius: 50%;
+	background-color: #f18036;
+}
+
+.btn.btn-join {
+	font-size: 22px;
+	padding: 1em 1.5em;
+}
 
 /**
  * Footer
