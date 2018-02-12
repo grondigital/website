@@ -510,6 +510,7 @@
 					<input type="hidden" name="contributor[is_read_wp]" value="true" id="check-whitepaper" />
 					<input type="hidden" name="contributor[is_read_tandc]" value="true" id="check-terms-conditions" />
 					<input type="hidden" name="contributor[is_eighteen]" value="true" id="check-age" />
+					<input type="hidden" name="contributor[affiliate]" />
 					<p>
 						<input type="email" name="contributor[email]" placeholder="Email *" required />
 					</p>
@@ -525,7 +526,10 @@
 					</p>
 					<div id="eth-address" style="display: none;">
 						<p>
-							<input type="text" name="contributor[eth_address]" placeholder="Your ETH Address *" />
+							<input type="text"
+							       name="contributor[eth_address]"
+							       placeholder="Your ETH Address *"
+							       pattern="^(0x)?[0-9a-fA-F]{40}$" />
 						</p>
 						<p class="highlighted">
 							Please make sure to contribute ONLY from this account.
@@ -605,6 +609,9 @@
 </div>
 
 <div id="social-float">
+	<a href="/affiliate">
+		<span>Become an Affiliate</span><img src="images/social/affiliate.png"/>
+	</a><br/>
 	<a href="https://t.me/joinchat/ABUQqRMODB670U-NbF9IRw" target="_blank">
 		<span>Community Chat</span><img src="images/social/telegram.png"/>
 	</a><br/>

@@ -38,4 +38,8 @@
   <loc>https://grondigital.com/pre-ico-extension</loc>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://grondigital.com/affiliate</loc>
+  <priority>0.80</priority>
+</url>
 </urlset>

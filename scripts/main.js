@@ -381,7 +381,11 @@ $(function () {
 	if (!$form.length)
 		return;
 	
-	if (getCookie('camp_source') === 'icoanimals') {
+	var campSource = getCookie('camp_source'),
+	    affiliates = ['icoanimals'];
+	$form.find('[name="contributor[affiliate]"]').val(affiliates.indexOf(campSource)>=0? campSource : 'grondigital');
+	
+	if (campSource === 'icoanimals') {
 		var $addrBlock = $form.find('#eth-address'),
 		    $addr = $addrBlock.find('input');
 		
@@ -427,13 +431,17 @@ $(function () {
 		for (var i=0; i < $inputs.length; i++) {
 			var $input = $inputs.eq(i);
 			
+			//TODO: use .checkValidity()?
 			if ($input.is('[type="checkbox"]')) {
 				if (!$input.is(':checked')) {
 					passed = false;
 				}
 			} else if ($input.is('[type="email"]')) {
 				passed = /.+@.+\..+/.test($input.val());
-			} if ($input.val()==='') {
+			} else if ($input.is('[pattern]')) {
+				var exp = new RegExp($input.attr('pattern'), 'u');
+				passed = exp.test($input.val());
+			} else if ($input.val()==='') {
 				passed = false;
 			}
 		}
