@@ -427,13 +427,17 @@ $(function () {
 		for (var i=0; i < $inputs.length; i++) {
 			var $input = $inputs.eq(i);
 			
+			//TODO: use .checkValidity()?
 			if ($input.is('[type="checkbox"]')) {
 				if (!$input.is(':checked')) {
 					passed = false;
 				}
 			} else if ($input.is('[type="email"]')) {
 				passed = /.+@.+\..+/.test($input.val());
-			} if ($input.val()==='') {
+			} else if ($input.is('[pattern]')) {
+				var exp = new RegExp($input.attr('pattern'), 'u');
+				passed = exp.test($input.val());
+			} else if ($input.val()==='') {
 				passed = false;
 			}
 		}
