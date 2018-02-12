@@ -381,7 +381,11 @@ $(function () {
 	if (!$form.length)
 		return;
 	
-	if (getCookie('camp_source') === 'icoanimals') {
+	var campSource = getCookie('camp_source'),
+	    affiliates = ['icoanimals'];
+	$form.find('[name="contributor[affiliate]"]').val(affiliates.indexOf(campSource)>=0? campSource : 'grondigital');
+	
+	if (campSource === 'icoanimals') {
 		var $addrBlock = $form.find('#eth-address'),
 		    $addr = $addrBlock.find('input');
 		
