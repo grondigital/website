@@ -1141,7 +1141,17 @@ hr.divider {
 	max-width: calc(100% - 370px);
 }
 .title-section-large h1 {
+	margin-bottom: 5px;
+}
+.title-section-large ul,
+.title-section-large ol,
+.title-section-large p {
+	margin-bottom: 15px;
+}
+.title-section-large :last-child {
 	margin-bottom: 0;
+}
+.title-section-large h1 {
 	font-size: 40px;
 	text-shadow: 2px 2px 3px rgba(22,37,68,.55);
 }
