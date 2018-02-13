@@ -1947,6 +1947,14 @@ hr.divider {
 
 
 /**
+ * Wallet section
+ */
+#wallet-section img {
+	margin-top: 3.5em;
+	margin-bottom: 2em;
+}
+
+/**
  * Products section
  */
 #products-section h4 {
@@ -2709,7 +2717,7 @@ hr.divider {
 #footer-widgets .subscribe-btn {
 	max-width: 100%;
 	min-width: auto;
-	width: 177px;
+	width: 130px;
 }
 
 @media (max-width: 450px) {
