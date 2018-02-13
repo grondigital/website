@@ -1947,6 +1947,14 @@ hr.divider {
 
 
 /**
+ * Wallet section
+ */
+#wallet-section img {
+	margin-top: 3.5em;
+	margin-bottom: 2em;
+}
+
+/**
  * Products section
  */
 #products-section h4 {
