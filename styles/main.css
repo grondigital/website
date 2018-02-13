@@ -47,6 +47,9 @@ h4 {
 	font-weight: bold;
 }
 
+nav.toc {
+	margin-bottom: 30px;
+}
 p, ul, ol {
 	margin: 0 0 30px 0;
 }
@@ -84,7 +87,7 @@ ol.colored > li::before {
 }
 
 a {
-	color: #6b7a8f;
+	color: #f18036;
 	text-decoration: underline;
 }
 
@@ -411,9 +414,6 @@ textarea::placeholder {
 }
 .input-block {
 	margin-bottom: 10px;
-}
-.content-form a {
-	color: #f18036;
 }
 
 /**
@@ -1229,10 +1229,6 @@ hr.divider {
 }
 
 
-.content-section a {
-	color: #f18036;
-}
-
 .content-section h2:first-child {
 	margin-top: 0;
 }
@@ -1322,6 +1318,7 @@ hr.divider {
 }
 #top-menu a {
 	text-decoration: none;
+	color: #6b7a8f;
 }
 #top-menu .highlighted a {
 	display: inline-block;
