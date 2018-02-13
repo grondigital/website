@@ -50,6 +50,9 @@ h4 {
 p, ul, ol {
 	margin: 0 0 30px 0;
 }
+p:last-child, ul:last-child, ol:last-child {
+	margin-bottom: 0;
+}
 ul, ol {
 	padding-left: 1em;
 }
@@ -375,9 +378,6 @@ textarea::placeholder {
 }
 .form-section {
 	padding: 20px 30px;
-}
-.form-section > :last-child {
-	margin-bottom: 0;
 }
 @media (max-width: 767px) {
 	.form-step {
@@ -943,10 +943,6 @@ hr.divider {
 	font-size: 22px;
 	font-weight: bold;
 }
-.popup-body > :last-child,
-.form-step > :last-child {
-	margin-bottom: 0;
-}
 
 
 #subscribe-form {
@@ -1187,6 +1183,9 @@ hr.divider {
 .content-subsection {
 	margin-left: 35px;
 }
+.content-subsection :last-child {
+	margin-bottom: 30px;
+}
 .content-section h2 {
 	position: relative;
 	margin-top: 10px;
@@ -1237,8 +1236,7 @@ hr.divider {
 .content-section h2:first-child {
 	margin-top: 0;
 }
-.title-section .container > :last-child,
-.content-section .container > *:last-child {
+.title-section .container > :last-child {
 	margin-bottom: 0;
 }
 
@@ -1894,9 +1892,6 @@ hr.divider {
 .blurb-content {
 	text-align: justify;
 }
-.blurb-content :last-child {
-	margin-bottom: 0;
-}
 .blurb-content {
 	margin-left: 100px;
 }
@@ -1968,9 +1963,6 @@ hr.divider {
 }
 #products-section .product:last-child::after {
 	display: none;
-}
-#products-section .product p:last-child {
-	margin-bottom: 0;
 }
 
 
@@ -2272,9 +2264,6 @@ hr.divider {
 }
 .team .description {
 	text-align: justify;
-}
-.team .description p:last-child {
-	margin-bottom: 0;
 }
 
 .team a[class|="icon"] {
@@ -2686,10 +2675,6 @@ hr.divider {
 	width: 20px;
 	height: 3px;
 	background: #f18036;
-}
-#footer-widgets p:last-child,
-#footer-widgets ul:last-child {
-	margin-bottom: 0;
 }
 #footer-widgets a {
 	text-decoration-line: none;
