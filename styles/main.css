@@ -2717,6 +2717,19 @@ hr.divider {
 	}
 }
 
+#contribute-error h4 {
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 34px;
+	color: #f18036;
+}
+#contribute-error .error-text {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #425372;
+}
+
 
 /**
  * Affiliate Programme page
