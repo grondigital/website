@@ -315,7 +315,6 @@ $(function() {
 	var $subFormShim = $('#subscribe-shim'), 
 		$subForm = $('#subscribe-form');
 	function showSubForm() {
-		lockBody();
 		$subFormShim.show();
 		$('#subscribe-email').focus();
 		setCookie('subscribe_form', '1', 30);
@@ -330,6 +329,7 @@ $(function() {
 	});
 	
 	$('.subscribe-btn').click(function() {
+		lockBody();
 		showSubForm();
 		return false;
 	});
@@ -339,7 +339,12 @@ $(function() {
 				!getCookie('subscribe_form') &&
 				!isScrolling
 			)
-				showSubForm();
+				lockBody();
+				//wait after locking scroll, because desktop Safari has glitch - 
+				//it scrolls content for a few ms after locking if user scrolls fast
+				setTimeout(function () {
+					showSubForm();
+				}, 100);
 		});
 	}
 	
