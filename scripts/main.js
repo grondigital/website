@@ -189,18 +189,18 @@ $(function() {
  */
 $(function() {
 	//change header style on scroll
-	var $header = $('#main-header'),
+	var $body = $('body'),
 	    $topLink = $('#to-top');
-	$('body > section:first-of-type').waypoint(function(dir) {
+	$('.first-section').waypoint(function(dir) {
 		if (dir === 'down') {
-			$header.addClass('fixed-header');
+			$body.addClass('fixed-header');
 			$topLink.show();
 		} else {
-			$header.removeClass('fixed-header');
+			$body.removeClass('fixed-header');
 			$topLink.hide();
 		}
 	}, {
-		offset: -50
+		offset: 0
 	});
 	
 	$('#copyright-section').waypoint(function (dir) {
@@ -568,7 +568,7 @@ $(function() {
 	 * @param {string} hash
 	 */
 	function setActiveItem(hash) {
-		var $currentLink = (hash === 'top-section' || hash === 'ico-banner-section')?
+		var $currentLink = (hash === 'top-section')?
 		    $menu.find('li:first-child a') :
 		    $menu.find('a[href*="' + hash + '"]');
 		if ($currentLink.length) {
@@ -846,7 +846,7 @@ $(function() {
 		//The "Back to top" button
 		//scroll to page top or to top section if it exists - so menu items will be set active
 		//TODO: activate menu items depending only on current scroll position, not on link anchors
-		var topSectionId = 'ico-banner-section', target;
+		var topSectionId = 'top-section', target;
 		target = document.getElementById(topSectionId)? topSectionId : 0;
 		$('#to-top').click(function () {
 			anchorScrolls.scrollTo(target, false);
