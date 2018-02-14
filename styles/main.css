@@ -7,7 +7,9 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	box-sizing: border-box;
 	min-height: 100%;
+	padding-top: 80px; /* space for fixed header */
 }
 
 /*
@@ -419,9 +421,6 @@ textarea::placeholder {
 /**
  * Home sections
  */
-body > section:first-of-type {
-	padding-top: 80px;
-}
 .blue {
 	background-color: #425372;
 }
@@ -1032,6 +1031,10 @@ hr.divider {
 	font-size: 22px;
 	line-height: 31px;
 	text-decoration: none;
+	transition: bottom 0.3s;
+}
+#to-top.raised {
+	bottom: 74px;
 }
 
 #social-float {
@@ -1273,7 +1276,7 @@ hr.divider {
 	line-height: 80px;
 	transition: height 0.4s, line-height 0.4s;
 }
-#main-header.fixed-header {
+.fixed-header #main-header {
 	height: 50px;
 	line-height: 50px;
 }
@@ -1393,25 +1396,49 @@ hr.divider {
  * ICO banner section
  */
 #ico-banner-section {
+	position: fixed;
+	top: 80px;
+	left: 0;
+	right: 0;
+	z-index: 60;
 	background-color: #1d2f54;
 	background-image: url("../images/bg/bg-banner.png");
 	background-size: cover;
 	background-position-x: center;
+	transition: top 0.4s;
 }
-#ico-banner-section .container {
+#ico-banner-section > .container {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+.fixed-header #ico-banner-section {
+	top: 50px;
+}
+.fixed-header #ico-banner-section > .container {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 #ico-banner {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	align-items: center;
+	height: 60px;
 }
 #ico-banner > * {
 	flex-grow: 0;
+	margin: 0 8px;
+}
+#ico-banner > *:first-child {
+	margin-left: 0;
+}
+#ico-banner > *:last-child {
+	margin-right: 0;
 }
 #ico-banner .separator {
 	width: 1px;
+	height: 100%;
 	background: #425372;
 }
 #ico-banner-action {
@@ -1420,6 +1447,9 @@ hr.divider {
 @media (max-width: 1023px) {
 	#ico-banner {
 		justify-content: center;
+		width: 290px;
+		margin: 0 auto;
+		height: 195px;
 	}
 	#ico-banner > * {
 		width: 100%;
@@ -1458,7 +1488,6 @@ hr.divider {
 
 #ico-banner-action .btn {
 	width: 100%;
-	max-width: 290px;
 	margin: 0 auto;
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -1470,12 +1499,54 @@ hr.divider {
 	}
 	#ico-banner-status {
 		order: -2;
-		margin-right: 15px;
 		font-size: 30px;
 	}
 	#ico-banner-bonus {
 		order: -1;
 		margin-top: 0;
+		margin-right: 0;
+	}
+	#ico-banner-action {
+		margin-left: 0;
+	}
+}
+
+.fixed-header #ico-banner {
+	justify-content: center;
+	height: 40px;
+}
+.fixed-header #ico-banner-status {
+	font-size: 26px;
+}
+.fixed-header #ico-banner-timer,
+.fixed-header #ico-banner-timer + .separator {
+	display: none;
+}
+.fixed-header #ico-banner-bonus-value,
+.fixed-header #ico-banner-bonus-text {
+	display: inline;
+	font-size: 26px;
+}
+.fixed-header #ico-banner-action {
+	width: 250px;
+}
+.fixed-header #ico-banner-action .btn {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+}
+@media (max-width: 1023px) {
+	.fixed-header #ico-banner {
+		height: 110px;
+	}
+	.fixed-header #ico-banner-bonus-value,
+	.fixed-header #ico-banner-bonus-text {
+		display: block;
+	}
+	.fixed-header #ico-banner-bonus-value {
+		font-size: 30px;
+	}
+	.fixed-header #ico-banner-bonus-text {
+		font-size: 16px;
 	}
 }
 
@@ -1486,6 +1557,12 @@ hr.divider {
 #top-section {
 	position: relative;
 	line-height: 1.25;
+	padding-top: 100px; /* space for fixed ICO banner */
+}
+@media (max-width: 1023px) {
+	#top-section {
+		padding-top: 235px;
+	}
 }
 
 #top-section .container {
@@ -1597,7 +1674,7 @@ hr.divider {
 }
 
 #statistics {
-	padding: 41px 40px 77px 40px;
+	padding: 41px 40px 60px 40px;
 	margin-bottom: 5px;
 	text-align: center;
 	background: #2a3a59 url("../images/bg/bg-stat.png") top center / cover;
@@ -1606,6 +1683,11 @@ hr.divider {
 
 #statistics .section-header::after {
 	margin-top: 23px;
+}
+
+#statistics .section-header + p {
+	margin-top: -8px;
+	margin-bottom: 25px;
 }
 
 .progress-label {
@@ -1650,7 +1732,7 @@ hr.divider {
 	position: absolute;
 	width: 100px;
 	top: 49px;
-	left: 50%;
+	left: 100%;
 	margin-left: -50px;
 	font-weight: 400;
 	color: #98abce;
@@ -1690,6 +1772,7 @@ hr.divider {
 }
 
 .bar-start::before,
+.bar-divider::after,
 .bar-middle::before,
 .bar-middle::after,
 .bar-finish::after {
@@ -1704,6 +1787,7 @@ hr.divider {
 	background: #ffffff;
 }
 
+.bar-divider::after,
 .bar-middle::before,
 .bar-middle::after {
 	height: 55px;
@@ -1715,6 +1799,7 @@ hr.divider {
 	background-size: 100% 11px;
 }
 
+.bar-divider::after,
 .bar-middle::after,
 .bar-finish::after {
 	left: initial;
@@ -1743,16 +1828,20 @@ hr.divider {
 	/* sm */
 
 	#statistics {
-		padding: 21px 20px 77px 20px;
+		padding: 21px 20px 60px 20px;
 	}
 
 	#statistics .section-header {
-		font-size: 25px;
-		margin-bottom: 103px;
+		font-size: 22px;
 	}
 
 	#statistics .section-header::after {
 		margin-top: 15px;
+	}
+
+	#statistics .section-header + p {
+		font-size: 12px;
+		margin-top: 0;
 	}
 
 	.progress-label {
@@ -1762,6 +1851,14 @@ hr.divider {
 
 	.progress-label > div {
 		width: 35%;
+	}
+
+	.progress-bar {
+		padding: 2px 5px;
+	}
+
+	.progress-text {
+		font-size: 11px;
 	}
 
 	.label-start,
@@ -1776,27 +1873,14 @@ hr.divider {
 		display: none;
 	}
 
-	.progress-bar {
-		padding: 5px;
-	}
-
-	.progress-text {
-		font-size: 12px;
-		font-weight: 400;
-		position: absolute;
-		width: 100px;
-		color: #ffffff;
-	}
-
 	.progress-number {
 		font-size: 12px;
+		top: 40px;
 	}
 
-	.bar-start .progress-text { top: -64px; left: 1px; text-align: left; }
 	.bar-middle .progress-text { top: 31px; left: 50%; margin-left: -50px; }
 	.bar-finish .progress-text { top: -64px; right: 1px; text-align: right; }
 
-	.bar-start .progress-number { top: -35px; left: 1px; margin-left: 0; text-align: left; }
 	.bar-middle .progress-number { top: 46px; }
 	.bar-finish .progress-number { top: -35px; left: initial; right: 1px; margin-left: 0; text-align: right; }
 
@@ -1806,6 +1890,7 @@ hr.divider {
 		margin-top: -17px;
 	}
 
+	.bar-divider::after,
 	.bar-middle::before,
 	.bar-middle::after {
 		height: 40px;
@@ -2630,6 +2715,19 @@ hr.divider {
 		margin-right: 0;
 		margin-bottom: 5px;
 	}
+}
+
+#contribute-error h4 {
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 34px;
+	color: #f18036;
+}
+#contribute-error .error-text {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #425372;
 }
 
 

@@ -189,26 +189,28 @@ $(function() {
  */
 $(function() {
 	//change header style on scroll
-	var $header = $('#main-header'),
+	var $body = $('body'),
 	    $topLink = $('#to-top');
-	$('body > section:first-of-type').waypoint(function(dir) {
+	$('.first-section').waypoint(function(dir) {
 		if (dir === 'down') {
-			$header.addClass('fixed-header');
+			$body.addClass('fixed-header');
 			$topLink.show();
 		} else {
-			$header.removeClass('fixed-header');
+			$body.removeClass('fixed-header');
 			$topLink.hide();
 		}
 	}, {
-		offset: -50
+		offset: 0
 	});
-
-	$(window).scroll(function () {
-		if ($(window).scrollTop() + $(window).height() === $(document).height()) {
-			$topLink.animate({bottom: 74}, 300);
+	
+	$('#copyright-section').waypoint(function (dir) {
+		if (dir==='down') {
+			$topLink.addClass('raised');
 		} else {
-			$topLink.filter(':not(:animated)').animate({bottom: 20}, 300);
+			$topLink.removeClass('raised');
 		}
+	}, {
+		offset: '100%'
 	});
 	
 	$('#logo, #partners').on('contextmenu', false);
@@ -313,7 +315,6 @@ $(function() {
 	var $subFormShim = $('#subscribe-shim'), 
 		$subForm = $('#subscribe-form');
 	function showSubForm() {
-		lockBody();
 		$subFormShim.show();
 		$('#subscribe-email').focus();
 		setCookie('subscribe_form', '1', 30);
@@ -328,6 +329,7 @@ $(function() {
 	});
 	
 	$('.subscribe-btn').click(function() {
+		lockBody();
 		showSubForm();
 		return false;
 	});
@@ -337,7 +339,12 @@ $(function() {
 				!getCookie('subscribe_form') &&
 				!isScrolling
 			)
-				showSubForm();
+				lockBody();
+				//wait after locking scroll, because desktop Safari has glitch - 
+				//it scrolls content for a few ms after locking if user scrolls fast
+				setTimeout(function () {
+					showSubForm();
+				}, 100);
 		});
 	}
 	
@@ -566,7 +573,7 @@ $(function() {
 	 * @param {string} hash
 	 */
 	function setActiveItem(hash) {
-		var $currentLink = (hash === 'top-section' || hash === 'ico-banner-section')?
+		var $currentLink = (hash === 'top-section')?
 		    $menu.find('li:first-child a') :
 		    $menu.find('a[href*="' + hash + '"]');
 		if ($currentLink.length) {
@@ -844,7 +851,7 @@ $(function() {
 		//The "Back to top" button
 		//scroll to page top or to top section if it exists - so menu items will be set active
 		//TODO: activate menu items depending only on current scroll position, not on link anchors
-		var topSectionId = 'ico-banner-section', target;
+		var topSectionId = 'top-section', target;
 		target = document.getElementById(topSectionId)? topSectionId : 0;
 		$('#to-top').click(function () {
 			anchorScrolls.scrollTo(target, false);
@@ -943,3 +950,17 @@ $(function() {
 		}, 250);
 	});
 })();
+
+/**
+ * Statistics progress
+ */
+$(function () {
+
+    var num = parseInt($('#progress_sold').text().replace(/,/g, ""));
+    var sold = num / (17000000 / 100);
+    var left = 100 - sold;
+
+    $('.bg-sold').css('width', sold.toFixed(2) + '%');
+    $('.bg-sold .progress-number').text(sold.toFixed() + '%');
+    $('.bg-available').css('width', left.toFixed(2) + '%');
+});
