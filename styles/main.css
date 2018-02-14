@@ -1674,7 +1674,7 @@ hr.divider {
 }
 
 #statistics {
-	padding: 41px 40px 77px 40px;
+	padding: 41px 40px 60px 40px;
 	margin-bottom: 5px;
 	text-align: center;
 	background: #2a3a59 url("../images/bg/bg-stat.png") top center / cover;
@@ -1683,6 +1683,11 @@ hr.divider {
 
 #statistics .section-header::after {
 	margin-top: 23px;
+}
+
+#statistics .section-header + p {
+	margin-top: -8px;
+	margin-bottom: 25px;
 }
 
 .progress-label {
@@ -1727,7 +1732,7 @@ hr.divider {
 	position: absolute;
 	width: 100px;
 	top: 49px;
-	left: 50%;
+	left: 100%;
 	margin-left: -50px;
 	font-weight: 400;
 	color: #98abce;
@@ -1767,6 +1772,7 @@ hr.divider {
 }
 
 .bar-start::before,
+.bar-divider::after,
 .bar-middle::before,
 .bar-middle::after,
 .bar-finish::after {
@@ -1781,6 +1787,7 @@ hr.divider {
 	background: #ffffff;
 }
 
+.bar-divider::after,
 .bar-middle::before,
 .bar-middle::after {
 	height: 55px;
@@ -1792,6 +1799,7 @@ hr.divider {
 	background-size: 100% 11px;
 }
 
+.bar-divider::after,
 .bar-middle::after,
 .bar-finish::after {
 	left: initial;
@@ -1820,16 +1828,20 @@ hr.divider {
 	/* sm */
 
 	#statistics {
-		padding: 21px 20px 77px 20px;
+		padding: 21px 20px 60px 20px;
 	}
 
 	#statistics .section-header {
-		font-size: 25px;
-		margin-bottom: 103px;
+		font-size: 22px;
 	}
 
 	#statistics .section-header::after {
 		margin-top: 15px;
+	}
+
+	#statistics .section-header + p {
+		font-size: 12px;
+		margin-top: 0;
 	}
 
 	.progress-label {
@@ -1839,6 +1851,14 @@ hr.divider {
 
 	.progress-label > div {
 		width: 35%;
+	}
+
+	.progress-bar {
+		padding: 2px 5px;
+	}
+
+	.progress-text {
+		font-size: 11px;
 	}
 
 	.label-start,
@@ -1853,27 +1873,14 @@ hr.divider {
 		display: none;
 	}
 
-	.progress-bar {
-		padding: 5px;
-	}
-
-	.progress-text {
-		font-size: 12px;
-		font-weight: 400;
-		position: absolute;
-		width: 100px;
-		color: #ffffff;
-	}
-
 	.progress-number {
 		font-size: 12px;
+		top: 40px;
 	}
 
-	.bar-start .progress-text { top: -64px; left: 1px; text-align: left; }
 	.bar-middle .progress-text { top: 31px; left: 50%; margin-left: -50px; }
 	.bar-finish .progress-text { top: -64px; right: 1px; text-align: right; }
 
-	.bar-start .progress-number { top: -35px; left: 1px; margin-left: 0; text-align: left; }
 	.bar-middle .progress-number { top: 46px; }
 	.bar-finish .progress-number { top: -35px; left: initial; right: 1px; margin-left: 0; text-align: right; }
 
@@ -1883,6 +1890,7 @@ hr.divider {
 		margin-top: -17px;
 	}
 
+	.bar-divider::after,
 	.bar-middle::before,
 	.bar-middle::after {
 		height: 40px;

@@ -945,3 +945,17 @@ $(function() {
 		}, 250);
 	});
 })();
+
+/**
+ * Statistics progress
+ */
+$(function () {
+
+    var num = parseInt($('#progress_sold').text().replace(/,/g, ""));
+    var sold = num / (17000000 / 100);
+    var left = 100 - sold;
+
+    $('.bg-sold').css('width', sold.toFixed(2) + '%');
+    $('.bg-sold .progress-number').text(sold.toFixed() + '%');
+    $('.bg-available').css('width', left.toFixed(2) + '%');
+});
