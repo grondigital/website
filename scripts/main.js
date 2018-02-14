@@ -202,13 +202,15 @@ $(function() {
 	}, {
 		offset: -50
 	});
-
-	$(window).scroll(function () {
-		if ($(window).scrollTop() + $(window).height() === $(document).height()) {
-			$topLink.animate({bottom: 74}, 300);
+	
+	$('#copyright-section').waypoint(function (dir) {
+		if (dir==='down') {
+			$topLink.addClass('raised');
 		} else {
-			$topLink.filter(':not(:animated)').animate({bottom: 20}, 300);
+			$topLink.removeClass('raised');
 		}
+	}, {
+		offset: '100%'
 	});
 	
 	$('#logo, #partners').on('contextmenu', false);
