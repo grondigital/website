@@ -338,13 +338,14 @@ $(function() {
 			if (
 				!getCookie('subscribe_form') &&
 				!isScrolling
-			)
+			) {
 				lockBody();
 				//wait after locking scroll, because desktop Safari has glitch - 
 				//it scrolls content for a few ms after locking if user scrolls fast
 				setTimeout(function () {
 					showSubForm();
 				}, 100);
+			}
 		});
 	}
 	
