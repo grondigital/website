@@ -191,7 +191,7 @@ $(function() {
 	//change header style on scroll
 	var $body = $('body'),
 	    $topLink = $('#to-top');
-	$('.first-section').waypoint(function(dir) {
+	$body.waypoint(function(dir) {
 		if (dir === 'down') {
 			$body.addClass('fixed-header');
 			$topLink.show();
@@ -200,7 +200,7 @@ $(function() {
 			$topLink.hide();
 		}
 	}, {
-		offset: 0
+		offset: -50
 	});
 	
 	$('#copyright-section').waypoint(function (dir) {
@@ -338,13 +338,14 @@ $(function() {
 			if (
 				!getCookie('subscribe_form') &&
 				!isScrolling
-			)
+			) {
 				lockBody();
 				//wait after locking scroll, because desktop Safari has glitch - 
 				//it scrolls content for a few ms after locking if user scrolls fast
 				setTimeout(function () {
 					showSubForm();
 				}, 100);
+			}
 		});
 	}
 	
@@ -477,7 +478,8 @@ $(function () {
  * The Buy Tokens form
  */
 $(function () {
-	var ethToGro = 14000; //TODO: automatically update exchange rate with ICO rounds
+	var ethToGro = 10000, //TODO: automatically update exchange rate with ICO rounds
+	    bonusFr = 0.4;
 	
 	var $address = $('#contribution-address');
 	$('#copy-address').click(function () {
@@ -520,6 +522,14 @@ $(function () {
 		
 		return amount;
 	}
+	//calculate bonus amount
+	function calcBonus(gro) {
+		return gro*bonusFr;
+	}
+	//calculate GRO amount from GRO+bonus amount
+	function calcGro(groB) {
+		return groB/(1+bonusFr);
+	}
 	function formatAmount(amount) {
 		if (isNaN(amount)) {
 			return 0;
@@ -533,29 +543,38 @@ $(function () {
 	
 	$eth.on('input propertychange', function () {
 		var eth = forceNumber($eth),
-		    gro = convert('eth', eth);
+		    gro = convert('eth', eth),
+		    bonus = calcBonus(gro),
+		    groB = gro + bonus;
 		
-		$gro.val(gro? gro : '');
+		$gro.val(groB? groB : '');
 		
-		$('.gro-amount').html(formatAmount(gro));
+		$('.gro-amount').html(formatAmount(groB));
 		$('.eth-amount').html(formatAmount(eth));
+		$('.bonus-amount').html(formatAmount(bonus));
 	});
 	
 	$gro.on('input propertychange', function () {
-		var gro = forceNumber($gro),
-		    eth = convert('gro', gro);
+		var groB = forceNumber($gro),
+		    gro = calcGro(groB),
+		    eth = convert('gro', gro),
+		    bonus = calcBonus(gro);
 		
 		$eth.val(eth? eth : '');
 		
-		$('.gro-amount').html(formatAmount(gro));
+		$('.gro-amount').html(formatAmount(groB));
 		$('.eth-amount').html(formatAmount(eth));
+		$('.bonus-amount').html(formatAmount(bonus));
 	});
 	
 	//initial values
 	var eth = forceNumber($eth),
-	    gro = forceNumber($gro);
-	$('.gro-amount').html(formatAmount(gro));
+	    groB = forceNumber($gro),
+	    gro = calcGro(groB),
+	    bonus = calcBonus(gro);
+	$('.gro-amount').html(formatAmount(groB));
 	$('.eth-amount').html(formatAmount(eth));
+	$('.bonus-amount').html(formatAmount(bonus));
 });
 
 
@@ -851,8 +870,19 @@ $(function() {
 		//The "Back to top" button
 		//scroll to page top or to top section if it exists - so menu items will be set active
 		//TODO: activate menu items depending only on current scroll position, not on link anchors
-		var topSectionId = 'top-section', target;
-		target = document.getElementById(topSectionId)? topSectionId : 0;
+		var target,
+		    $icoBanner = $('#ico-banner-section'),
+		    $topSection = $('#top-section');
+		if ($icoBanner.length && $icoBanner.css('position')!=='fixed') {
+			//ICO banner is not fixed, scroll to it
+			target = 'ico-banner-section';
+		} else if ($topSection.length) {
+			//ICO banner is fixed, scroll to top section
+			target = 'top-section';
+		} else {
+			target = 0;
+		}
+		
 		$('#to-top').click(function () {
 			anchorScrolls.scrollTo(target, false);
 			return false;
