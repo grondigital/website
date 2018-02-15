@@ -191,7 +191,7 @@ $(function() {
 	//change header style on scroll
 	var $body = $('body'),
 	    $topLink = $('#to-top');
-	$('.first-section').waypoint(function(dir) {
+	$body.waypoint(function(dir) {
 		if (dir === 'down') {
 			$body.addClass('fixed-header');
 			$topLink.show();
@@ -200,7 +200,7 @@ $(function() {
 			$topLink.hide();
 		}
 	}, {
-		offset: 0
+		offset: -50
 	});
 	
 	$('#copyright-section').waypoint(function (dir) {
@@ -851,8 +851,19 @@ $(function() {
 		//The "Back to top" button
 		//scroll to page top or to top section if it exists - so menu items will be set active
 		//TODO: activate menu items depending only on current scroll position, not on link anchors
-		var topSectionId = 'top-section', target;
-		target = document.getElementById(topSectionId)? topSectionId : 0;
+		var target,
+		    $icoBanner = $('#ico-banner-section'),
+		    $topSection = $('#top-section');
+		if ($icoBanner.length && $icoBanner.css('position')!=='fixed') {
+			//ICO banner is not fixed, scroll to it
+			target = 'ico-banner-section';
+		} else if ($topSection.length) {
+			//ICO banner is fixed, scroll to top section
+			target = 'top-section';
+		} else {
+			target = 0;
+		}
+		
 		$('#to-top').click(function () {
 			anchorScrolls.scrollTo(target, false);
 			return false;

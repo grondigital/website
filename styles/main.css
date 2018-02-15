@@ -9,7 +9,6 @@ body {
 	flex-direction: column;
 	box-sizing: border-box;
 	min-height: 100%;
-	padding-top: 80px; /* space for fixed header */
 }
 
 /*
@@ -1262,6 +1261,37 @@ hr.divider {
 
 
 /**
+ * Fixed header & ICO banner positioning
+ */
+/* first sections on secondary pages */
+.first-section {
+	padding-top: 80px; /* space for fixed header */
+}
+@media (min-width: 1024px) {
+	/* home page - #top-section is the first */
+	#top-section {
+		padding-top: 180px; /* space for fixed header & ICO banner */
+	}
+	#ico-banner-section {
+		position: fixed;
+		top: 80px;
+		left: 0;
+		right: 0;
+		z-index: 60;
+	}
+	.fixed-header #ico-banner-section {
+		top: 50px;
+	}
+}
+@media (max-width: 1023px) {
+	/* home page - first section is ICO banner */
+	#ico-banner-section {
+		padding-top: 80px; /* space for fixed header */
+	}
+}
+
+
+/**
  * Header
  */
 #main-header {
@@ -1396,11 +1426,6 @@ hr.divider {
  * ICO banner section
  */
 #ico-banner-section {
-	position: fixed;
-	top: 80px;
-	left: 0;
-	right: 0;
-	z-index: 60;
 	background-color: #1d2f54;
 	background-image: url("../images/bg/bg-banner.png");
 	background-size: cover;
@@ -1411,12 +1436,11 @@ hr.divider {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-.fixed-header #ico-banner-section {
-	top: 50px;
-}
-.fixed-header #ico-banner-section > .container {
-	padding-top: 10px;
-	padding-bottom: 10px;
+@media (min-width: 1024px) {
+	.fixed-header #ico-banner-section > .container {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
 
 #ico-banner {
@@ -1449,7 +1473,7 @@ hr.divider {
 		justify-content: center;
 		width: 290px;
 		margin: 0 auto;
-		height: 195px;
+		height: auto;
 	}
 	#ico-banner > * {
 		width: 100%;
@@ -1511,42 +1535,30 @@ hr.divider {
 	}
 }
 
-.fixed-header #ico-banner {
-	justify-content: center;
-	height: 40px;
-}
-.fixed-header #ico-banner-status {
-	font-size: 26px;
-}
-.fixed-header #ico-banner-timer,
-.fixed-header #ico-banner-timer + .separator {
-	display: none;
-}
-.fixed-header #ico-banner-bonus-value,
-.fixed-header #ico-banner-bonus-text {
-	display: inline;
-	font-size: 26px;
-}
-.fixed-header #ico-banner-action {
-	width: 250px;
-}
-.fixed-header #ico-banner-action .btn {
-	padding-top: 0.6em;
-	padding-bottom: 0.6em;
-}
-@media (max-width: 1023px) {
+/* fixed ICO banner in desktop mode */
+@media (min-width: 1024px) {
 	.fixed-header #ico-banner {
-		height: 110px;
+		justify-content: center;
+		height: 40px;
+	}
+	.fixed-header #ico-banner-status {
+		font-size: 26px;
+	}
+	.fixed-header #ico-banner-timer,
+	.fixed-header #ico-banner-timer + .separator {
+		display: none;
 	}
 	.fixed-header #ico-banner-bonus-value,
 	.fixed-header #ico-banner-bonus-text {
-		display: block;
+		display: inline;
+		font-size: 26px;
 	}
-	.fixed-header #ico-banner-bonus-value {
-		font-size: 30px;
+	.fixed-header #ico-banner-action {
+		width: 250px;
 	}
-	.fixed-header #ico-banner-bonus-text {
-		font-size: 16px;
+	.fixed-header #ico-banner-action .btn {
+		padding-top: 0.6em;
+		padding-bottom: 0.6em;
 	}
 }
 
@@ -1557,12 +1569,6 @@ hr.divider {
 #top-section {
 	position: relative;
 	line-height: 1.25;
-	padding-top: 100px; /* space for fixed ICO banner */
-}
-@media (max-width: 1023px) {
-	#top-section {
-		padding-top: 235px;
-	}
 }
 
 #top-section .container {
