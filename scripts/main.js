@@ -478,7 +478,8 @@ $(function () {
  * The Buy Tokens form
  */
 $(function () {
-	var ethToGro = 14000; //TODO: automatically update exchange rate with ICO rounds
+	var ethToGro = 10000, //TODO: automatically update exchange rate with ICO rounds
+	    bonusFr = 0.4;
 	
 	var $address = $('#contribution-address');
 	$('#copy-address').click(function () {
@@ -521,6 +522,14 @@ $(function () {
 		
 		return amount;
 	}
+	//calculate bonus amount
+	function calcBonus(gro) {
+		return gro*bonusFr;
+	}
+	//calculate GRO amount from GRO+bonus amount
+	function calcGro(groB) {
+		return groB/(1+bonusFr);
+	}
 	function formatAmount(amount) {
 		if (isNaN(amount)) {
 			return 0;
@@ -534,29 +543,38 @@ $(function () {
 	
 	$eth.on('input propertychange', function () {
 		var eth = forceNumber($eth),
-		    gro = convert('eth', eth);
+		    gro = convert('eth', eth),
+		    bonus = calcBonus(gro),
+		    groB = gro + bonus;
 		
-		$gro.val(gro? gro : '');
+		$gro.val(groB? groB : '');
 		
-		$('.gro-amount').html(formatAmount(gro));
+		$('.gro-amount').html(formatAmount(groB));
 		$('.eth-amount').html(formatAmount(eth));
+		$('.bonus-amount').html(formatAmount(bonus));
 	});
 	
 	$gro.on('input propertychange', function () {
-		var gro = forceNumber($gro),
-		    eth = convert('gro', gro);
+		var groB = forceNumber($gro),
+		    gro = calcGro(groB),
+		    eth = convert('gro', gro),
+		    bonus = calcBonus(gro);
 		
 		$eth.val(eth? eth : '');
 		
-		$('.gro-amount').html(formatAmount(gro));
+		$('.gro-amount').html(formatAmount(groB));
 		$('.eth-amount').html(formatAmount(eth));
+		$('.bonus-amount').html(formatAmount(bonus));
 	});
 	
 	//initial values
 	var eth = forceNumber($eth),
-	    gro = forceNumber($gro);
-	$('.gro-amount').html(formatAmount(gro));
+	    groB = forceNumber($gro),
+	    gro = calcGro(groB),
+	    bonus = calcBonus(gro);
+	$('.gro-amount').html(formatAmount(groB));
 	$('.eth-amount').html(formatAmount(eth));
+	$('.bonus-amount').html(formatAmount(bonus));
 });
 
 
