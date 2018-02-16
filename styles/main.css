@@ -1984,6 +1984,17 @@ hr.divider {
 .problem h4 {
 	color: #6b7a8f;
 }
+.problem h4 [class^="icon-"]::before,
+.solution h4 [class^="icon-"]::before {
+	width: auto;
+	margin: 0;
+}
+.problem h4 .icon-cancel {
+	color: #f46e6f;
+}
+.solution h4 .icon-ok {
+	color: #3a8cf4;
+}
 @media (max-width: 1023px) {
 	.problem-title {
 		float: none;
