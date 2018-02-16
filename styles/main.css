@@ -1934,6 +1934,89 @@ hr.divider {
 
 
 /**
+ * Problems/solutions section
+ */
+.problem-solutions {
+	overflow: hidden;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #6b7a8f;
+}
+.problem-solutions:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+.problem-title {
+	float: left;
+	width: 25%;
+}
+.problem-title .numblurb-number {
+	float: none;
+	vertical-align: middle;
+	color: #f18036;
+}
+.problem-title h3 {
+	vertical-align: middle;
+	color: #f18036;
+	font-size: 30px;
+}
+.problems, .solution {
+	margin-left: calc(25% + 30px);
+}
+.problems {
+	display: flex;
+	justify-content: space-between;
+}
+.problem {
+	width: 50%;
+	margin: 0 15px;
+}
+.problem:first-child {
+	margin-left: 0;
+}
+.problem:last-child {
+	margin-right: 0;
+}
+.problem h4, .solution h4,
+.problem p, .solution p {
+	margin-bottom: 15px;
+}
+.problem h4 {
+	color: #6b7a8f;
+}
+@media (max-width: 1023px) {
+	.problem-title {
+		float: none;
+		width: auto;
+		margin-bottom: 15px;
+	}
+	.problem-title .numblurb-number {
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.problem-title h3 {
+		display: inline-block;
+		width: calc(100% - 95px);
+		margin: 0;
+		line-height: 1.15;
+	}
+	.problems, .solution {
+		margin-left: 0;
+	}
+	.problems {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.problem {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
+/**
  * Platform description section
  */
 #platform-description-section {
