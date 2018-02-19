@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Whitepaper | Gron Digital</title>
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/manifest.json">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#f18036">
+	<link rel="shortcut icon" href="/favicon/favicon.ico">
+	<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+	
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5CSPLQJ');</script>
+	<!-- End Google Tag Manager -->
+	
+	<!-- libs -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
+	<link rel="stylesheet" href="styles/aos.css" />
+	<link rel="stylesheet" href="styles/fontello.css" />
+	<link rel="stylesheet" href="styles/normalize.css" />
+	
+	<!-- common styles -->
+	<link rel="stylesheet" href="styles/common.css" />
+	<link rel="stylesheet" href="styles/forms.css" />
+	<link rel="stylesheet" href="styles/sections.css" />
+	<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CSPLQJ"
+	                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<header id="main-header" class="home-section">
+		<div class="container">
+			<a href="/" id="logo">
+				<img src="images/gron-logo.svg" alt="grondigital.com" />
+			</a>
+			<nav id="top-menu">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/#products-section">Our products</a></li>
+					<li><a href="/#ico-counter-section">ICO</a></li>
+					<li><a href="/#roadmap-section">Road map</a></li>
+					<li><a href="/#partners-section">Our team</a></li>
+					<li><a href="/faq">FAQ</a></li>
+					<li><a href="/whitepaper" class="active">Whitepaper</a></li>
+					<li><a href="/one-page-whitepaper">One-page Whitepaper</a></li>
+					<li class="highlight"><a href="/affiliate">Become an Affiliate</a></li>
+				</ul>
+				<a href="#" class="menu-button icon-menu"></a>
+			</nav>
+		</div>
+	</header>
+	
+	<section class="gray title-section first-section">
+		<div class="container">
+			<h1 class="section-header">White Paper de la Plataforma Blockchain de Juegos y Apuestas Gron Digital</h1>
+			<p>
+				"La primera generación de la revolución digital nos trajo el Internet de la información. La segunda generación,
+				impulsada por la tecnología Blockchain, nos está brindando el Internet del valor: una nueva plataforma para
+				remodelar el mundo de los negocios y transformar el viejo orden de los asuntos humanos para mejorar." –
+				<em>Don Tapscott</em>
+			</p>
+		</div>
+	</section>
+	
+	<section class="content-section">
+		<div class="container">
+			<p class="highlighted centered"><strong>* Translation Bounty Campaign</strong></p>
+			<h2>1. Resumen</h2>
+			<p>
+				La industria global de juegos y apuestas ha existido durante años y estará presente por muchos más
+				debido al atractivo y la creciente demanda dentro de la industria. A pesar de esto, hay cuestiones
+				innegablemente fundamentales a las que se enfrenta la industria del juego y las apuestas. La plataforma
+				Gron Digital, que se analizará a continuación, tiene como objetivo promover la innovación. Además, la
+				plataforma proporcionará seguridad a todos los jugadores, ya que las transacciones en la industria
+				garantizan la transparencia y la equidad a través de código verificado criptográficamente, en lugar de
+				la intervención humana.
+			</p>
+			<p>
+				Este documento conceptual captura el protocolo blockchain para un juego justo. El documento establecerá
+				cómo Gron Digital crea una plataforma que realineará el mercado global de juegos y apuestas a través de
+				transacciones confiables y autónomas en Blockchain. Esta plataforma generará una economía entre los
+				usuarios, que se satisface para todos permitiendo una amplia participación en los siguientes roles:
+			</p>
+			<ul>
+				<li>Desarrolladores de juegos y aplicaciones;</li>
+				<li>Patrocinador de fondos y riesgos;</li>
+				<li>Proveedores de servicio;</li>
+				<li>Operadores;</li>
+				<li>Laboratorios de juego y Autoridades de;</li>
+				<li>Certificación; Reguladores; y</li>
+				<li>Jugadores.</li>
+			</ul>
+
+
+			<h2>2. Introducción</h2>
+			<p>
+				El tamaño del mercado global regulado de juegos y apuestas en 2016 fue de $ 45.86 mil millones, mientras
+				que los pronósticos indican un aumento de hasta $ 56.05 mil millones para 2018. No hay datos sólidos
+				sobre el tamaño del mercado ilegal, sin embargo se estima en alrededor de $ 200 - $ 400 mil millones
+				anuales. Se puede decir que esta industria lucrativa a menudo se asocia con connotaciones negativas. Sin
+				embargo, las preguntas siguen en pie:
+				¿pueden cambiarse estas percepciones? Gron Digital propone una economía de juegos y apuestas basada en
+				el Blockchain que se ejecuta mediante contratos inteligentes. Un contrato inteligente es un contrato
+				autoejecutable, por el cual los términos acordados del contrato entre las partes se escriben
+				directamente en líneas de código. Esta plataforma aportará los beneficios inherentes de confianza,
+				transparencia y certeza a nuestra economía, presentando a los jugadores una alternativa abierta y justa
+				a la norma.
+			</p>
+			<p>
+				Este documento explorará la plataforma propuesta desde varias perspectivas. Esto es: regulación;
+				barreras para entrar; fabricación y costo de certificación de productos y sistemas de apuestas y
+				apuestas; operadores y los mismos
+				jugadores. Entonces, el documento explorará las características de nuestro sistema, que incluyen:
+				generación aleatoria de números (RNG); porcentajes auditables de Retorno al Jugador (RTP); nuestra
+				herramienta de desarrollo para juegos; desarrollo de aplicaciones, así como la forma en que los
+				reguladores y operadores entran en la plataforma, lo que les permite optimizar sus negocios actuales o
+				nuevos. El protocolo de Gron utiliza un token llamado GRO. Los tokens GRO se utilizan como una moneda
+				para realizar transacciones y como un incentivo, así como también como un mecanismo de recompensa para
+				varios usuarios de la plataforma.
+			</p>
+
+
+			<h2>3. Problemas comunes de la industria</h2>
+			<p>
+				Hay muchos factores que afectan negativamente a la industria del juego y las apuestas. Primeramente, es
+				el tema de la confianza. Sin confianza, las personas dudan en realizar transacciones. La confianza
+				afecta a todos los aspectos de la industria, desde los juegos justos hasta los operadores respetables,
+				hasta los sistemas que almacenan los depósitos de los clientes y administran sus ganancias. Los
+				mecanismos actuales se basan en un modelo de intervención y control humano que provoca fraude y
+				deshonestidad. Por lo tanto, los jugadores se enfrentan a desafíos que conducen a la desconfianza. Los
+				problemas comunes de la industria serán discutidos a continuación.
+			</p>
+
+			<div class="content-subsection">
+				<h3>3.1 Depósitos y retiros</h3>
+				<p>
+					Cuando los jugadores hacen depósitos en una cuenta de juego, que es controlada por un tercero,
+					frecuentemente hay retrasos. Los depósitos a menudo toman mucho tiempo para ser rechazados o algunas
+					veces no son rechazados en absoluto. ¿Cómo sabe el jugador que su dinero está seguro? Los retiros
+					son un problema adicional al que se enfrentan los jugadores. A menudo, los retiros solo se permiten
+					por encima de un cierto monto mínimo y pueden generar más cargos. Cláusulas de renovación para
+					bonificaciones y promociones, impuesto sobre juegos y apuestas, así como la dependencia de sistemas
+					de terceros para realizar transacciones en estas redes, todas las áreas actuales donde la confianza
+					y la eficiencia son esenciales para que exista una relación comercial.
+				</p>
+
+				<h3>3.2 Competencia justa</h3>
+				<p>
+					Un monopolio se caracteriza por la ausencia de competencia. Esto significa que los monopolios pueden
+					generar altos costos para los consumidores, productos inferiores y, a menudo, conductas corruptas,
+					lo que obliga a las personas a desarrollar un cierto grado de desconfianza. El efecto es que los
+					monopolios obtienen un mayor control dentro de la esfera del juego y las apuestas, esto significa
+					que los monopolios pueden impedir la entrada de nuevos participantes en la industria, discriminando
+					e inhibiendo la experimentación o el desarrollo de nuevos productos. Además, las barreras
+					financieras, que incluyen el costo de entrada para los nuevos operadores y los costos asociados con
+					el cumplimiento, son más accesibles para los gigantes monopolísticos.
+				</p>
+
+				<h3>3.3 Proveedores de servicios confiables</h3>
+				<p>
+					Una cuestión que aún no se ha abordado es la cuestión de las licencias. Los jugadores que visitan y
+					se registran con varios proveedores de servicios, no siempre pueden diferenciar entre operadores
+					legales e ilegales. Esto deja a los jugadores confundidos y engañados.
+				</p>
+
+				<h3>3.4 Juego justo</h3>
+				<p>
+					¿Son justos los productos ofrecidos? ¿Lo tratarán a uno de manera ética y profesional? Desde el
+					punto de vista de los proveedores de desarrollo y software, los productos de juegos y apuestas no
+					han evolucionado de forma significativa. Además del costo de desarrollo, las empresas deben
+					asegurarse de que los laboratorios de juego certifiquen sus productos de juego para cumplir con las
+					prácticas de juego justo antes de ingresar al mercado. Estos laboratorios trabajan dentro de un
+					marco estricto que puede obstaculizar la creatividad de los desarrolladores de juegos. Además, el
+					código y la lógica de estos sistemas implican la propiedad intelectual del desarrollador o
+					proveedores del sistema, que a menudo es un secreto muy bien guardado. Esto obliga a los jugadores a
+					confiar en los desarrolladores, en sus juegos y sistemas, junto con el laboratorio de juego, que
+					certifica los productos para la equidad. La lógica del juego está programada en una máquina o un
+					juego de mesa (físico o en línea) y es propiedad intelectual del fabricante del juego, que es poco
+					probable que lo comparta con el público.
+				</p>
+
+				<h3>3.5 Generador de números aleatorios y porcentaje de devolución al jugador</h3>
+				<p>
+					Otro tema comúnmente discutido es el problema del Generador de Números Aleatorios (RNG, por sus
+					siglas en inglés). Un ejemplo básico de
+					RNG son las loterías. Los participantes de la lotería se ven obligados a confiar en que el código de
+					software o dispositivo físico que genera los números ganadores es verdaderamente aleatorio. Sin
+					dicho sistema habrá un elemento de previsibilidad cuando los jugadores hagan sus apuestas.
+					Contrariamente a la creencia común, la industria del juego y las apuestas de hecho quiere que su RNG
+					sea tan aleatorio e impredecible como sea posible. Esto es para asegurar que ningún jugador pueda
+					adivinar el resultado de la próxima parada del carrete de tragamonedas ni los números ganadores de
+					un próximo sorteo de lotería. Sin embargo, el problema real en el mundo de los juegos y las apuestas
+					está más arraigado que la cuestión del RNG. ¿Cómo saben los jugadores que el juego es justo? La
+					preocupación es que los jugadores den por hecho la lógica del juego y el porcentaje de Retorno al
+					Jugador (RTP).
+				</p>
+
+				<h3>3.6 Apuestas mutuas</h3>
+				<p>
+					El problema de las apuestas mutuas difiere de las apuestas de probabilidades fijas en que el pago
+					final solo se determina una vez que se cierra el grupo, mientras que en las apuestas con
+					probabilidades fijas, el pago se acuerda una vez que se realiza la apuesta. Por lo tanto, está claro
+					que el sistema de apuestas mutuas plantea la preocupación de la transparencia. Esencialmente, esto
+					puede disminuir la confianza entre los jugadores ya que las probabilidades de pago se calculan
+					compartiendo el conjunto de todas las apuestas ganadoras, esto significa que los jugadores deben
+					confiar en un tercero para calcular las acciones de manera honesta y justa.
+				</p>
+			</div>
+
+			<p>
+				En la actualidad, las personas y la tecnología de la industria no han sido capaces de resolver los
+				problemas antes mencionados, particularmente la cuestión de la confianza y el costo. Por lo tanto, los
+				participantes de la industria confían en organismos autorizados y regulaciones para generar confianza,
+				mientras que los costos incurridos siguen siendo altos para todos. Para superar estas preocupaciones,
+				Gron Digital ofrece una plataforma que atiende y reúne a todos los actores de la industria, que pueden
+				coexistir y compartir los ingresos. Esto generará un ecosistema que sea transparente y confiable, ya que
+				permite a las personas participar en actividades de juegos y apuestas, administradas por código
+				criptográficamente verificable.
+			</p>
+
+
+			<h2>4. Plataforma</h2>
+			<p>
+				El desarrollo de la plataforma Gron Digital tiene como objetivo crear un ecosistema donde las
+				transacciones se administren mediante código criptográficamente verificable sin intervención humana.
+				Esto crea un dominio de apuestas para todos los participantes que es:
+			</p>
+			<ul>
+				<li>Seguro;</li>
+				<li>Transparente;</li>
+				<li>Garantizado;</li>
+				<li>Autónomo;</li>
+				<li>Auditable; y</li>
+				<li>Justo</li>
+			</ul>
+
+			<p>
+				La base del protocolo de Gron es que la plataforma representa un conjunto de contratos inteligentes que
+				actúan como el agente de confianza autónomo, que posteriormente rige todas las transacciones. Estos
+				contratos inteligentes pueden cumplir automáticamente un conjunto de condiciones predeterminadas basadas
+				en reglas codificadas que se ejecutan en Blockchain. Mediante el uso de la criptografía, podemos
+				proporcionar seguridad, transparencia y un registro verificable de todas las transacciones.
+			</p>
+			<p>
+				Gron Digital proporcionará un conjunto de módulos preconstruidos que cubrirán todos los aspectos de las
+				operaciones de apuestas. Usando nuestras herramientas y nuestro framework, los desarrolladores y las
+				compañías podrán armar una selección de módulos preconstruidos y construir sus propias aplicaciones
+				personalizadas. Además, Gron Digital incluirá una disposición para el desarrollo externo de módulos por
+				parte de la comunidad.
+			</p>
+			<p>
+				También es importante que todos los jugadores reciban algún incentivo económico por su participación en
+				nuestra plataforma. Para habilitar esto, todas las transacciones se basan en nuestro token llamado GRO.
+				Todas las apuestas se colocan en GRO, todas las ganancias se pagan en GRO, así como cualquier tipo de
+				bonificación de desarrollo, bonificación, incentivo y honorarios pagados en GRO. La participación amplia
+				es crucial para el éxito de cualquier economía. Varios participantes han sido identificados por el
+				equipo de Gron Digital en la creación de nuestro ecosistema. En las etapas posteriores al PMV (producto
+				mínimo viable) podemos encontrar la necesidad de incluir roles adicionales. Sin embargo, a continuación
+				se detallan los participantes mínimos que hasta ahora hemos identificado para que nuestro ecosistema
+				funcione.
+			</p>
+
+			<div class="content-subsection">
+				<h3>4.1 Desarrollo de protocolo</h3>
+				<p>
+					Gron Digital será responsable del desarrollo y la implementación del protocolo Blockchain para
+					juegos justos y contratos inteligentes. Este protocolo se beneficiará del conocimiento combinado de
+					la experiencia de nuestros fundadores, así como de los sistemas existentes que aportan a la
+					plataforma.
+				</p>
+
+				<p>
+					Junto con el protocolo, Gron Digital desarrollará herramientas y un framework que facilite el
+					desarrollo de aplicaciones. Este constructor tendrá módulos que abarcan todos los servicios y
+					procesos que se requieren para ejecutar una operación de apuestas y juegos. Gron Digital también
+					proporcionará un conjunto de módulos de casino, deportes y lotería para impulsar la creación de
+					aplicaciones personalizadas.
+				</p>
+
+				<h3>4.2 Desarrolladores de juegos distribuidos y aplicaciones</h3>
+				<p>
+					El desarrollo, en un sentido amplio, incluye a Gron Digital o cualquier tercero contribuidor que
+					desarrolle un juego o servicio funcional disponible para nuestra plataforma. Esto podría ser
+					cualquier cosa, desde un único juego de casino hasta un servicio de gestión de apuestas de grupo.
+					También podría incluir el desarrollo subcontratado de aplicaciones personalizadas para operadores
+					que prefieren que los profesionales construyan sus sistemas para ellos.
+				</p>
+
+				<h3>4.3 Proveedores de servicios</h3>
+				<p>
+					La industria depende de varios servicios para operar de manera eficiente, esto incluye a los
+					proveedores de:
+				</p>
+				<ul>
+					<li>Accesorios y eventos;</li>
+					<li>Probabilidades;</li>
+					<li>Juegos de casino;</li>
+					<li>Loterías;</li>
+					<li>Resultados;</li>
+					<li>Estadísticas;</li>
+					<li>RNG; y</li>
+					<li>Limitadores</li>
+				</ul>
+				<p>
+					Los individuos y compañías, por igual, podrán proporcionar estos servicios y ganar una tarifa por su
+					contribución.
+				</p>
+
+				<h3>4.4 Operadores</h3>
+				<p>
+					Los operadores pueden ser individuos o compañías existentes, que operan dentro del ámbito de la ley
+					dentro de su jurisdicción, que tienen la intención de pasar al Blockchain o convertirse en una nueva
+					empresa iniciando una operación en el Blockchain.
+				</p>
+				<p>
+					Los operadores existentes que buscan migrar a Blockchain por los beneficios inherentes aún tendrán
+					que cumplir con las regulaciones. Nuestro contrato inteligente se acomodará a varios criterios de
+					cumplimiento, tales como: verificación de licencia; cumplimiento tributario; KYC (conozca a su
+					cliente) y resolución de disputas. Los operadores podrán utilizar nuestras herramientas para
+					ensamblar módulos que se adapten a sus necesidades. Esto les permitirá operar de manera efectiva en
+					la plataforma.
+				</p>
+				<p>
+					Las empresas emergentes también tendrán la capacidad de integrar módulos, crear sus propias
+					aplicaciones y operarlas en Blockchain. Esto abre la industria a la competencia leal, fomentando
+					estándares más altos y una mayor variedad para los jugadores.
+				</p>
+
+				<h3>4.5 Scouts y resultados</h3>
+				<p>
+					Los scouts son buscadores de recompensas. Estas son personas que asisten a eventos en vivo y brindan
+					la información más reciente en tiempo real a la red. Gron Digital proporcionará una aplicación móvil
+					con la funcionalidad necesaria para realizar estas tareas. Puede haber muchos Scouts en un evento, y
+					todos proceden a informar a la red. Esta acumulación de datos en tiempo real nos da un mayor
+					consenso y precisión de la información.
+				</p>
+				<p>
+					Los resultados son una parte fundamental de la plataforma, deben ser de una fuente confiable,
+					altamente precisa, verificable y recibida rápidamente. Los scouts son recompensados con GRO en una
+					estructura por niveles, basada en la precisión y velocidad con la que brindan actualizaciones de
+					eventos.
+				</p>
+				
+				<h3>4.6 Afiliados y Referidos</h3>
+				<p>
+					Conducir el tráfico de calidad a un sitio web de juegos y apuestas es clave para una operación en línea exitosa. Los programas de afiliación bien estructurados pueden ayudar a los operadores a alcanzar sus objetivos de ventas. Como se ve en la práctica común de la industria de la tarifa de introducción de una vez, Gron Digital pretende desviarse de este sistema convencional, al introducir un mecanismo de recompensa justo y duradero para los referidores. Dicho mecanismo asegurará la continuidad a lo largo del valor de tiempo de vida de los jugadores referidos.
+				</p>
+
+				<h3>4.7 Patrocinador de fondos y riesgo</h3>
+				<p>
+					Los patrocionadores de fondos y riesgo pueden ser un individuo o una entidad que actúa en diferentes
+					roles o partes diferentes que combinan recursos en un contrato inteligente. Su rol típico es
+					proporcionar la recompensa inicial utilizada para subsidiar los juegos mediante el acoplamiento de
+					sus tokens de utilidad a un contrato por una recompensa. Pueden respaldar los premios del bote u
+					ofertas de bonificación en un gran evento deportivo, loterías y otros juegos diversos. Están
+					dispuestos a exponerse a un alto riesgo por una recompensa.
+				</p>
+
+				<h3>4.8 Jugadores</h3>
+				<p>
+					Los jugadores son personas que descubren oportunidades de juegos y apuestas en la plataforma digital
+					de Gron y participan en actividades de juegos de apuestas mediante el uso de tokens GRO. Los
+					jugadores también pueden ganar recompensas por referir, a través de la adopción promocional de
+					primer juego de un juego recientemente desarrollado, así como a través de varios incentivos y
+					esquemas de bonificación que serán proporcionados por los operadores. En Gron Digital creemos que
+					otros clientes agregarán valor a medida que el ecosistema se desarrolle y surjan varias necesidades.
+				</p>
+
+				<h3>4.9 Reguladores</h3>
+				<p>
+					El objetivo de una industria regulada de juegos de azar y apuestas es garantizar que todos los
+					jugadores de rol involucrados en cualquier actividad de juego se encuentren dentro del marco legal
+					regulatorio. Las regulaciones efectivas aseguran que la industria respete los estándares de
+					cumplimiento reconocidos a nivel nacional e internacional dentro del sector económico.
+					Esencialmente, el propósito de la legislación es proteger a los jugadores de roles y garantizar que
+					los operadores sean justos. La manifestación de tal industria como un foro en línea, así como el
+					aumento de la confianza de las personas por la tecnología, pueden presentar preocupaciones reales a
+					medida que aumentan los delitos cibernéticos. El marco legal regulatorio se estanca y se retrasa, ya
+					que puede dificultar mantenerse al día con el avance continuo de la tecnología. Estas experiencias
+					negativas dejan el marco regulatorio estático y los jugadores vulnerables, dañando la reputación de
+					la industria del juego y las apuestas como un todo. Los organismos reguladores se beneficiarán al
+					participar en la Plataforma Gron Digital. Las empresas reguladas existentes pueden buscar mudarse a
+					Blockchain por la seguridad y la sinergia que brinda a la industria. Esto incluye:
+				</p>
+				<ul>
+					<li>Esfuerzos de recaudación de impuestos (que representan la mayoría de sus ingresos y casualmente
+						es el área donde puede ocurrir la mayor actividad fraudulenta). Éstos se pueden programar en
+						nuestro Contrato Inteligente y ser pagados directamente sin necesidad de intervención manual,
+						auditorías costosas y procedimientos de supervisión;
+					</li>
+					<li>Todas las transacciones importantes se registrarán en el libro en línea inmutable que ofrece
+						auditabilidad y transparencia garantizadas;
+					</li>
+					<li>Las firmas digitales agregadas a los Contratos Inteligentes por los reguladores pueden verificar
+						los operadores y sus licencias en las aplicaciones de los operadores para mayor seguridad y
+						garantía para los jugadores junto con los reguladores por igual; y
+					</li>
+					<li>Los Contratos Inteligentes también pueden tener términos integrados de resolución de disputas,
+						que reducen la necesidad de intervención regulatoria cuando se resuelven disputas.
+					</li>
+				</ul>
+			</div>
+
+
+			<h2>5. Rentabilidad de Gron Digital</h2>
+			<p>
+				GRO es nuestro token de utilidad que se usará en la plataforma Gron Digital. El token de utilidad actúa
+				como:
+			</p>
+			<ul>
+				<li>una moneda de juego y apuesta;</li>
+				<li>como recompensa;</li>
+				<li>una forma de pago; y</li>
+				<li>un incentivo que impulsa la economía de Gron Digital.</li>
+			</ul>
+			<p>
+				La plataforma se puede utilizar de varias maneras, especialmente al realizar transacciones y al
+				proporcionar servicios.
+				A la vanguardia, GRO se usará como moneda. Quizás uno pueda pensar en el GRO como una ficha de casino.
+				Los tokens de utilidad de GRO permitirán a los individuos y organizaciones jugar cualquier juego(s)
+				disponible en la Plataforma, colocar apuestas con una casa de apuestas o jugar a la lotería. Todas las
+				ganancias potenciales se pagarán en GRO, sin embargo, esto no se limita a que el GRO actúe como una mera
+				moneda. Dependiendo del rol adoptado en el ecosistema, los participantes ganarán GRO y serán
+				recompensados por los servicios que brindan en la Plataforma. Los principales jugadores de rol en la
+				plataforma incluyen:
+			</p>
+			<ul>
+				<li>Desarrolladores de juegos y aplicaciones;</li>
+				<li>RNG;</li>
+				<li>Proveedores de servicio;</li>
+				<li>Resulters;</li>
+				<li>Line-makers;</li>
+				<li>Patrocinador de fondos y riesgos;</li>
+				<li>Exploradores; y</li>
+				<li>Proveedores de estadísticas.</li>
+			</ul>
+			<p>
+				El modelo de valor se basa en la tarifa obtenida por los servicios prestados. Los honorarios pueden ser
+				fijados o incentivados en proporción al riesgo asumido o la complejidad de la tarea que realizan. Gron
+				Digital obtendrá una tarifa general para respaldar las mejoras continuas del protocolo, el desarrollo de
+				módulos y herramientas para el desarrollo de aplicaciones, así como para financiar operaciones y
+				marketing. Una vez que nuestra iniciativa de crowdfunding tenga éxito y se emitan los tokens de
+				utilidad, GRO será listado y cotizará en los principales intercambios.
+			</p>
+
+
+			<h2>6. Análisis Competitivo</h2>
+			<p>
+				El dominio Blockchain se ha vuelto cada vez más relevante desde el lanzamiento de Bitcoin y otras
+				criptomonedas. La creciente demanda de adopción de Blockchain continúa y continuará a medida que nuevas
+				ideas entren en el mercado a diario. El Blockchain tiene el potencial de beneficiar a múltiples
+				industrias. Esto es particularmente evidente en la clara sinergia entre Blockchain y la industria del
+				juego.
+			</p>
+			<p>
+				Gron Digital tiene varias ventajas clave sobre sus competidores. Los fundadores de Gron Digital poseen
+				la experiencia relevante en la industria:
+			</p>
+			<ul>
+				<li>Somos un fabricante con licencia legal y proveedor de servicios para la industria del juego;</li>
+				<li>Tenemos el conocimiento y la experiencia práctica en el dominio de juegos y apuestas;</li>
+				<li>Contamos con la infraestructura de TI, la experiencia necesaria, la administración y el equipo de
+					desarrollo necesarios para ejecutar un proyecto de esta naturaleza de manera eficiente; y
+				</li>
+				<li>Tenemos los productos certificados de Juegos de Azar y Apuestas utilizados en un entorno de
+					producción.
+				</li>
+			</ul>
+			<p>
+				Gron Digital no está en la fase de aprendizaje. Exhibimos experiencia en el mundo real, así como
+				sistemas funcionales existentes e infraestructura que actualmente prestan servicios a clientes y la
+				industria del juego. Explore los siguientes sitios enumerados para ver la base desde la cual se lanzará
+				Gron Digital: www.cdpgaming.com www.yesplay.bet www.sintez.com
+			</p>
+			<p>
+				Nuestro calendario de desarrollo acelerado significa que nuestro plan MVP para la incorporación de
+				nuestros sistemas actuales con Blockchain ya está en marcha.
+			</p>
+
+
+			<h2>7. ICO</h2>
+			<p>
+				La plataforma Gron Digital se basará en su token de utilidad GRO. El token GRO se emite en la demanda
+				como contribución tiene lugar, es decir, como 0,6 GRO está intercambiado, ya sea para ETH, BTC o BCH, un
+				0.4 GRO adicional se emite y es asignado a los Fundadores, Incentivos del Equipo, y Financiamiento
+				Inicial, por lo tanto se emite un total de 1 GRO. El máximo de 950 000 000 (nuevecientos cincuenta
+				millones) de tokens de utilidad GRO se emitirá en las fases Pre-ICO e ICO, a partir del 01/09/2018 a las
+				00:00 UTC. Las siguientes criptomonedas se pueden intercambiar por GRO:
+			</p>
+			<ul>
+				<li>Bitcoin</li>
+				<li>Ethereum</li>
+				<li>Bitcoin Cash</li>
+			</ul>
+			<p>
+				El 60% del GRO emitido, máximo 570 000 000 (quinientos setenta millones de tokens), se asignará a las
+				fases Gron Digital Pre-ICO e ICO para la participación pública. Pre-ICO está programado para funcionar
+				durante 28 días, seguido de 4 rondas de ICO con cada ronda con duración de hasta 14 días. Estos tokens
+				son emitidos por contrato GRO.sol. Después de las 4 rondas (o si se alcanza el tope ICO de 570 000 000
+				tokens), el ICO se cerrará. Gron Digital tiene como objetivo aumentar 57,000 ETH en las fases Pre-ICO e
+				ICO; el desglose de cada ronda es el siguiente:
+			</p>
+			
+			<div class="content-subsection">
+				<h3>7.1 Pre-ICO:</h3>
+				<p>
+					Se venderán 14,000 GRO por 1 ETH, esto incluye la asignación de bonificación del 40% para los
+					participantes en esta ronda. La ronda funcionará durante veintiocho días o hasta que se alcance el
+					tope.
+				</p>
+
+				<h3>7.2 Primera Ronda:</h3>
+				<p>
+					13,000 GRO se venderán por 1 ETH, esto incluye la asignación de bonificación del 30% para los
+					participantes en esta ronda. La ronda durará catorce días o hasta que se alcance el tope.
+				</p>
+
+				<h3>7.3 Segunda Ronda:</h3>
+				<p>
+					Se venderán 12,000 GRO por 1 ETH, esto incluye la asignación de bonificación del 20% para los
+					participantes en esta ronda. La ronda durará catorce días o hasta que se alcance el techo.
+				</p>
+
+				<h3>7.4 Tercera Ronda:</h3>
+				<p>
+					Se venderán 11,000 GRO por 1 ETH, esto incluye la asignación de bonificación del 10% para los
+					participantes en esta ronda. La ronda durará catorce días o hasta que se alcance el tope.
+				</p>
+
+				<h3>7.5 Cuarta Ronda:</h3>
+				<p>
+					10,000 GRO se venderán por 1 ETH. Esta ronda durará catorce días o hasta que se alcance el tope.
+				</p>
+			</div>
+			
+			<p>
+				Los fondos recaudados durante las fases Pre-ICO e ICO se asignarán de la siguiente manera:
+			</p>
+			<ul>
+				<li>50% - Desarrollo de Software;</li>
+				<li>5% - Marco Legal y Finanzas;</li>
+				<li>15% - Operaciones;</li>
+				<li>10% - Comercialización;</li>
+				<li>15% - Asesores;</li>
+				<li>5% - Contingencias.</li>
+			</ul>
+			<p>
+				El 40% restante de GRO, un máximo de 380 000 000 (trescientos ochenta millones de tokens), se gestionará
+				mediante el contrato GROVesting.sol de la siguiente manera:
+			</p>
+			<ul>
+				<li>40% - Financiamiento (disponible de inmediato);</li>
+				<li>30% - Incentivos y Bonos de Equipo (disponibles después de 26 semanas a partir de la fecha en que
+					finaliza el ICO);
+				</li>
+				<li>15% - Fundadores (disponible después de 52 semanas desde la fecha en que finaliza el ICO);</li>
+				<li>15% - Fundadores (disponible después de 104 semanas a partir de la fecha de finalización de ICO).
+				</li>
+			</ul>
+			
+			
+			<h2>8. Hoja de Ruta de Desarrollo</h2>
+			<div class="content-subsection">
+				<h3>8.1 2012</h3>
+				<ul>
+					<li>La Plataforma de Juegos de Casino Basada en Servidor se lanzó en el mercado de América del Sur
+						basado de manera tradicional. 158 video tragamonedas y 12 juegos de mesa
+					</li>
+				</ul>
+
+				<h3>8.2 2014</h3>
+				<ul>
+					<li>La licencia del fabricante de juegos de apuestas fue emitida por Western Cape Gambling and
+						Racing Board.
+					</li>
+					<li>La Licencia de Apuestas Deportivas fue emitida por Western Cape Gambling and Racing Board</li>
+					<li>El Sistema de Registro de Apuestas Betfinity fue certificado por BMM Gaming Testlab</li>
+					<li>La Carta de Cumplimiento fue emitida por las Autoridades de Juegos SA</li>
+					<li>Se lanzó la Plataforma de Apuestas y Lotería</li>
+				</ul>
+
+				<h3>8.3 2016</h3>
+				<ul>
+					<li>Blockchain y Contratos Inteligentes se identificaron como el enfoque más adecuado y lógico en
+						Juegos de Azar y Apuestas
+					</li>
+					<li>Aplicación I + D Blockchain en juegos</li>
+					<li>Se desarrollaron prototipos de Apuestas Deportivas y Lotería</li>
+				</ul>
+
+				<h3>8.4 2017</h3>
+				<ul>
+					<li>Trimestre 2 – La decisión de ICO fue tomada. Preparación para ICO</li>
+					<li>Trimestre 3 – Consultoría con asesores y equipo legal</li>
+				</ul>
+
+				<h3>8.5 2018</h3>
+				<div class="content-subsection">
+					<h4>Trimestre 1</h4>
+					<ul>
+						<li>pre-ICO comienza el 9 de enero de 2018</li>
+						<li>ICO comienza el 6 de febrero de 2018</li>
+						<li>Listado de GRO en los Principales Intercambios</li>
+						<li>Desarrollo de la Plataforma Gron Digital</li>
+					</ul>
+					<h4>Trimestre 2</h4>
+					<ul>
+						<li>Implementación de la Aplicación de Apuestas Deportivas existente en la Plataforma Gron
+							Digital, donde GRO es el token de la utilidad
+						</li>
+						<li>MVP de Aplicaciones de Apuestas Deportivas móviles y de escritorio</li>
+						<li>Solicitud de Reguladores para acceder y auditar todas las transacciones de juego.
+							Proporcionar un mecanismo para la emisión y verificación de licencias
+						</li>
+						<li>Integración de proveedores de resultados</li>
+						<li>Programa de Referidos y Afiliados</li>
+					</ul>
+					<h4>Trimestre 3</h4>
+					<ul>
+						<li>MVP de Juegos de Habilidades móviles y de escritorio</li>
+						<li>MVP de Aplicación de Lotería móvil y de escritorio</li>
+					</ul>
+					<h4>Trimestre 4</h4>
+					<ul>
+						<li>Aplicación de Escritorio de Casino. Más de 20 Video Tragamonedas, 4 Video Póker, Ruleta,
+							Black Jack, Texas Hold'em, Baccarat
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<h2>9. Conclusión</h2>
+			<p>
+				Gron Digital tiene el conocimiento, la experiencia y la capacidad para hacer realidad esta plataforma de
+				juego y apuestas. Gron Digital, junto con otros primeros usuarios, busca cambiar radicalmente la forma
+				en que las personas realizan transacciones e intercambian valor por bienes y servicios en línea.
+				Teniendo en cuenta la historia reciente y la mala gestión de las corporaciones e instituciones que han
+				plagado el funcionamiento y la confianza de la sociedad, se puede afirmar que el desarrollo de esta
+				Plataforma se encuentra a un paso de las estructuras monopólicas y centralizadas. Blockchain es la
+				solución ideal para abordar los problemas fundamentales de la confianza y la transparencia. El futuro de
+				los juegos y apuestas en línea nunca ha sido tan extraordinario y emocionante. Gron Digital crea una
+				plataforma que fusiona y conecta varias partes dentro de esta lucrativa industria con el fin de
+				garantizar el crecimiento y la prosperidad continuos para todos.
+			</p>
+			<p>
+				La propuesta de valor, que se ofrece a la industria a través de nuestros tokens de servicios públicos y
+				Protocolo, proporciona a la industria una solución global para diversos problemas que enfrentan los
+				operadores, jugadores, desarrolladores y reguladores hoy en día.
+			</p>
+			<p>
+				A través de este documento conceptual detallado, creemos que nuestra experiencia y atención particular a
+				las necesidades de la industria sirven como herramientas poderosas que nos permiten llevar esta
+				plataforma revolucionaria al mundo de los juegos y las apuestas.
+			</p>
+			
+			<p class="centered">
+				<a href="/files/whitepaper.pdf" class="download-link" target="_blank"><img src="images/pdf.png"
+				                                                                           alt="Download Gron Digital Whitepaper"/>
+					Download PDF</a>
+			</p>
+		</div>
+	</section>
+	
+	<footer id="main-footer" class="blue home-section">
+		<div class="container">
+			<div id="footer-widgets" class="flex-container flex-cols-3">
+				<div>
+					<h4>Contacts</h4>
+					<p>
+						<a href="tel:+27116842252">+27 11 684 2252</a><br/>
+						Suite 9, 1st Floor,<br/>
+						1, Melrose Boulevard<br/>
+						Melrose Arch,<br/>
+						South Africa<br/>
+					</p>
+				</div>
+				<div id="widget-token-swap">
+					<h4>Token Sale</h4>
+					<ul>
+						<li><a href="/#ico-counter-section">Tokens</a></li>
+						<li><a href="/faq">FAQ</a></li>
+						<li><a href="/whitepaper">Whitepaper</a></li>
+						<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+						<li><a href="https://etherscan.io/address/0x997e3ADb550A85895F5BECF54a2751E6dF24edC8#code" target="_blank">
+							GRO Smart Contract
+						</a></li>
+						<li><a href="https://etherscan.io/address/0x16E9B1234df1f10AeeA65Ee48223986ce62C8a7B#code" target="_blank">
+							GROVesting Contract
+						</a></li>
+						<li><a href="https://bitcointalk.org/index.php?topic=2858989.msg29344962#msg29344962" target="_blank">
+							Bounty campaign
+						</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Follow Us</h4>
+					<div class="social">
+						<a href="https://www.facebook.com/Gron-Digital-497963550568477/" class="icon-facebook" target="_blank"></a>
+						<a href="https://twitter.com/GronDigital" class="icon-twitter" target="_blank"></a>
+						<a href="https://github.com/grondigital" class="icon-github-circled" target="_blank"></a><br/>
+						<a href="https://t.me/grondigital" class="icon-telegram" target="_blank"></a>
+						<a href="https://join.slack.com/t/gron-digital/shared_invite/enQtMzE2Njk1OTkzMTcxLTIyZWEzY2U2MWI2OWU1YWU0ZDVhMTUyNTgxM2M4ZWM0NjllNzYzMWE3YWEzMDQwMmRiMzQyYzk4MzdmZTUxMjc"
+						   class="icon-slack" target="_blank"></a>
+						<a href="https://medium.com/@grondigitalplatform" class="icon-medium" target="_blank"></a><br/>
+						<a href="https://bitcointalk.org/index.php?topic=2758561" class="icon-bitcoin" target="_blank"></a>
+						<a href="https://www.youtube.com/channel/UCJ96NoVr_JtU8y9h9Br1jaQ" class="icon-youtube-play"
+						   target="_blank"></a>
+						<a href="https://www.reddit.com/user/digitalaman" class="icon-reddit-alien" target="_blank"></a>
+					</div>
+					<a class="subscribe-btn btn animated highlighted" href="#" data-ev-category="Subscribe"
+					   data-ev-action="popup">Subscribe</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<section id="copyright-section" class="home-section">
+		<div class="container">
+			Copyright &copy; 2018 Gron Digital. All rights reserved.
+		</div>
+	</section>
+	
+	<div id="to-top-section">
+		<div class="container">
+			<div id="to-top-positioner"><a id="to-top" class="icon-angle-up" href="#" style="display: none;"></a></div>
+		</div>
+	</div>
+	
+	<div id="social-float">
+		<a href="/contribute" data-ev-category="Contribute" data-ev-label="Buy Tokens Now (float)">
+			<span>Buy Tokens Now</span><img src="images/social/buy-tokens.png"/>
+		</a><br/>
+		<a href="/affiliate">
+			<span>Become an Affiliate</span><img src="images/social/affiliate.png"/>
+		</a><br/>
+		<a href="https://t.me/joinchat/ABUQqRMODB670U-NbF9IRw" target="_blank">
+			<span>Community Chat</span><img src="images/social/telegram.png"/>
+		</a><br/>
+		<a href="#" class="subscribe-btn">
+			<span>Subscribe</span><img src="images/social/email.png"/>
+		</a>
+	</div>
+	
+	<div id="shim" class="shim"></div>
+	
+	<div id="subscribe-shim" class="shim popup-shim"><div id="subscribe-form">
+		<a href="#" class="close-popup icon-cancel"></a>
+		<div id="subscribe-header">
+			<img src="images/share.svg" id="share-img" alt="Subscribe to Gron Digital Gambling and Betting ICO news" />
+			<div id="subscribe-header-text">
+				<h4>Tokens Pre-Sale has begun.<br />
+					Limited 40% bonus offer ends 26th&nbsp;February&nbsp;2018.</h4>
+				<p>Join our mailing list for the latest news.</p>
+			</div>
+		</div>
+		<div id="subscribe-body" class="blue">
+			<form method="post" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
+				<input type="hidden" name="listname" value="awlist4809394" />
+				<input type="hidden" name="redirect" value="https://www.aweber.com/thankyou-coi.htm?m=text" />
+				<input type="email" name="email" id="subscribe-email" title="Email" placeholder="Type your email..." required /><!--
+				--><input name="submit" type="submit" value="Submit" id="subscribe-submit" class="btn highlighted" />
+			</form>
+		</div>
+	</div></div>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="scripts/lib/aos.js"></script>
+	<script src="scripts/lib/jquery.waypoints.min.js"></script>
+
+	<script src="scripts/functions.js"></script>
+	<script src="scripts/tracking.js"></script>
+	<script src="scripts/common.js"></script>
+	<script src="scripts/main.js"></script>
+	<script src="scripts/subscribe.js"></script>
+</body>
+</html>

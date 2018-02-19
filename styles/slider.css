@@ -1,0 +1,53 @@
+/**
+ * Swiper slider styles
+ */
+.swiper-container {
+	margin-bottom: 20px;
+}
+.prev, .next {
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	color: #b8bcc4;
+	font-size: 35px;
+	cursor: pointer;
+}
+.next {
+	right: -25px;
+}
+.prev {
+	left: -25px;
+}
+.prev.disabled, .next.disabled {
+	display: none;
+}
+.prev::before, .next::before {
+	width: 25px;
+	margin: 0;
+}
+
+.pagination-bullets {
+	margin: 0 0 20px 0;
+	padding: 0;
+	text-align: center;
+}
+.pagination-bullets .bullet {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin: 0 3px;
+	border-radius: 50%;
+	background: #d8dadf;
+	cursor: pointer;
+}
+.pagination-bullets .bullet.active {
+	background: #415275;
+}
+.blue .pagination-bullets .bullet {
+	background: #ffffff;
+	opacity: 0.4;
+}
+.blue .pagination-bullets .bullet.active {
+	opacity: 1;
+}
