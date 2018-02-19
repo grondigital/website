@@ -1,0 +1,144 @@
+/**
+ * Header
+ */
+#main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	height: 80px;
+	background: #ffffff;
+	box-shadow: 0 3px 3px 0 rgba(33, 51, 82, 0.1);
+	line-height: 80px;
+	transition: height 0.4s, line-height 0.4s;
+}
+.fixed-header #main-header {
+	height: 50px;
+	line-height: 50px;
+}
+#main-header .container {
+	height: 100%;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#logo {
+	display: block;
+	float: left;
+	height: 100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#logo img {
+	height: 50%;
+	vertical-align: middle;
+}
+
+/**
+ * Top menu
+ */
+#top-menu {
+	position: relative;
+	height: 100%;
+	margin-left: 140px;
+	text-align: right;
+}
+#top-menu ul {
+	margin: 0;
+	padding: 0;
+}
+#top-menu li {
+	display: inline;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+#top-menu li.highlighted {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#top-menu li:first-child {
+	margin-left: 0;
+}
+#top-menu li:last-child {
+	margin-right: 0;
+}
+#top-menu a {
+	text-decoration: none;
+	color: #6b7a8f;
+}
+#top-menu .highlighted a {
+	display: inline-block;
+	padding: 0.5em 0.75em;
+	line-height: 1.4;
+	border: 1px solid #f18036;
+	color: #f18036;
+}
+#top-menu li:not(.highlighted) a:hover,
+#top-menu li:not(.highlighted) a.active {
+	border-bottom: 3px solid #f18036;
+	color: #415275;
+}
+
+#top-menu .menu-button {
+	display: none;
+}
+#top-menu .menu-button::before {
+	font-size: 180%;
+	line-height: inherit;
+}
+#top-menu a.menu-button:hover {
+	border-bottom: none;
+}
+
+@media (max-width: 1199px) {
+	#top-menu .menu-button {
+		display: inline;
+	}
+	#top-menu ul {
+		position: absolute;
+		display: none;
+		left: -155px;
+		right: -15px;
+		top: 100%;
+		padding: 0 15px 20px 15px;
+		background: rgba(255, 255, 255, 0.94);
+		box-shadow: 0 3px 3px 0 rgba(33, 51, 82, 0.1);
+		text-align: center;
+	}
+	#top-menu.open ul {
+		display: block;
+	}
+	#top-menu li {
+		display: block;
+		margin: 25px 0;
+		line-height: 1.5;
+	}
+	#top-menu li.highlighted {
+		margin: 15px 0;
+	}
+}
+
+#top-menu li.highlight a,
+#top-menu li.highlight a:hover,
+#top-menu li.highlight a.active{
+	color: #f18036;
+	border: none;
+}
+
+
+/**
+ * Copyright section
+ */
+#copyright-section {
+	background-color: #2c3955;
+	color: #415275;
+}
+#copyright-section .container {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}

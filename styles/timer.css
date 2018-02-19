@@ -1,0 +1,71 @@
+/**
+ * ICO timer
+ */
+.timer {
+	display: flex;
+	justify-content: center;
+	visibility: hidden;
+	text-align: center;
+}
+.timer.shown {
+	visibility: visible;
+}
+.ico-timer {
+	font-size: 14px;
+}
+.ico-timer .timer-cell {
+	width: 70px;
+	height: 70px;
+	margin: 0 5px 5px 5px;
+	background: #ffffff;
+	color: #415275;
+	font: bold 44px/70px Helvetica, Arial, Lucida, sans-serif;
+}
+@media (max-width: 359px) {
+	.ico-timer {
+		font-size: 12px;
+	}
+	.ico-timer .timer-cell {
+		width: 50px;
+		height: 50px;
+		font-size: 35px;
+		line-height: 50px;
+	}
+}
+.banner-timer {
+	font-size: 40px;
+	line-height: 1;
+	font-weight: 600;
+}
+.banner-timer .timer-cell {
+	width: 50px;
+}
+.banner-timer > * {
+	margin: 0 10px;
+}
+.banner-timer > :first-child {
+	margin-left: 0;
+}
+.banner-timer > :last-child {
+	margin-right: 0;
+}
+.banner-timer .timer-text {
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #f18036;
+}
+@media (max-width: 359px) {
+	.banner-timer {
+		font-size: 30px;
+	}
+	.banner-timer .timer-cell {
+		width: 40px;
+	}
+	.banner-timer .timer-text {
+		font-size: 10px;
+	}
+	.banner-timer > * {
+		margin: 0 5px;
+	}
+}
