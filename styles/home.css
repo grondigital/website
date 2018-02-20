@@ -612,7 +612,9 @@
 	font-size: 30px;
 }
 .problems, .solution {
-	margin-left: calc(25% + 30px);
+	/*margin-left: calc(25% + 30px);*/
+	margin-left: 25%;
+	padding-left: 30px;
 }
 .problems {
 	display: flex;
@@ -664,6 +666,7 @@
 	}
 	.problems, .solution {
 		margin-left: 0;
+		padding-left: 0;
 	}
 	.problems {
 		flex-wrap: wrap;
