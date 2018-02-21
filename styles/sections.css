@@ -218,6 +218,22 @@
 	background: url("../images/flag/flag-ru.png") 50% 50%;
 }
 
+#top-menu li.with-submenu .flag-it {
+	background: url("../images/flag/flag-it.png") 50% 50%;
+}
+
+#top-menu li.with-submenu .flag-hi {
+	background: url("../images/flag/flag-hi.png") 50% 50%;
+}
+
+#top-menu li.with-submenu .flag-ko {
+	background: url("../images/flag/flag-ko.png") 50% 50%;
+}
+
+#top-menu li.with-submenu .flag-vi {
+	background: url("../images/flag/flag-vi.png") 50% 50%;
+}
+
 #top-menu li.with-submenu + li {
 	margin-left: 26px;
 }
@@ -245,6 +261,7 @@
 	#top-menu li.submenu-visible ul,
 	#top-menu li.submenu-visible:hover ul {
 		display: flex;
+		flex-wrap: wrap;
 		visibility: visible;
 		opacity: 1;
 	}
