@@ -51,3 +51,23 @@ $(function() {
 		disable: (Object.prototype.toString.call(window.operamini) === "[object OperaMini]")
 	});
 });
+
+/**
+ * Sub menu button
+ */
+$(function () {
+	var $submenu_btn = $('.submenu-button');
+
+	$submenu_btn.on('click', function () {
+		if ($(this).parent().hasClass('submenu-visible')) {
+			$(this).find('i')
+				.removeClass('icon-angle-up')
+				.addClass('icon-angle-down');
+		} else {
+			$(this).find('i')
+				.removeClass('icon-angle-down')
+				.addClass('icon-angle-up');
+		}
+		$(this).parent().toggleClass('submenu-visible');
+	});
+});
