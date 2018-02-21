@@ -255,6 +255,11 @@
 	position: relative;
 	padding-bottom: 100%;
 }
+@media (min-width: 1040px) {
+	#top-image {
+		margin-top: 50px;
+	}
+}
 #top-image img {
 	display: block;
 	position: absolute;
@@ -276,7 +281,7 @@
 
 #top-text {
 	color: #e8eaee;
-	font-size: 18px;
+	font-size: 16px;
 }
 #top-text h1 {
 	font-size: 40px;
@@ -304,9 +309,6 @@
 		display: inline-block;
 		vertical-align: top;
 		margin-top: 0;
-		margin-left: 20px;
-		position: relative;
-		top: -13px;
 	}
 }
 #top-text .btn:last-child {
