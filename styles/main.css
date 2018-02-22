@@ -5,17 +5,25 @@
 /**
  * Conditional hiding depending on current ICO round
  */
-.ico-shown-pre-pre, .ico-shown-pre, .ico-shown-1, .ico-shown-2, .ico-shown-3, .ico-shown-4 {
+.ico-shown-pre, .ico-shown-1, .ico-shown-2, .ico-shown-3, .ico-shown-4,
+.ico-shown-pre-il, .ico-shown-1-il, .ico-shown-2-il, .ico-shown-3-il, .ico-shown-4-il {
 	display: none!important;
 }
-.ico-current-pre-pre .ico-shown-pre-pre,
 .ico-current-pre .ico-shown-pre,
 .ico-current-1 .ico-shown-1,
-.ico-current-1 .ico-shown-2,
-.ico-current-1 .ico-shown-3,
+.ico-current-2 .ico-shown-2,
+.ico-current-3 .ico-shown-3,
 .ico-current-4 .ico-shown-4 {
 	display: block!important;
 }
+.ico-current-pre .ico-shown-pre-il,
+.ico-current-1 .ico-shown-1-il,
+.ico-current-2 .ico-shown-2-il,
+.ico-current-3 .ico-shown-3-il,
+.ico-current-4 .ico-shown-4-il {
+	display: inline!important;
+}
+
 
 /**
  * Subscribe form

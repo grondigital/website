@@ -2,8 +2,33 @@
  * The Buy Tokens form
  */
 $(function () {
-	var ethToGro = 10000, //TODO: automatically update exchange rate with ICO rounds
-		bonusFr = 0.4;
+	var ethToGro = 10000,
+		roundBonus = [0.4, 0.3, 0.2, 0.1, 0],
+		bonusFr = 0;
+	
+	//determine current ICO round
+	var roundDates = [
+		new Date('2018-01-09T00:00:00Z').getTime(),//pre-ICO
+		new Date('2018-02-27T00:00:00Z').getTime(), //round 1
+		new Date('2018-03-13T00:00:00Z').getTime(), //round 2
+		new Date('2018-03-27T00:00:00Z').getTime(), //round 3
+		new Date('2018-04-10T00:00:00Z').getTime()  //round 4
+	];
+	// select first round date which is after current
+	var now = new Date().getTime();
+	var countDownDate, currentRound = 4;
+	for (var i=0; i<roundDates.length; i++) {
+		countDownDate = roundDates[i]; //TODO: what will happen after round 4 will be started?
+		if (now < countDownDate) {
+			currentRound = i-1;
+			if (currentRound>=0 && currentRound<roundBonus.length) {
+				bonusFr = roundBonus[currentRound];
+			} else {
+				bonusFr = 0;
+			}
+			break;
+		}
+	}
 	
 	var $address = $('#contribution-address');
 	$('#copy-address').click(function () {

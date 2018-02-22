@@ -147,18 +147,21 @@
 	font-size: 40px;
 	color: #f18036;
 }
-#ico-banner-bonus {
+.ico-banner-bonus {
 	line-height: 1;
 	font-weight: 600;
 	text-align: center;
 	text-transform: uppercase;
 }
-#ico-banner-bonus-value {
+.ico-banner-bonus-value {
 	font-size: 30px;
 }
-#ico-banner-bonus-text {
+.ico-banner-bonus-text {
 	font-size: 16px;
 	color: #f18036;
+}
+#ico-banner-bonus-ends {
+	font-size: 20px;
 }
 
 #ico-banner-action .btn {
@@ -169,14 +172,14 @@
 }
 
 @media (max-width: 1023px) {
-	#ico-banner-status, #ico-banner-bonus {
+	#ico-banner-status, .ico-banner-bonus {
 		width: auto;
 	}
 	#ico-banner-status {
 		order: -2;
 		font-size: 30px;
 	}
-	#ico-banner-bonus {
+	.ico-banner-bonus {
 		order: -1;
 		margin-top: 0;
 		margin-right: 0;
@@ -195,12 +198,13 @@
 	.fixed-header #ico-banner-status {
 		font-size: 26px;
 	}
+	.fixed-header #ico-banner-bonus-ends,
 	.fixed-header #ico-banner-timer,
 	.fixed-header #ico-banner-timer + .separator {
-		display: none;
+		display: none!important;
 	}
-	.fixed-header #ico-banner-bonus-value,
-	.fixed-header #ico-banner-bonus-text {
+	.fixed-header .ico-banner-bonus-value,
+	.fixed-header .ico-banner-bonus-text {
 		display: inline;
 		font-size: 26px;
 	}
@@ -902,6 +906,15 @@
 		width: 270px;
 	}
 }
+
+/* fade out ICO timeline past rounds */
+.ico-current-1 .ico-timeline-pre, .ico-current-2 .ico-timeline-pre, .ico-current-3 .ico-timeline-pre, .ico-current-4 .ico-timeline-pre,
+.ico-current-2 .ico-timeline-1, .ico-current-3 .ico-timeline-1, .ico-current-4 .ico-timeline-1,
+.ico-current-3 .ico-timeline-2, .ico-current-4 .ico-timeline-2,
+.ico-current-4 .ico-timeline-3 {
+	opacity: 0.6;
+}
+
 .timeline-card .faded {
 	color: #889cbf;
 }
@@ -930,7 +943,7 @@
 	color: #ffffff;
 	font-weight: bold;
 }
-.ico-round-live {
+.ico-round-live, .ico-round-ended {
 	font-size: 36px;
 	text-transform: uppercase;
 }

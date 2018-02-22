@@ -16,7 +16,7 @@
 	
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-5CSPLQJ');</script>
@@ -24,7 +24,6 @@
 	
 	<!-- libs -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
-	<link rel="stylesheet" href="styles/swiper.css" />
 	<link rel="stylesheet" href="styles/aos.css" />
 	<link rel="stylesheet" href="styles/fontello.css" />
 	<link rel="stylesheet" href="styles/normalize.css" />
@@ -35,7 +34,7 @@
 	<link rel="stylesheet" href="styles/sections.css" />
 	<link rel="stylesheet" href="styles/main.css" />
 </head>
-<body>
+<body class="ico-current-pre">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CSPLQJ"
 	                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -281,7 +280,12 @@
 			
 			<h2 id="q-14">What is 1-in-10 Bonus?</h2>
 			<p>
-				In addition to our +40% Pre-ICO Bonus, we are also running the 1-in-10 Lottery, whereby you, the
+				In addition to our
+				<span class="ico-shown-pre-il">+40% Pre-ICO Bonus,</span>
+				<span class="ico-shown-1-il">+30% Bonus,</span>
+				<span class="ico-shown-2-il">+20% Bonus,</span>
+				<span class="ico-shown-3-il">+10% Bonus,</span>
+				we are also running the 1-in-10 Lottery, whereby you, the
 				contributor, will get an additional 10% of GRO, if your contribution transaction is written in the block
 				number ending with “0”. In other words, the block number is a multiple of 10. You can check if you are a
 				winner on the Etherscan website. This is an automated process if you are a winner the Gron Digital smart
@@ -413,8 +417,18 @@
 		<div id="subscribe-header">
 			<img src="images/share.svg" id="share-img" alt="Subscribe to Gron Digital Gambling and Betting ICO news" />
 			<div id="subscribe-header-text">
-				<h4>Tokens Pre-Sale has begun.<br />
-					Limited 40% bonus offer ends 26th&nbsp;February&nbsp;2018.</h4>
+				<h4 class="ico-shown-pre">
+					Tokens Pre-Sale has begun.<br />Limited 40% bonus offer ends 26th&nbsp;February&nbsp;2018.
+				</h4>
+				<h4 class="ico-shown-1">
+					Public sale has begun.<br />Limited 30% bonus offer ends 12th&nbsp;March&nbsp;2018.
+				</h4>
+				<h4 class="ico-shown-2">
+					Public sale has begun.<br />Limited 20% bonus offer ends 26th&nbsp;March&nbsp;2018.
+				</h4>
+				<h4 class="ico-shown-3">
+					Public sale has begun.<br />Limited 10% bonus offer ends 9th&nbsp;April&nbsp;2018.
+				</h4>
 				<p>Join our mailing list for the latest news.</p>
 			</div>
 		</div>
@@ -437,5 +451,6 @@
 	<script src="scripts/common.js"></script>
 	<script src="scripts/main.js"></script>
 	<script src="scripts/subscribe.js"></script>
+	<script src="scripts/timer.js"></script>
 </body>
 </html>
