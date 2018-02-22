@@ -593,10 +593,7 @@
  * Problems/solutions section
  */
 .problem-solutions {
-	overflow: hidden;
 	margin-bottom: 30px;
-	padding-bottom: 15px;
-	border-bottom: 2px solid #6b7a8f;
 }
 .problem-solutions:last-child {
 	margin-bottom: 0;
@@ -606,6 +603,7 @@
 .problem-title {
 	float: left;
 	width: 25%;
+	margin-top: 6px;
 }
 .problem-title .numblurb-number {
 	float: none;
@@ -616,9 +614,10 @@
 	vertical-align: middle;
 	color: #f18036;
 	font-size: 30px;
+	line-height: 34px;
+	margin-top: 11px;
 }
-.problems, .solution {
-	/*margin-left: calc(25% + 30px);*/
+.problems {
 	margin-left: 25%;
 	padding-left: 30px;
 }
@@ -648,17 +647,55 @@
 	width: auto;
 	margin: 0;
 }
+.problem h4 .icon-attention,
 .problem h4 .icon-cancel {
-	color: #f46e6f;
+	color: #f57f45;
 }
 .solution h4 .icon-ok {
-	color: #3a8cf4;
+	color: #415470;
+}
+#problems .numblurb-number {
+	box-shadow: none;
+}
+.problem {
+	margin: 0 15px 29px 15px;
+}
+.problem h4 {
+	font-size: 16px;
+	margin-bottom: 14px;
+}
+.problem p {
+	line-height: 26px;
+	margin-bottom: 26px;
+}
+.problem p:last-child {
+	margin-bottom: 0;
+}
+.solution {
+	clear: both;
+	margin: 0;
+	background: #dde6eb;
+}
+.solution-inner {
+	margin-left: 25%;
+	padding: 20px 30px 20px 30px;
+}
+.solution h4 {
+	font-size: 16px;
+	margin-bottom: 14px;
+}
+.solution p {
+	line-height: 26px;
+	margin-bottom: 26px;
+}
+.solution p:last-child {
+	margin-bottom: 0;
 }
 @media (max-width: 1023px) {
 	.problem-title {
 		float: none;
 		width: auto;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 	}
 	.problem-title .numblurb-number {
 		display: inline-block;
@@ -682,6 +719,9 @@
 		width: 100%;
 		margin-left: 0;
 		margin-right: 0;
+	}
+	.solution-inner {
+		margin-left: 0;
 	}
 }
 

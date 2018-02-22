@@ -130,6 +130,9 @@ a.no-line:focus {
 p.highlighted {
 	color: #f57e45;
 }
+p.dark {
+	color: #294f61;
+}
 
 .bg-particles {
 	background: url("../images/bg/bg-particles.png") center center / cover;
