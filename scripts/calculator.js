@@ -3,7 +3,7 @@
  */
 $(function () {
 	var ethToGro = 10000,
-		roundBonus = [0.4, 0.3, 0.2, 0.1, 0],
+		roundBonus = [0.3, 0.3, 0.2, 0.1, 0],
 		bonusFr = 0;
 	
 	//determine current ICO round

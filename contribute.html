@@ -99,7 +99,7 @@
 			<form id="contribute-form" name="contribute" action="https://api.chuk.tk/preico" method="post">
 				<div class="form-crumbs">
 					<div class="form-crumb col-vertical-center"><span>Your Details</span></div>
-					<div class="form-crumb col-vertical-center"><span>Buy Tokens</span></div>
+					<div class="form-crumb col-vertical-center"><span>Order Tokens</span></div>
 				</div>
 				<div id="contribute-step-email" class="form-step">
 					<input type="hidden" name="contributor[message_text]" placeholder="Message (optional)" />
@@ -118,14 +118,14 @@
 					<p>
 						<input type="text" name="contributor[surname]" placeholder="Surname" />
 					</p>
-					<div id="eth-address" style="display: none;">
+					<div id="eth-address">
 						<p>
 							<input type="text"
 							       name="contributor[eth_address]"
 							       placeholder="Your ETH Address *"
 							       pattern="^(0x)?[0-9a-fA-F]{40}$" />
 						</p>
-						<p class="highlighted">
+						<p class="highlighted" style="display: none;">
 							Please make sure to contribute ONLY from this account.
 						</p>
 					</div>
