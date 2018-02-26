@@ -22,13 +22,22 @@
 	})(window,document,'script','dataLayer','GTM-5CSPLQJ');</script>
 	<!-- End Google Tag Manager -->
 	
+	<!-- libs -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
 	<link rel="stylesheet" href="styles/aos.css" />
 	<link rel="stylesheet" href="styles/fontello.css" />
 	<link rel="stylesheet" href="styles/normalize.css" />
+	
+	<!-- common styles -->
+	<link rel="stylesheet" href="styles/common.css" />
+	<link rel="stylesheet" href="styles/forms.css" />
+	<link rel="stylesheet" href="styles/sections.css" />
 	<link rel="stylesheet" href="styles/main.css" />
+	
+	<link rel="stylesheet" href="styles/contribute.css" />
+	<link rel="stylesheet" href="styles/calculator.css" />
 </head>
-<body>
+<body class="ico-current-pre">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CSPLQJ"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -46,8 +55,31 @@
 				<li><a href="/#roadmap-section">Road map</a></li>
 				<li><a href="/#partners-section">Our team</a></li>
 				<li><a href="/faq">FAQ</a></li>
-				<li><a href="/whitepaper">Whitepaper</a></li>
-				<li><a href="/one-page-whitepaper">One-page Whitepaper</a></li>
+				<li class="with-submenu">
+					<span class="submenu-button"><i class="icon-angle-down"></i></span>
+					<a href="/whitepaper">Whitepaper</a>
+					<span class="flag flag-en"></span>
+					<ul>
+						<li><a href="/whitepaper-es">Spanish</a><span class="flag flag-es"></span></li>
+						<li><a href="/whitepaper-it">Italian</a><span class="flag flag-it"></span></li>
+						<li><a href="/whitepaper-ru">Russian</a><span class="flag flag-ru"></span></li>
+						<li><a href="/whitepaper-ko">Korean</a><span class="flag flag-ko"></span></li>
+						<li><a href="/whitepaper-vi">Vietnam</a><span class="flag flag-vi"></span></li>
+					</ul>
+				</li>
+				<li class="with-submenu">
+					<span class="submenu-button"><i class="icon-angle-down"></i></span>
+					<a href="/one-page-whitepaper">One-page Whitepaper</a>
+					<span class="flag flag-en"></span>
+					<ul>
+						<li><a href="/one-page-whitepaper-es">Spanish</a><span class="flag flag-es"></span></li>
+						<li><a href="/one-page-whitepaper-it">Italian</a><span class="flag flag-it"></span></li>
+						<li><a href="/one-page-whitepaper-ru">Russian</a><span class="flag flag-ru"></span></li>
+						<li><a href="/one-page-whitepaper-hi">Hindi</a><span class="flag flag-hi"></span></li>
+						<li><a href="/one-page-whitepaper-ko">Korean</a><span class="flag flag-ko"></span></li>
+						<li><a href="/one-page-whitepaper-vi">Vietnameese</a><span class="flag flag-vi"></span></li>
+					</ul>
+				</li>
 				<li class="highlight"><a href="/affiliate">Become an Affiliate</a></li>
 			</ul>
 			<a href="#" class="menu-button icon-menu"></a>
@@ -66,12 +98,12 @@
 		<div id="buy-tokens">
 			<div class="form-crumbs">
 				<div class="form-crumb col-vertical-center past"><span>Your Details</span></div>
-				<div class="form-crumb col-vertical-center active"><span>Buy Tokens</span></div>
+				<div class="form-crumb col-vertical-center active"><span>Order Tokens</span></div>
 			</div>
 			<div class="form-step">
 				<div id="calculator-block" class="form-section blue">
 					<p>
-						<span class="user-step">1.</span> Decide, using the calculator below, how many tokens you would like to buy
+						Decide, using the calculator below, how many tokens you would like to order
 					</p>
 					<fieldset id="calculator">
 						<legend>Calculator</legend>
@@ -101,7 +133,10 @@
 				</div>
 				<div id="calculator-summary" class="form-section blue bg-particles">
 					<div>
-						<p>Your 40% BONUS</p>
+						<p class="ico-shown-pre">Your 30% BONUS</p>
+						<p class="ico-shown-1">Your 30% BONUS</p>
+						<p class="ico-shown-2">Your 20% BONUS</p>
+						<p class="ico-shown-3">Your 10% BONUS</p>
 						<p class="highlighted"><span class="bonus-amount"></span> GRO</p>
 					</div>
 					<div>
@@ -113,7 +148,7 @@
 						<p class="highlighted"><span class="eth-amount"></span> ETH</p>
 					</div>
 				</div>
-				<div id="contribution-block" class="form-section gray">
+				<div id="contribution-block" class="form-section gray" style="display: none;">
 					<p>
 						<span class="user-step">2.</span> From the ERC20
 						<a href="https://grondigital.com/faq#q-3" target="_blank">Token compatible wallet</a> send your ETH to
@@ -127,21 +162,39 @@
 					<p>*Make sure you set your GAS Limit to minimum 120000</p>
 					<p class="highlighted">*Do not send your ETH from any exchanges, as we won’t be able to send you GRO</p>
 				</div>
-				<div class="form-section divider">
+				<div class="form-section divider" style="display: none;">
 					<p>
-						<span class="user-step">3.</span> You will receive your <span class="highlighted">GRO + 40% bonus</span>
+						<span class="user-step">3.</span> You will receive your
+						<span class="highlighted ico-shown-pre-il">GRO + 40% Bonus</span>
+						<span class="highlighted ico-shown-1-il">GRO + 30% Bonus</span>
+						<span class="highlighted ico-shown-2-il">GRO + 20% Bonus</span>
+						<span class="highlighted ico-shown-3-il">GRO + 10% Bonus</span>
+						<span class="ico-shown-4-il">GRO</span>
 						within a few minutes.
 					</p>
 				</div>
-				<div class="form-section">
+				<div class="form-section" style="display: none;">
 					<p>
-						In addition to our +40% Pre-ICO Bonus, we are also running the 1-in-10 Lottery, whereby you, the
+						In addition to our
+						<span class="ico-shown-pre-il">+40% Pre-ICO Bonus,</span>
+						<span class="ico-shown-1-il">+30% Bonus,</span>
+						<span class="ico-shown-2-il">+20% Bonus,</span>
+						<span class="ico-shown-3-il">+10% Bonus,</span>
+						we are also running the 1-in-10 Lottery, whereby you, the
 						contributor, will get an additional 10% of GRO, if your contribution transaction is written in the block
 						number ending with “0”. In other words, the block number is a multiple of 10. You can check if you are a
 						winner on the Etherscan website. This is an automated process if you are a winner the Gron Digital smart
 						contract will reward you with an additional 10% of GRO.
 					</p>
 				</div>
+				<p></p>
+				<p>
+					<a href="https://grondigital.com/" class="btn btn-orange ico-shown-pre ico-shown-1"
+					   data-ev-category="Contribute"
+					   data-ev-label="Pre-Order Tokens (ok)"
+					   style="max-width: 220px; margin: 0 auto"
+					>Order Tokens</a>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -173,6 +226,9 @@
 					<li><a href="https://etherscan.io/address/0x16E9B1234df1f10AeeA65Ee48223986ce62C8a7B#code" target="_blank">
 						GROVesting Contract
 					</a></li>
+					<li><a href="https://bitcointalk.org/index.php?topic=2858989.msg29344962#msg29344962" target="_blank">
+						Bounty campaign
+					</a></li>
 				</ul>
 			</div>
 			<div>
@@ -182,7 +238,7 @@
 					<a href="https://twitter.com/GronDigital" class="icon-twitter" target="_blank"></a>
 					<a href="https://github.com/grondigital" class="icon-github-circled" target="_blank"></a><br/>
 					<a href="https://t.me/grondigital" class="icon-telegram" target="_blank"></a>
-					<a href="https://join.slack.com/t/gron-digital/shared_invite/enQtMjk1MTMwMTUxNTU1LThhN2RmNTQ0YmFlOTQyNGQyOWY5ZTliZTQwNTk4ZDcyNjUwYzQ3NGMwMWM0NDkxNDZmZmJhMTllYzIyYThhMWE"
+					<a href="https://join.slack.com/t/gron-digital/shared_invite/enQtMzE2Njk1OTkzMTcxLTIyZWEzY2U2MWI2OWU1YWU0ZDVhMTUyNTgxM2M4ZWM0NjllNzYzMWE3YWEzMDQwMmRiMzQyYzk4MzdmZTUxMjc"
 					   class="icon-slack" target="_blank"></a>
 					<a href="https://medium.com/@grondigitalplatform" class="icon-medium" target="_blank"></a><br/>
 					<a href="https://bitcointalk.org/index.php?topic=2758561" class="icon-bitcoin" target="_blank"></a>
@@ -210,8 +266,8 @@
 </div>
 
 <div id="social-float">
-	<a href="/contribute" data-ev-category="Contribute" data-ev-label="Buy Tokens Now (float)">
-		<span>Buy Tokens Now</span><img src="images/social/buy-tokens.png"/>
+	<a href="/contribute" data-ev-category="Contribute" data-ev-label="Pre-Order Tokens (float)">
+		<span>Pre-Order Tokens</span><img src="images/social/buy-tokens.png"/>
 	</a><br/>
 	<a href="/affiliate">
 		<span>Become an Affiliate</span><img src="images/social/affiliate.png"/>
@@ -231,8 +287,18 @@
 	<div id="subscribe-header">
 		<img src="images/share.svg" id="share-img" alt="Subscribe to Gron Digital Gambling and Betting ICO news" />
 		<div id="subscribe-header-text">
-			<h4>Tokens Pre-Sale has begun.<br />
-				Limited 40% bonus offer ends 26th&nbsp;February&nbsp;2018.</h4>
+			<h4 class="ico-shown-pre">
+				Token Crowdsale Starts <br> 15th of March 2018
+			</h4>
+			<h4 class="ico-shown-1">
+				Public sale has begun.<br />Limited 30% bonus offer ends 12th&nbsp;March&nbsp;2018.
+			</h4>
+			<h4 class="ico-shown-2">
+				Public sale has begun.<br />Limited 20% bonus offer ends 26th&nbsp;March&nbsp;2018.
+			</h4>
+			<h4 class="ico-shown-3">
+				Public sale has begun.<br />Limited 10% bonus offer ends 9th&nbsp;April&nbsp;2018.
+			</h4>
 			<p>Join our mailing list for the latest news.</p>
 		</div>
 	</div>
@@ -249,6 +315,14 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="scripts/lib/aos.js"></script>
 <script src="scripts/lib/jquery.waypoints.min.js"></script>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/tracking.js"></script>
+<script src="scripts/common.js"></script>
 <script src="scripts/main.js"></script>
+<script src="scripts/subscribe.js"></script>
+<script src="scripts/timer.js"></script>
+
+<script src="scripts/calculator.js"></script>
 </body>
 </html>
