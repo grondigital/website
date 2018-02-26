@@ -5,10 +5,10 @@ $(function() {
 	// Set the date we're counting down to
 	var roundDates = [
 		new Date('2018-01-09T00:00:00Z').getTime(), //pre-ICO
-		new Date('2018-02-27T00:00:00Z').getTime(), //round 1
-		new Date('2018-03-13T00:00:00Z').getTime(), //round 2
-		new Date('2018-03-27T00:00:00Z').getTime(), //round 3
-		new Date('2018-04-10T00:00:00Z').getTime()  //round 4
+		new Date('2018-03-08T00:00:00Z').getTime(), //round 1
+		new Date('2018-03-22T00:00:00Z').getTime(), //round 2
+		new Date('2018-04-05T00:00:00Z').getTime(), //round 3
+		new Date('2018-04-19T00:00:00Z').getTime()  //round 4
 	];
 	// select first round date which is after current
 	var now = new Date().getTime();
