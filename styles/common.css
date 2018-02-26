@@ -133,6 +133,9 @@ p.highlighted {
 p.dark {
 	color: #294f61;
 }
+.text-white {
+	color: #ffffff;
+}
 
 .bg-particles {
 	background: url("../images/bg/bg-particles.png") center center / cover;

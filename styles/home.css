@@ -55,7 +55,8 @@
 		padding-top: 180px; /* space for fixed header & ICO banner */
 	}
 	#ico-banner-section {
-		position: fixed;
+		/*position: fixed;*/
+		position: relative;
 		top: 80px;
 		left: 0;
 		right: 0;
@@ -89,8 +90,8 @@
 }
 @media (min-width: 1024px) {
 	.fixed-header #ico-banner-section > .container {
-		padding-top: 10px;
-		padding-bottom: 10px;
+		/*padding-top: 10px;*/
+		/*padding-bottom: 10px;*/
 	}
 }
 
@@ -122,7 +123,8 @@
 @media (max-width: 1023px) {
 	#ico-banner {
 		justify-content: center;
-		width: 290px;
+		/*width: 290px;*/
+		width: 100%;
 		margin: 0 auto;
 		height: auto;
 	}
@@ -144,9 +146,30 @@
 }
 
 #ico-banner-status {
+	width: 100%;
+	margin-right: 0;
 	font-size: 40px;
+	text-align: center;
 	color: #f18036;
 }
+
+#ico-banner-status .big {
+	font-size: 32px;
+	line-height: 40px;
+}
+
+#ico-banner-status .big strong {
+	font-weight: 600;
+}
+
+#ico-banner-status .small {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+	margin-top: 6px;
+	color: #ffffff;
+}
+
 .ico-banner-bonus {
 	line-height: 1;
 	font-weight: 600;
