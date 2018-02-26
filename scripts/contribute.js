@@ -67,6 +67,8 @@ $(function () {
 			} else if ($input.val()==='') {
 				passed = false;
 			}
+
+
 		}
 		
 		return passed;
