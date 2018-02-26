@@ -52,7 +52,7 @@
 @media (min-width: 1024px) {
 	/* home page - #top-section is the first */
 	#top-section {
-		padding-top: 180px; /* space for fixed header & ICO banner */
+		padding-top: 100px; /* space for fixed header & ICO banner */
 	}
 	#ico-banner-section {
 		/*position: fixed;*/
