@@ -492,6 +492,12 @@
 	right: 0;
 }
 
+#statistics {padding: 41px 40px 100px 40px;}
+#statistics .section-header {margin-bottom:70px;}
+.bar-start .progress-text {position: absolute; left: 50%; bottom: -70px; width: 250px; margin-left: -125px; color: #ffffff; font-weight: 400;}
+.bar-middle .progress-text {position: absolute; left: 50%; top: -50px; width: 250px; margin-left: -125px;  color: #ffffff; font-weight: 400;}
+.bar-finish .progress-text {position: absolute; left: 50%; bottom: -70px; width: 250px; margin-left: -125px; color: #ffffff; font-weight: 400;}
+
 @media (max-width: 1199px) {
 	
 	/* md */
@@ -514,7 +520,7 @@
 	/* sm */
 	
 	#statistics {
-		padding: 21px 20px 60px 20px;
+		padding: 21px 20px 90px 20px;
 	}
 	
 	#statistics .section-header {
@@ -564,8 +570,8 @@
 		top: 40px;
 	}
 	
-	.bar-middle .progress-text { top: 31px; left: 50%; margin-left: -50px; }
-	.bar-finish .progress-text { top: -64px; right: 1px; text-align: right; }
+	/*.bar-middle .progress-text { top: 31px; left: 50%; margin-left: -50px; }*/
+	/*.bar-finish .progress-text { top: -64px; right: 1px; text-align: right; }*/
 	
 	.bar-middle .progress-number { top: 46px; }
 	.bar-finish .progress-number { top: -35px; left: initial; right: 1px; margin-left: 0; text-align: right; }
