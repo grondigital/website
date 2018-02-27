@@ -407,7 +407,7 @@
 	text-align: center;
 	font-size: 14px;
 	font-weight: 700;
-	padding: 6px 5px;
+	min-height: 30px;
 	background-color: #98abce;
 	color: #3d4f72;
 	transition: width 0.6s ease;
@@ -461,15 +461,16 @@
 .bar-divider::after,
 .bar-middle::before,
 .bar-middle::after,
+.bar-finish::before,
 .bar-finish::after {
 	content: '';
 	display: block;
 	width: 2px;
-	height: 50px;
+	height: 40px;
 	position: absolute;
 	left: 0;
 	top: 50%;
-	margin-top: -26px;
+	margin-top: -20px;
 	background: #ffffff;
 }
 
@@ -477,12 +478,25 @@
 .bar-middle::before,
 .bar-middle::after {
 	height: 55px;
-	margin-top: -29px;
+	margin-top: -40px;
 	background: transparent;
 	background-image: linear-gradient(0deg,
 	#ffffff, #ffffff 8px,
 	transparent 8px, transparent 11px);
 	background-size: 100% 11px;
+}
+
+.bar-divider::after,
+.bar-middle::after {
+	content: '';
+	display: block;
+	width: 2px;
+	height: 40px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -20px;
+	background: #ffffff;
 }
 
 .bar-divider::after,
@@ -493,10 +507,23 @@
 }
 
 #statistics {padding: 41px 40px 100px 40px;}
-#statistics .section-header {margin-bottom:70px;}
-.bar-start .progress-text {position: absolute; left: 50%; bottom: -70px; width: 250px; margin-left: -125px; color: #ffffff; font-weight: 400;}
-.bar-middle .progress-text {position: absolute; left: 50%; top: -50px; width: 250px; margin-left: -125px;  color: #ffffff; font-weight: 400;}
-.bar-finish .progress-text {position: absolute; left: 50%; bottom: -70px; width: 250px; margin-left: -125px; color: #ffffff; font-weight: 400;}
+#statistics .section-header {margin-bottom:77px;}
+.progress {position: relative;}
+.bar-fake {
+	position: absolute; top: 0; left: 0; background: transparent;
+	-webkit-box-shadow: 0 0 0 10px rgba(8,15,33,0.25);
+	-moz-box-shadow: 0 0 0 10px rgba(8,15,33,0.25);
+	box-shadow: 0 0 0 10px rgba(8,15,33,0.25);
+}
+.bar-fake .progress-text {position: absolute; left: 0; bottom: -55px; width: 100%; color: #ffffff; font-weight: 400;}
+.bar-middle .progress-text {position: absolute; left: 0; top: -66px; width: 250px; margin-left: -125px;  color: #ffffff; font-weight: 400;}
+.bar-finish {
+	-webkit-box-shadow: 0 0 0 10px rgba(8,15,33,0.25);
+	-moz-box-shadow: 0 0 0 10px rgba(8,15,33,0.25);
+	box-shadow: 0 0 0 10px rgba(8,15,33,0.25);
+}
+.bar-finish .progress-text {position: absolute; right: 0; bottom: -72px; width: 100%; color: #ffffff; font-weight: 400;}
+.progress-text > span {color: #98abce;}
 
 @media (max-width: 1199px) {
 	
@@ -544,10 +571,12 @@
 	.progress-label > div {
 		width: 35%;
 	}
-	
+
+	/*
 	.progress-bar {
 		padding: 2px 5px;
 	}
+	*/
 	
 	.progress-text {
 		font-size: 11px;
@@ -569,10 +598,10 @@
 		font-size: 12px;
 		top: 40px;
 	}
-	
-	/*.bar-middle .progress-text { top: 31px; left: 50%; margin-left: -50px; }*/
-	/*.bar-finish .progress-text { top: -64px; right: 1px; text-align: right; }*/
-	
+
+	.bar-middle .progress-text { top: -55px; }
+	.bar-finish .progress-text { bottom: -66px; }
+
 	.bar-middle .progress-number { top: 46px; }
 	.bar-finish .progress-number { top: -35px; left: initial; right: 1px; margin-left: 0; text-align: right; }
 	
@@ -581,7 +610,8 @@
 		height: 34px;
 		margin-top: -17px;
 	}
-	
+
+	/*
 	.bar-divider::after,
 	.bar-middle::before,
 	.bar-middle::after {
@@ -590,6 +620,11 @@
 		background-image: linear-gradient(0deg, #ffffff, #ffffff 4px, transparent 4px, transparent 8px);
 		background-size: 100% 8px;
 	}
+	*/
+}
+
+@media (max-width: 390px) {
+	.bar-finish .progress-text { bottom: -55px; }
 }
 
 #reasons {
